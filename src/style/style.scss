@@ -20,7 +20,11 @@ html {
     sans-serif;
 }
 
-.hero-image {
+.photo {
+  background: url(/image/photo_neurona_vertical.png) no-repeat center;
+}
+
+@screen lg {
   .photo {
     background: url(/image/photo_neurona.jpg) no-repeat center;
   }
