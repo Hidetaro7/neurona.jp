@@ -1,14 +1,57 @@
 {% extends '_layout.njk' %}
 
-{% block title %}Hello World{% endblock %}
+{% block title %}ニューロナ 初のライブ 2021年1月30日（土）{% endblock %}
 
 {% block body %}
-  <article class="prose">
-    <h1>Hello World</h1>
-    <h2>Hello World</h2>
-    <h3>Hello World</h3>
-    <h4>Hello World</h4>
-    <p>Hello World</p>
+  <div class="first-view">
+    <div class="hero-image w-screen h-screen flex  flex-col">
+      <div class="photo h-1/2 lg:h-2/3 flex-grow bg-contain xl:bg-cover">
+      </div>
+      <article class="prose mx-auto flex-grow h-1/2">
+        <div class="container mx-auto text-white">
+          <div class="text-center px-6">
+            <img class="w-full md:w-5/6 lg:w-96 inline" src="/image/neurona_logo_white.svg" alt="ニューロナ">
+            <h1 class="m-0 text-white">初のリアル・ライブ！？</h1>
+            <p class="place text-2xl font-bold font-black m-2">仙台spaceZero</p>
+            <time class="font-bold text-2xl">2021年1月30日 土曜</time>
+
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="prose max-w-prose mx-auto">
+    <div class="live-info px-4">
+      <table class="mx-auto block mt-0">
+        <tr>
+          <th class="w-40">イベント名</th>
+          <td>ミララビ pre.『Prologue』</td>
+        </tr>
+        <tr>
+          <th>場所</th>
+          <td>仙台spaceZero</td>
+        </tr>
+        <tr>
+          <th>日時</th>
+          <td>2021/1/30土曜日</td>
+        </tr>
+        <tr>
+          <th>出演</th>
+          <td>ニューロナ/Rice-Eater/FRAME SIGN/THE HOWLING NOIS/Mirage Labyrinth/and more</td>
+        </tr>
+        <tr>
+          <th>オフライン</th>
+          <td>前売り￥2000/当日￥2500(+Drink￥600)</td>
+        </tr>
+        <tr>
+          <th>オンライン</th>
+          <td>無料</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
     <script src="/script/index.js"></script>
-  </article>
 {% endblock %}

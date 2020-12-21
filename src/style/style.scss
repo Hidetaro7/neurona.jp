@@ -6,3 +6,31 @@
 
 @tailwind components;
 @tailwind utilities;
+
+body,
+html {
+  @apply bg-black text-white;
+
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+
+.hero-image {
+  .photo {
+    background: url(/image/photo_neurona.jpg) no-repeat center;
+  }
+}
+
+.live-info {
+  table {
+    tr {
+      @apply border-gray-700 #{!important};
+      @apply text-lg;
+    }
+  }
+}

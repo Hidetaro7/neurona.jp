@@ -7,7 +7,11 @@ module.exports = {
   ],
   important: true,
   theme: {
-    extend: {},
+    extend: {
+    },
+    container: {
+      center: true,
+    }
   },
   variants: {},
   plugins: [
