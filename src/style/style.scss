@@ -21,12 +21,12 @@ html {
 }
 
 .photo {
-  background: url(/image/photo_neurona_vertical.png) no-repeat center;
+  background: url(../image/photo_neurona_vertical.png) no-repeat center;
 }
 
 @screen lg {
   .photo {
-    background: url(/image/photo_neurona.jpg) no-repeat center;
+    background: url(../image/photo_neurona.jpg) no-repeat center;
   }
 }
 
@@ -34,7 +34,6 @@ html {
   table {
     tr {
       @apply border-gray-700 #{!important};
-      @apply text-lg;
     }
   }
 }
