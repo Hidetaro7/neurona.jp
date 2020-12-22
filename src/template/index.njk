@@ -5,36 +5,41 @@
 {% block body %}
   <div class="first-view">
     <div class="hero-image w-screen h-screen flex flex-col">
-      <div class="photo h-3/4 md:h-1/2 flex-grow bg-cover md:bg-contain">
-      </div>
-      <article class="prose max-w-none mx-auto w-full flex-grow h-1/2">
-        <div class="container mx-auto text-white">
-          <div class="text-center px-6">
+      <article class="w-full flex-grow h-full relative">
+        <video class="absolute z-0 w-full object-cover h-full" src="./video/movie.mp4" playsinline loop muted autoplay></video>
+        <div class="flex justify-center items-center flex-col h-full text-white relative z-10">
             <img class="w-full my-0 md:w-2/3 lg:w-1/2 inline" src="./image/neurona_logo_white.svg" alt="ニューロナ">
             <h1 class="m-0 text-lg md:text-3xl md:mb-8 text-white">初のリアル・ライブ！？</h1>
             <p class="place text-2xl md:text-4xl md:mb-8 font-bold font-black m-2">仙台spaceZero</p>
             <time class="font-bold  md:text-4xl text-2xl">2021年1月30日 土曜</time>
 
-          </div>
         </div>
       </article>
     </div>
   </div>
 
+
+  <div class="photo h-3/4 md:h-2/3 flex-grow bg-cover md:bg-contain">
+  </div>
+
   <div class="prose mx-auto">
     <div class="live-info px-4">
-      <table class="mx-auto block mt-0">
+      <h2 class="text-white">ライブ概要</h2>
+      <table class="mx-auto block mt-0 mb-12 text-base">
         <tr>
           <th class="w-24 md:w-40">イベント名</th>
           <td>ミララビ pre.『Prologue』</td>
         </tr>
         <tr>
           <th>場所</th>
-          <td>仙台spaceZero</td>
+          <td>仙台spaceZero
+            <br>
+            <a class="text-white" href="https://goo.gl/maps/TVXVwupiw62uLvmE9" target="_blank">Googleマップはこちら</a>
+          </td>
         </tr>
         <tr>
           <th>日時</th>
-          <td>2021/1/30土曜日</td>
+          <td>2021年1月30日 土曜日</td>
         </tr>
         <tr>
           <th>出演</th>
@@ -42,7 +47,7 @@
         </tr>
         <tr>
           <th>オフライン</th>
-          <td>前売り￥2000/当日￥2500(+Drink￥600)</td>
+          <td>前売り￥2000 / 当日￥2500 (+Drink￥600)</td>
         </tr>
         <tr>
           <th>オンライン</th>
@@ -50,6 +55,32 @@
         </tr>
       </table>
     </div>
+
+    <div class="text-center mb-16">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScMf1JMu7YIZ2KY7oC2lAk-6-2C_pa1z29bLw1KyYehrBjL5Q/viewform?usp=sf_link" target="_blank" class="bg-transparent hover:bg-blue text-white font-semibold hover:text-white py-6 px-12 border border-blue hover:border-white rounded no-underline">
+        お申し込み・お問い合わせ
+      </a>
+    </div>
+
+    <div class="prose px-4 mb-16 text-white">
+      <h2 class="text-white">ネット中継を楽しみたい方へ</h2>
+      <p>スペース・ゼロ様が配信しているTwitCasting（ツイキャス）の番組があります、こちらは事前申し込みは不要です。<br>当日、以下のURLにアクセスしてライブをお楽しみください。
+      <br>
+        <a class="text-white" href="https://twitcasting.tv/spacezero_022/" target="_blank">https://twitcasting.tv/spacezero_022/</a>
+      </p>
+    </div>
+
+    <div class="prose px-4 mb-8 text-white">
+      <h2 class="text-white">ドリンク差し入れ</h2>
+      <p>もしもメンバーにドリンク差し入れされるお客様がいらっしゃいましたら、以下がご利用になれます。<br>（差し入れページは当日近くに開設されます）
+      <br>
+        <a class="text-white" href="https://spacezero-shop.stores.jp/" target="_blank">https://spacezero-shop.stores.jp/</a>
+      </p>
+    </div>
+
+    <footer class="text-center py-16">
+      <img class="w-20 my-0 inline" src="./image/neurona_logo_white.svg" alt="ニューロナ">
+    </footer>
 
   </div>
 
