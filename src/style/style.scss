@@ -9,8 +9,6 @@
 
 body,
 html {
-  @apply bg-black text-white;
-
   font-family:
     "Helvetica Neue",
     Arial,
@@ -30,10 +28,31 @@ html {
   }
 }
 
-.live-info {
-  table {
-    tr {
-      @apply border-gray-700 #{!important};
+.footer-links {
+  dl {
+    @apply flex mb-8;
+  }
+
+  dt {
+    @apply mb-4 font-bold text-xs text-gray-400 w-32;
+  }
+
+  li {
+    @apply mb-2;
+    @apply text-left;
+
+    a {
+      &:hover {
+        @apply underline;
+      }
+    }
+  }
+}
+
+@screen md {
+  .footer-links {
+    dl {
+      @apply block mb-0;
     }
   }
 }
