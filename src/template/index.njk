@@ -3,102 +3,165 @@
 {% block title %}ニューロナ ライブ＠仙台spaceZero 2021年1月30日 土曜日{% endblock %}
 
 {% block body %}
-  <div class="first-view">
-    <div class="hero-image w-screen h-screen flex flex-col">
-      <article class="w-full flex-grow h-full relative">
-        <video class="absolute z-0 w-full object-cover h-full opacity-50" src="./video/movie.mp4" playsinline loop muted autoplay></video>
-        <div class="flex justify-center items-center flex-col h-full text-white relative z-10 px-6 md:px-0">
-            <img class="w-full my-0 md:w-2/3 lg:w-1/2 inline" src="./image/neurona_logo_white.svg" alt="ニューロナ">
-            <h1 class="m-0 text-lg md:text-3xl md:mb-8 text-white text-center"><s>初のリアル・ライブ！？</s><br>緊急事態宣言発令によりリモート（動画）出演に変更</h1>
-            <p class="place text-base md:text-2xl md:mb-2 font-bold font-black m-2">仙台spaceZero</p>
-            <time class="font-bold  md:text-4xl text-2xl">2021年1月30日（土） 19:25〜</time>
 
-            <a  href="https://twitcasting.tv/spacezero_022/" target="_blank" class="mt-8 border-white bg-red-600 text-white font-bold text-center text-lg md:text-3xl w-full md:w-auto px-4 md:px-12 py-4 hover:opacity-80">
-              ツイキャスでライブを見る（無料）
-            </a>
+  <div class="app-header fixed top-0 w-screen bg-gray-800 bg-opacity-80">
+    <div class="container px-6 md:px-0 h-24 flex items-center justify-between">
+      <div class="logo">
+        <img class="w-32 my-0 inline" src="./image/neurona_logo_white.svg" alt="ニューロナ">
+      </div>
 
-        </div>
-      </article>
+      <div class="sns grid grid-cols-3 gap-12 text-white">
+        <a title="Youtube" href="https://www.youtube.com/channel/UCRKVZiebYGhWRCDxY3OA8cg">
+          <i class="fab fa-youtube text-2xl"></i>
+        </a>
+        <a title="Twitter" href="https://twitter.com/neurona_jp">
+          <i class="fab fa-twitter text-2xl"></i>
+        </a>
+        <a title="Instagram" href="https://www.instagram.com/neurona_jp/">
+          <i class="fab fa-instagram text-2xl"></i>
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="md:my-32 text-center md:h-2/3 h-2/6">
+  <div class="photo h-3/4 md:h-screen flex-grow bg-cover md:bg-contain bg-black">
+  </div>
+
+  <div class="md:my-16 text-center md:h-2/3 h-2/6">
     <iframe class="inline h-full w-full md:w-7/12 " width="560" height="315" src="https://www.youtube.com/embed/iXJJosZN7u4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
-  <div class="photo h-3/4 md:h-2/3 flex-grow bg-cover md:bg-contain">
+  <div class="container mx-auto my-16">
+
+    <section class="release prose max-w-none">
+      <h2 class="text-6xl text-center">RELEASE</h2>
+      <h3 class="text-4xl text-center mb-14">ALBUM / EP</h3>
+      <div class="release-items px-4 md:px-0 grid md:grid-cols-3 gap-4">
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:500px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E3%83%8A%E3%82%AC%E3%82%B9%E3%82%AE%E3%82%BF%E6%98%A5-ep/1527718465"></iframe>
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:500px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%A9%BA%E8%9D%89-ep/1529845355"></iframe>
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:500px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%8E%89%E8%99%AB%E8%89%B2%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%83%E3%83%88/1551296505"></iframe>
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:500px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E6%94%BE%E5%87%BA-%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E3%83%86%E3%82%A3%E3%83%86%E3%82%A3-ep/1520538261"></iframe>
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:500px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E9%80%83%E3%81%92%E3%81%9F%E3%82%89%E3%81%84%E3%83%BC%E3%81%98%E3%82%83%E3%82%93-ep/1490938738"></iframe>
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:500px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E8%9B%87%E5%A8%98-single/1531289684"></iframe>
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/utsuyume-single/1526294262"></iframe>
+
+
+      </div>
+
+      <h3 class="text-4xl text-center mb-14">SINGLE</h3>
+      <div class="release-items px-4 md:px-0 grid md:grid-cols-3 gap-4">
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E3%82%A8%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%86-single/1520534591"></iframe>
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E3%82%BD%E3%83%A9%E3%83%8B%E3%83%8F%E3%83%96%E3%83%AC%E3%83%90-single/1488200619"></iframe>
+
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E5%9B%9B%E8%B6%B3%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC-2020ver-single/1543863425"></iframe>
+      </div>
+    </section>
+
   </div>
 
-  <div class="prose mx-auto">
-    <div class="live-info px-4">
-      <h2 class="text-white">ライブ概要</h2>
-      <table class="mx-auto block mt-0 mb-12 text-base">
-        <tr>
-          <th class="w-24 md:w-40">イベント名</th>
-          <td>ミララビ pre.『Prologue』</td>
-        </tr>
-        <tr>
-          <th>場所</th>
-          <td>仙台spaceZero
-            <br>
-            <a class="text-white" href="https://goo.gl/maps/TVXVwupiw62uLvmE9" target="_blank">Googleマップはこちら</a>
-          </td>
-        </tr>
-        <tr>
-          <th>日時</th>
-          <td>2021年1月30日 土曜日</td>
-        </tr>
-        <tr>
-          <th>出演</th>
-          <td>ニューロナ/ライスイーター/FLAME SIGN/加藤貴之/Mirage Labyrint</td>
-        </tr>
-        <tr>
-          <th>現地参加</th>
-          <td>
-            <span class="opacity-30">
-          前売り￥2000 / 当日￥2500 (+Drink￥600)</span><br>
-            ニューロナは当日、ライブハウスには出演しません。
-          </td>
-        </tr>
-        <tr>
-          <th>参加費</th>
-          <td>無料（ツイキャスにて映像配信） <br>
+    <footer class="py-16 bg-gray-200">
+      <div class="container text-center md:text-left md:grid md:grid-cols-3 gap-12 text-gray-600 px-6 md:px-0">
+        <div class="logo text-center mb-16 md:mb-0 md:h-full md:flex justify-center items-center col-span-1">
+          <img class="w-48 my-0 inline opacity-70" src="./image/neurona_logo_black.svg" alt="ニューロナ">
+        </div>
+        <div class="footer-links inline-flex flex-col md:flex-row col-span-2">
+          <dl class=" md:mr-36 ">
+            <dt>SOCIAL</dt>
+            <dd>
+              <ul>
+                <li>
+                  <a title="Youtube" href="https://www.youtube.com/channel/UCRKVZiebYGhWRCDxY3OA8cg">Youtube</a>
+                </li>
+                <li>
+                  <a title="Twitter" href="https://twitter.com/neurona_jp">Twitter</a>
+                </li>
+                <li>
+                  <a title="Instagram" href="https://www.instagram.com/neurona_jp/">Instagram</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
 
-          緊急事態宣言を受けて、映像出演になりましたので
-          <a class="text-white" href="https://twitcasting.tv/spacezero_022/" target="_blank">こちら</a>
-          からどなたでも無料でご参加いただけます。
-          </td>
-        </tr>
-      </table>
-    </div>
+          <dl class=" md:mr-36">
+            <dt >STORE</dt>
+            <dd class="flex flex-col md:flex-row ">
+              <ul class="mr-12">
+                <li>
+                  <a href="https://music.apple.com/jp/artist/%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%AD%E3%83%8A/1334369411">Apple Music</a>
+                </li>
+                <li>
+                  <a href="https://open.spotify.com/artist/0gQIqHeeJEQsTXndnNJl1P">Spotify</a>
+                </li>
+                <li>
+                  <a href="https://music.youtube.com/channel/UCXZO9VKELoqta-iKpaPiwdA">Youtube Music</a>
+                </li>
+                <li>
+                  <a href="https://music.line.me/webapp/artist/mi000000000e6fd2f8">LINE Music</a>
+                </li>
+                <li>
+                  <a href="https://s.awa.fm/artist/89cb561b2459e7318d45">AWA</a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="https://recochoku.jp/artist/2000952896">レコチョク</a>
+                </li>
+                <li>
+                  <a href="https://mora.jp/artist/945320/">mora</a>
+                </li>
+                <li>
+                  <a href="https://www.kkbox.com/jp/ja/artist/I-tWhvElGxqs7r0F0aFx808K-index-1.html">KKBOX</a>
+                </li>
+                <li>
+                  <a href="https://music-book.jp/music/Artist/1156955/Music/aaadtjhq">music.jp</a>
+                </li>
+                <li>
+                  <a href="https://ototoy.jp/_/default/a/203056">OTOTOY</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
 
-    <div class="text-center mb-16">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScMf1JMu7YIZ2KY7oC2lAk-6-2C_pa1z29bLw1KyYehrBjL5Q/viewform?usp=sf_link" target="_blank" class="bg-transparent hover:bg-blue text-white font-semibold hover:text-white py-6 px-12 border border-blue hover:border-white rounded no-underline">
-        お問い合わせ
-      </a>
-    </div>
+          <dl class=" ">
+            <dt>ABOUT US</dt>
+            <dd>
+              <ul>
+                <li>
+                  <a href="https://twitter.com/T_o_m_o_mu">Tomo</a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/Hidetaro7">Hideki</a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/a_t_s369">Take</a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/c_f_rocket">シュウ</a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/chikuwa_cats">ちくわ</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
 
-    <div class="prose px-4 mb-16 text-white">
-      <h2 class="text-white">ネット中継を楽しみたい方へ</h2>
-      <p>スペース・ゼロ様が配信しているTwitCasting（ツイキャス）の番組があります、こちらは事前申し込みは不要です。<br>当日、以下のURLにアクセスしてライブをお楽しみください。
-      <br>
-        <a class="text-white" href="https://twitcasting.tv/spacezero_022/" target="_blank">https://twitcasting.tv/spacezero_022/</a>
-      </p>
-    </div>
+      </div>
 
-    <div class="prose px-4 mb-8 text-white">
-      <h2 class="text-white">ドリンク差し入れ</h2>
-      <p>もしもメンバーにドリンク差し入れされるお客様がいらっしゃいましたら、以下がご利用になれます。<br>（差し入れページは当日近くに開設されます）
-      <br>
-        <a class="text-white" href="https://spacezero-shop.stores.jp/" target="_blank">https://spacezero-shop.stores.jp/</a>
-      </p>
-    </div>
+      <div class="text-center mt-16 text-gray-500">
+        ニューロナ
+        <small>neurona.jp</small>
+      </div>
 
-    <footer class="text-center py-16">
-      <img class="w-20 my-0 inline" src="./image/neurona_logo_white.svg" alt="ニューロナ">
     </footer>
-
-  </div>
 
     <script src="./script/index.js"></script>
 {% endblock %}
