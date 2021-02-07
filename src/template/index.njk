@@ -4,7 +4,7 @@
 
 {% block body %}
 
-  <div class="app-header fixed top-0 w-screen bg-gray-800 bg-opacity-80">
+  <div class="app-header md:fixed md:top-0 w-screen bg-gray-800 bg-opacity-80 z-10">
     <div class="container px-6 md:px-0 h-24 flex items-center justify-between">
       <div class="logo">
         <img class="w-32 my-0 inline" src="./image/neurona_logo_white.svg" alt="ニューロナ">
@@ -24,7 +24,14 @@
     </div>
   </div>
 
-  <div class="photo h-3/4 md:h-screen flex-grow bg-cover md:bg-contain bg-black">
+  {# <div class="photo h-3/4 md:h-screen flex-grow bg-cover md:bg-contain bg-black">
+  </div> #}
+
+  <div class="photo relative">
+    <img src="./image/neurona-2021.jpg" alt="">
+    <div class="photographer text-sm opacity-90 absolute bottom-4 right-4 text-white">photographer:
+      <a target="_blank" href="https://twitter.com/morisakiyoko">#photoyocco</a>
+    </div>
   </div>
 
   <div class="md:my-16 text-center md:h-2/3 h-2/6">
