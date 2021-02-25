@@ -18,19 +18,31 @@ html {
     sans-serif;
 }
 
-.photo {
-  background: url(../image/photo_neurona_vertical.png) no-repeat center;
+.is-headerfixed {
+  .app-header {
+    @apply bg-gray-900 bg-opacity-70;
+  }
 }
 
-@screen lg {
-  .photo {
-    background: url(../image/photo_neurona.jpg) no-repeat center;
+.app-header {
+  @apply fixed top-0 w-screen bg-transparent z-10;
+}
+
+.release-items {
+  iframe {
+    @apply h-96;
+  }
+}
+
+.member-singleshot {
+  img {
+    @apply rounded-xl w-14 h-14 sm:w-20 sm:h-20 md:w-32 md:h-32 m-4;
   }
 }
 
 .footer-links {
   dl {
-    @apply flex mb-8;
+    @apply inline-flex mb-8 md:ml-6;
   }
 
   dt {
