@@ -40,6 +40,14 @@ html {
   }
 }
 
+.jackets {
+  @apply grid grid-cols-5 md:grid-cols-8 lg:grid-cols-11 gap-2 grid-rows-2;
+
+  img {
+    @apply inline-block m-0 rounded-lg ;
+  }
+}
+
 .footer-links {
   dl {
     @apply inline-flex mb-8 md:ml-6;
