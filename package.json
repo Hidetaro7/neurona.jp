@@ -39,12 +39,13 @@
     "url": "git+https://github.com/tuqulore/website-boilerplate.git"
   },
   "scripts": {
-    "build": "export NODE_ENV=production; rm -r docs/*; yarn build:image; yarn build:script; yarn build:style; yarn build:template; yarn build:video",
+    "build": "export NODE_ENV=production; rm -r docs/*; yarn build:image; yarn build:script; yarn build:style; yarn build:template; yarn build:video; yarn build:audio",
     "build:image": "imagemin src/image/** --out-dir=docs/image",
     "build:script": "test 0 -ne $(ls -U src/script | wc -l) && { mkdir docs/script; cp -r src/script/* docs/script; } || echo 'script not found'",
     "build:style": "sass --style expanded --no-source-map src/style/:.cache/style; postcss .cache/style/** --dir docs/style",
     "build:template": "nunjucks **/*.njk --path src/template --out docs",
     "build:video": "test 0 -ne $(ls -U src/video | wc -l) && { mkdir docs/video; cp -r src/video/* docs/video; } || echo 'video not found'",
+    "build:audio": "test 0 -ne $(ls -U src/audio | wc -l) && { mkdir docs/audio; cp -r src/audio/* docs/audio; } || echo 'audio not found'",
     "serve": "npm-watch & browser-sync docs --watch"
   },
   "watch": {
@@ -75,6 +76,11 @@
     "build:video": {
       "patterns": [
         "src/video"
+      ]
+    },
+    "build:audio": {
+      "patterns": [
+        "src/audio"
       ]
     }
   }

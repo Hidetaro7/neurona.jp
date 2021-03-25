@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css?ver=20210225">
+    <link rel="stylesheet" href="./style/style.css?ver=20210314">
     <meta property="og:url" content="https://neurona.jp" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="ニューロナ" />
@@ -44,15 +44,15 @@
     </div>
   </div>
 
-  <div class="lg:container lg:my-16 h-2/6 md:h-3/6 lg:h-2/3">
+  <div class="lg:container max-w-5xl md:mx-auto lg:my-16 h-2/6 md:h-3/6 lg:h-4/6">
     
     <iframe class="block m-auto h-full w-full " width="560" height="315" src="https://www.youtube.com/embed/0ptLIbWYdU4?start=92" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <section class="profile prose max-w-none font-serif">
-    <div class="container px-4 lg:px-0">
+    <div class="container max-w-4xl px-4 lg:px-0">
      <h2>ニューロナ</h2>
-      <div class="text-sm leading-relaxed">
+      <div class="text-sm leading-relaxed mb-12">
         <p>2017年12月結成。オンラインで音楽配信を中心に活動し、2018年以降はInstagramを中心にヴォーカルのTomoとギター兼コンポーザーのHidekiの二人でネットライブを行なっていた。<br>
         自身で演奏動画やミュージックビデオを制作してSNSに投稿して、特にライブハウスなどの活動はなく、ジャンルもポップス寄りのサウンドだったが、2020年末にベースのTake、ドラムのShuが加わり、よりバンドらしいサウンドに方向性を変えた。</p>
 
@@ -76,6 +76,30 @@
         <img src="/image/jacket-yonsoku.jpg" alt="四足のヒーロー（ニューロナ）">
       </div>
     </div>
+
+    <div class="my-8 bg-cover bg-no-repeat bg-right md:bg-center h-4/6 md:h-96 relative w-full" style="background-image: url(/image/tomo-bg.jpg)">
+      <div class="absolute bg-black bg-opacity-50 top-0 left-0 w-full h-full"></div>
+      <section class="p-10 max-w-4xl mx-auto text-white relative z-10 flex items-start h-full justify-end md:justify-center flex-col">
+        <h2 class="text-white text-4xl font-normal my-4">デモ音源</h2>
+        <div class="audio flex items-center mb-4">
+          <div class="text-xl mr-4">
+            幾千一夜
+            <small class="block">作詞・作曲: Hideki, 編曲: ニューロナ</small>
+          </div>
+          <audio src="/audio/ikusenhitoyo.mp3" controls class="h-8 opacity-60"></audio>
+        </div>
+
+        <div class="audio flex items-center">
+          <div class="text-xl mr-4">
+            Strange Day
+            <small class="block">作詞・作曲: Hideki, 編曲: ニューロナ</small>
+          </div>
+          <audio src="/audio/strange_day.mp3" controls class="h-8 opacity-60"></audio>
+        </div>
+
+      </section>
+    </div>
+
   </section>
 
   <div class="container mx-auto mt-16">
@@ -119,7 +143,7 @@
   </div>
     
 
-  <footer class="py-16 bg-gray-200">
+  <footer class="py-16 mt-16 bg-gray-200">
     <div class="container max-w-4xl text-center md:flex justify-center md:justify-between flex-col md:flex-row text-gray-600 px-16 lg:px-0">
       <div class="logo text-center mb-16 lg:mb-0 lg:h-full lg:flex justify-center items-center col-span-1">
         <img class="w-48 my-0 inline opacity-70" src="./image/neurona_logo_black.svg" alt="ニューロナ">
