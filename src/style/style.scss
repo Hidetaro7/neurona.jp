@@ -76,3 +76,12 @@ html {
     }
   }
 }
+
+.swiper-container {
+  .swiper-button-prev,
+  .swiper-button-next {
+    &::after {
+      @apply text-base text-gray-700;
+    }
+  }
+}
