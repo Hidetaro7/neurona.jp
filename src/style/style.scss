@@ -34,9 +34,24 @@ html {
   }
 }
 
-.member-singleshot {
+/* .member-singleshot {
   img {
     @apply rounded-xl w-14 h-14 sm:w-20 sm:h-20 md:w-32 md:h-32 m-4;
+  }
+}
+ */
+
+.information {
+  dl {
+    @apply grid grid-cols-2 auto-cols-fr;
+
+    dt {
+      @apply text-gray-600 text-sm;
+    }
+
+    dd {
+      @apply col-start-2 col-end-8;
+    }
   }
 }
 
