@@ -25,7 +25,26 @@ html {
 }
 
 .app-header {
-  @apply fixed top-0 w-screen bg-transparent z-10;
+  @apply fixed top-0 w-screen bg-transparent z-30;
+}
+
+.global-nav {
+  @apply hidden lg:flex items-center;
+  li {
+    a {
+      @apply block py-2 px-4 font-bold text-center relative text-white;
+      &::after {
+        content: "";
+        @apply absolute bottom-0 left-1/2 transition-all transform -translate-x-1/2 bg-gray-300 h-0.5 w-0;
+      }
+      &:hover {
+        @apply opacity-80;
+        &::after {
+          @apply w-full;
+        }
+      }
+    }
+  }
 }
 
 .release-items {
@@ -69,7 +88,7 @@ html {
   }
 
   dt {
-    @apply mb-4 font-bold text-xs text-gray-400 w-32;
+    @apply mb-4 font-bold text-xs text-gray-400 w-32 text-left;
   }
 
   li {
@@ -97,6 +116,124 @@ html {
   .swiper-button-next {
     &::after {
       @apply text-base text-gray-700;
+    }
+  }
+}
+
+/*=============================
+.btn-trigger
+=============================*/
+.btn-trigger {
+  position: relative;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+}
+.btn-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.btn-trigger, .btn-trigger span {
+  display: inline-block;
+  transition: all .5s;
+  box-sizing: border-box;
+}
+.btn-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.btn-trigger span:nth-of-type(2) {
+  top: calc(50% - 1px);
+}
+.btn-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+/*=============================
+#btn07
+=============================*/
+#btn07 span:nth-of-type(1) {
+  animation: btn07-bar01 .25s forwards;
+}
+@keyframes btn07-bar01 {
+  0% {
+    transform: translateY(7px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+#btn07 span:nth-of-type(2) {
+  transition: all .25s .25s;
+  opacity: 1;
+}
+#btn07 span:nth-of-type(3) {
+  animation: btn07-bar03 .25s forwards;
+}
+@keyframes btn07-bar03 {
+  0% {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+#btn07.active span:nth-of-type(1) {
+  animation: active-btn07-bar01 .25s forwards;
+}
+@keyframes active-btn07-bar01 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(7px) rotate(0);
+  }
+  100% {
+    transform: translateY(7px) rotate(45deg);
+  }
+}
+#btn07.active span:nth-of-type(2) {
+  opacity: 0;
+}
+#btn07.active span:nth-of-type(3) {
+  animation: active-btn07-bar03 .25s forwards;
+}
+@keyframes active-btn07-bar03 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0);
+  }
+  100% {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+.drawer-menu {
+  @apply -translate-x-full transition-all transform-gpu w-screen h-screen overflow-y-auto overflow-x-hidden p-8 bg-gray-900 bg-opacity-80 fixed text-white top-0 left-0 z-10 pt-24;
+  &.active {
+    @apply translate-x-0;
+  }
+  dl {
+    @apply mt-12;
+    dt {
+      @apply font-bold text-gray-400;
+    }
+
+    li {
+      a {
+        @apply py-2 text-lg inline-block font-bold;
+      }
     }
   }
 }
