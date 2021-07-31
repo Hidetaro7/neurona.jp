@@ -1,20 +1,16 @@
-const typography = require('@tailwindcss/typography');
+const typography = require("@tailwindcss/typography");
+const forms = require("@tailwindcss/forms");
 
 module.exports = {
-  purge: [
-    'src/script/**/*.js',
-    'src/template/**/*.njk',
-  ],
+  purge: ["src/**/*.js", "src/**/*.njk", "src/**/*.md"],
   important: true,
   theme: {
     extend: {
+      container: {
+        center: true,
+      }
     },
-    container: {
-      center: true,
-    }
   },
   variants: {},
-  plugins: [
-    typography,
-  ],
+  plugins: [typography, forms],
 };

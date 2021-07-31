@@ -1,0 +1,10 @@
+{% extends '_layouts/_layout.njk' %}
+
+{% block title %}NEURONA.JP | ニューロナ{% endblock %}
+
+{% block body %}
+
+  {% include '_components/_header.njk' %}
+  <main class="page-main">{{ content | safe }}</main>
+
+{% endblock %}
