@@ -1,7 +1,5 @@
 module.exports = {
-  extends: [
-    'airbnb-base',
-  ],
+  extends: ["airbnb-base"],
   env: {
     commonjs: true,
     es2020: true,
@@ -11,8 +9,11 @@ module.exports = {
     ecmaVersion: 11,
   },
   rules: {
-    'import/no-extraneous-dependencies': ['error', {
-      devDependencies: ['**/*.config.js'],
-    }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: ["**/*.config.js"],
+      },
+    ],
   },
 };

@@ -1,1 +1,4 @@
+*.log
+.cssdist
+docs
 node_modules

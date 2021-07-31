@@ -1,12 +1,10 @@
-console.log('Hello ニューロナWorld');
-
 const bodyElement = document.body;
 
 function onScroll() {
   if (window.scrollY >= 70) {
-    bodyElement.classList.add('is-headerfixed');
+    bodyElement.classList.add("is-headerfixed");
   } else {
-    bodyElement.classList.remove('is-headerfixed');
+    bodyElement.classList.remove("is-headerfixed");
   }
 }
 
@@ -14,7 +12,7 @@ window.onscroll = onScroll;
 
 // swiper
 
-const mySwiper = new Swiper('.swiper-container', {
+const mySwiper = new Swiper(".swiper-container", {
   breakpoints: {
     320: {
       slidesPerView: 1.5,
@@ -38,20 +36,20 @@ const mySwiper = new Swiper('.swiper-container', {
   loop: true, // 最後の画像までいったらループする
   // ページネーションをつける場合
   pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
+    el: ".swiper-pagination",
+    type: "bullets",
     clickable: true,
   },
   // 左右のナビゲーションをつける場合
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
 
-const menuButton = document.querySelector('.btn-trigger');
-const drawerMenu = document.querySelector('.drawer-menu');
-menuButton.addEventListener('click', () => {
-  menuButton.classList.toggle('active');
-  drawerMenu.classList.toggle('active');
+const menuButton = document.querySelector(".btn-trigger");
+const drawerMenu = document.querySelector(".drawer-menu");
+menuButton.addEventListener("click", () => {
+  menuButton.classList.toggle("active");
+  drawerMenu.classList.toggle("active");
 });
