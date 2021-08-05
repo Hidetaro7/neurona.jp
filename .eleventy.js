@@ -18,9 +18,9 @@ const CacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 })();
 
 module.exports = (eleventyConfig) => {
-  if (process.env.NODE_ENV === "production") {
+  /* if (process.env.NODE_ENV === "production") {
     eleventyConfig.addPlugin(CacheBuster({ outputDirectory: "docs" }));
-  }
+  } */
   eleventyConfig.addFilter("formatDate", (date) =>
     date.toLocaleDateString("ja-JP")
   );

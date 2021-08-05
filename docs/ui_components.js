@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 const svgToDataUri = require("mini-svg-data-uri");
 const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
@@ -53,9 +54,12 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
             "--tw-ring-offset-width": "0px",
             "--tw-ring-offset-color": "#fff",
             "--tw-ring-color": theme("colors.blue.600", colors.blue[600]),
-            "--tw-ring-offset-shadow": `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
-            "--tw-ring-shadow": `var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
-            "box-shadow": `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)`,
+            "--tw-ring-offset-shadow":
+              "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+            "--tw-ring-shadow":
+              "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+            "box-shadow":
+              "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
             "border-color": theme("colors.blue.600", colors.blue[600]),
           },
         },
@@ -96,10 +100,10 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
             )}" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>`
           )}")`,
           "background-position": `right ${spacing[2]} center`,
-          "background-repeat": `no-repeat`,
-          "background-size": `1.5em 1.5em`,
+          "background-repeat": "no-repeat",
+          "background-size": "1.5em 1.5em",
           "padding-right": spacing[10],
-          "color-adjust": `exact`,
+          "color-adjust": "exact",
         },
       },
       {
@@ -115,7 +119,7 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
         },
       },
       {
-        base: [`[type='checkbox']`, `[type='radio']`],
+        base: ["[type='checkbox']", "[type='radio']"],
         class: [".form-checkbox", ".form-radio"],
         styles: {
           appearance: "none",
@@ -135,21 +139,21 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
         },
       },
       {
-        base: [`[type='checkbox']`],
+        base: ["[type='checkbox']"],
         class: [".form-checkbox"],
         styles: {
           "border-radius": borderRadius["md"],
         },
       },
       {
-        base: [`[type='radio']`],
+        base: ["[type='radio']"],
         class: [".form-radio"],
         styles: {
           "border-radius": "100%",
         },
       },
       {
-        base: [`[type='checkbox']:focus`, `[type='radio']:focus`],
+        base: ["[type='checkbox']:focus", "[type='radio']:focus"],
         class: [".form-checkbox:focus", ".form-radio:focus"],
         styles: {
           outline: outline.none[0],
@@ -158,46 +162,49 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
           "--tw-ring-offset-width": "2px",
           "--tw-ring-offset-color": "#fff",
           "--tw-ring-color": theme("colors.blue.600", colors.blue[600]),
-          "--tw-ring-offset-shadow": `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
-          "--tw-ring-shadow": `var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
-          "box-shadow": `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)`,
+          "--tw-ring-offset-shadow":
+            "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+          "--tw-ring-shadow":
+            "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+          "box-shadow":
+            "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
         },
       },
       {
-        base: [`[type='checkbox']:checked`, `[type='radio']:checked`],
+        base: ["[type='checkbox']:checked", "[type='radio']:checked"],
         class: [".form-checkbox:checked", ".form-radio:checked"],
         styles: {
-          "border-color": `transparent`,
-          "background-color": `currentColor`,
-          "background-size": `100% 100%`,
-          "background-position": `center`,
-          "background-repeat": `no-repeat`,
+          "border-color": "transparent",
+          "background-color": "currentColor",
+          "background-size": "100% 100%",
+          "background-position": "center",
+          "background-repeat": "no-repeat",
         },
       },
       {
-        base: [`[type='checkbox']:checked`],
+        base: ["[type='checkbox']:checked"],
         class: [".form-checkbox:checked"],
         styles: {
           "background-image": `url("${svgToDataUri(
-            `<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z"/></svg>`
+            '<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z"/></svg>'
           )}")`,
         },
       },
       {
-        base: [`[type='radio']:checked`],
+        base: ["[type='radio']:checked"],
         class: [".form-radio:checked"],
         styles: {
           "background-image": `url("${svgToDataUri(
-            `<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3"/></svg>`
+            '<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3"/></svg>'
           )}")`,
         },
       },
       {
         base: [
-          `[type='checkbox']:checked:hover`,
-          `[type='checkbox']:checked:focus`,
-          `[type='radio']:checked:hover`,
-          `[type='radio']:checked:focus`,
+          "[type='checkbox']:checked:hover",
+          "[type='checkbox']:checked:focus",
+          "[type='radio']:checked:hover",
+          "[type='radio']:checked:focus",
         ],
         class: [
           ".form-checkbox:checked:hover",
@@ -211,23 +218,23 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
         },
       },
       {
-        base: [`[type='checkbox']:indeterminate`],
+        base: ["[type='checkbox']:indeterminate"],
         class: [".form-checkbox:indeterminate"],
         styles: {
           "background-image": `url("${svgToDataUri(
-            `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h8"/></svg>`
+            '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h8"/></svg>'
           )}")`,
-          "border-color": `transparent`,
-          "background-color": `currentColor`,
-          "background-size": `100% 100%`,
-          "background-position": `center`,
-          "background-repeat": `no-repeat`,
+          "border-color": "transparent",
+          "background-color": "currentColor",
+          "background-size": "100% 100%",
+          "background-position": "center",
+          "background-repeat": "no-repeat",
         },
       },
       {
         base: [
-          `[type='checkbox']:indeterminate:hover`,
-          `[type='checkbox']:indeterminate:focus`,
+          "[type='checkbox']:indeterminate:hover",
+          "[type='checkbox']:indeterminate:focus",
         ],
         class: [
           ".form-checkbox:indeterminate:hover",
@@ -239,7 +246,7 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
         },
       },
       {
-        base: [`[type='file']`],
+        base: ["[type='file']"],
         class: null,
         styles: {
           background: "unset",
@@ -252,17 +259,17 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
         },
       },
       {
-        base: [`[type='file']:focus`],
+        base: ["[type='file']:focus"],
         class: null,
         styles: {
-          outline: `1px solid ButtonText`,
-          outline: `1px auto -webkit-focus-ring-color`,
+          outline: "1px solid ButtonText",
+          outline: "1px auto -webkit-focus-ring-color",
         },
       },
       //added hideki
       // button
       {
-        base: [`.button`],
+        base: [".button"],
         class: null,
         styles: {
           appearance: "none",
@@ -279,7 +286,8 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
           "text-decoration": "none",
           "&:hover": {
             filter: "brightness(95%)",
-            boxShadow: `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)`,
+            boxShadow:
+              "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
           },
           "&:active": {
             outline: outline.none[0],
@@ -335,14 +343,15 @@ const forms = plugin.withOptions(function (options = { strategy: "base" }) {
       },
       // card
       {
-        base: [`.card`],
+        base: [".card"],
         class: null,
         styles: {
           backgroundColor: theme("colors.white"),
           borderRadius: borderRadius.md,
           "border-color": theme("colors.gray.100"),
           "border-width": borderWidth["DEFAULT"],
-          "box-shadow": `0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)`,
+          "box-shadow":
+            "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
         },
       },
     ];
