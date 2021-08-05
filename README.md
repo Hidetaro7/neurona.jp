@@ -1,4 +1,5 @@
 # ニューロナのオフィシャルサイト
+
 Github Pagesとの連動
 https://neurona.jp/
 
@@ -13,7 +14,7 @@ $ yarn
 ### ローカルサーバーを立てて開発する
 
 ```
-$ yarn serve
+$ yarn dev
 ```
 
 ### デプロイ用にビルドする
@@ -21,3 +22,19 @@ $ yarn serve
 ```
 $ yarn build
 ```
+
+## GitHubワークフロー
+
+### Format
+
+PR時にコード整形します
+
+### Lint
+
+PR時にリントしreviewdogがレポートします
+
+### Preview
+
+PR時にCloud Runでプレビュー環境を作成します
+
+デフォルトではすべてのブランチで実行しない、かつ、 `env.PROJECT` が空欄なので、利用する場合はコメントアウトされているイベントトリガーに差し替え `env.PROJECT` を設定してください
