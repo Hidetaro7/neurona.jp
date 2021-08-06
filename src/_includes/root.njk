@@ -30,6 +30,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.js"></script>
 
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.css"
+    />
+
+    <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="/image/apple-touch-icon.png"
@@ -54,6 +59,7 @@
     {% include "header.njk" %} {{ content | safe }}{% include "footer.njk" %}
     <div class="drawer-menu">{% include "global-nav.njk" %}</div>
 
+    <script src="/script/lightbox.js"></script>
     <script src="/script/index.js?ver=20210420"></script>
   </body>
 </html>

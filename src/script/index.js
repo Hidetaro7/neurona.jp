@@ -53,3 +53,10 @@ menuButton.addEventListener("click", () => {
   menuButton.classList.toggle("active");
   drawerMenu.classList.toggle("active");
 });
+
+[].forEach.call(
+  document.getElementsByClassName("iframe-lightbox-link"),
+  function (el) {
+    el.lightbox = new IframeLightbox(el);
+  }
+);
