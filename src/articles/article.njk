@@ -1,0 +1,20 @@
+---
+layout: root
+pagination:
+  data: articles["contents"]
+  size: 1
+  alias: article
+permalink: "articles/{{ article.permalink }}/"
+title: article.title
+---
+
+<div class="h-20 lg:h-24 bg-black"></div>
+<div class="prose mx-auto py-8 md:py-16 px-4">
+  <p class="text-sm mb-8">
+    <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+    ><a href="/articles/">News</a><i class="fal fa-angle-right mx-1"></i>
+    {{article.title}}
+  </p>
+  <h1>{{article.title}}</h1>
+  <main>{{ article.content | safe }}</main>
+</div>

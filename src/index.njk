@@ -37,6 +37,17 @@ title: NEURONA.JP | ニューロナ
   </div> -->
 </div>
 
+<div class="prose mx-auto py-8 px-4">
+  <h2 class="text-4xl font-normal my-4">News</h2>
+  <ul>
+    {%- for article in articles.contents -%}
+    <li>
+      <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>
+
 <div class="container max-w-4xl">
   <div class="flex flex-col sm:flex-row items-center justify-start">
     <img
