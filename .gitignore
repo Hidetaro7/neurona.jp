@@ -1,5 +1,4 @@
 *.log
 .cssdist
 node_modules
-docs/_data/
 .env
