@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { default: axios } = require('axios');
-require("dotenv").config();
+require('dotenv').config();
 
 // eslint-disable-next-line consistent-return
 module.exports = async () => {
