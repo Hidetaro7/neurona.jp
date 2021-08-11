@@ -1,0 +1,41 @@
+---
+layout: root
+title: 社員ブログ
+
+pagination:
+  data: articles
+  size: 100
+  alias: article
+---
+
+<div class="h-20 lg:h-24 bg-black"></div>
+<div class="container">
+  <div class="prose mx-auto py-8">
+    <p class="text-sm mb-8">
+      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+      ><a href="/articles/">News</a>
+    </p>
+    <h1>News</h1>
+    <ul>
+      {%- for article in articles.contents -%}
+      <li>
+        <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+<script>
+  const formatDate = (current_datetime) => {
+    let c_date = new Date(current_datetime);
+    let formatted_date =
+      c_date.getFullYear() +
+      "年" +
+      (c_date.getMonth() + 1) +
+      "月" +
+      c_date.getDate() +
+      "日";
+    return formatted_date;
+  };
+</script>
