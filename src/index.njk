@@ -40,7 +40,7 @@ title: NEURONA.JP | ニューロナ
 <div class="prose mx-auto py-8 px-4">
   <h2 class="text-4xl font-normal my-4">News</h2>
   <ul>
-    {%- for article in articles.contents -%}
+    {%- for article in articles.contents | reverse -%}
     <li>
       <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
     </li>
