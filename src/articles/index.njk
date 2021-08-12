@@ -1,6 +1,6 @@
 ---
 layout: root
-title: 社員ブログ
+title: News
 
 pagination:
   data: articles
@@ -17,7 +17,7 @@ pagination:
     </p>
     <h1>News</h1>
     <ul>
-      {%- for article in articles.contents -%}
+      {%- for article in articles.contents | reverse -%}
       <li>
         <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
       </li>
