@@ -6,8 +6,10 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      
       - name: Touch secret env
-        run: |
+        uses: actions/checkout@v2
+      - run: |
           touch .env
           echo ${{ secrets.XKEY }} >> .env
       - name: Install Dependencies
