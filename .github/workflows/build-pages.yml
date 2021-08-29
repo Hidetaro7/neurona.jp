@@ -1,7 +1,8 @@
 
 name: Build Pages
 on:
-  workflow_dispatch:
+  repository_dispatch:
+    types: [foo, orange]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
