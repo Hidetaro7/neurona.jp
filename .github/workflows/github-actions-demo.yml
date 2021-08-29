@@ -18,7 +18,7 @@ jobs:
       - name: Touch secret env
         run: |
           touch .env
-          echo "XKEY=${{ secrets.XKEY }}" >> .env
+          echo ${{ secrets.XKEY }} >> .env
       - name: Install Dependencies
         run: yarn
       - name: App Build
