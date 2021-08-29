@@ -6,10 +6,8 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      
       - name: Touch secret env
-        uses: actions/checkout@v2
-      - run: |
+        run: |
           touch .env
           echo ${{ secrets.XKEY }} >> .env
       - name: Install Dependencies
@@ -17,4 +15,4 @@ jobs:
       - name: App Build
         run: yarn build
       - name: Echo status
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+        run: echo "🍏 This job's status is ${{ job.status }}."
