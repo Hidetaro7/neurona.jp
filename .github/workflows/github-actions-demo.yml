@@ -14,6 +14,6 @@ jobs:
           touch .env
           echo ${{ secrets.XKEY }} >> .env
       - name: hoge
-      - run: yarn
+        run: yarn
       - name: moge
-      - run: yarn build
+        run: yarn build
