@@ -14,8 +14,13 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Touch secret env
+        run: |
+          touch .env
+          echo "XKEY=${{ secrets.XKEY }}" >> .env
       - name: Install Dependencies
         run: yarn
       - name: Build
         run: yarn build
+      - name: Echo status
       - run: echo "🍏 This job's status is ${{ job.status }}."
