@@ -1,13 +1,13 @@
 
-name: GitHub Actions Demo
+name: Build Pages
 on:
   workflow_dispatch:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    name: test
+    name: Build Pages
     steps:
-      - name: actions
+      - name: Checkout
         uses: actions/checkout@v2
         
       - name: Touch secret env
@@ -15,8 +15,8 @@ jobs:
           touch .env
           echo ${{ secrets.XKEY }} >> .env
           
-      - name: hoge
+      - name: Install yarn and dependencies
         run: yarn
         
-      - name: moge
+      - name: Build static pages
         run: yarn build
