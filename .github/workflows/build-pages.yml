@@ -1,6 +1,8 @@
 
 name: Build Pages
 on:
+  push:
+    branches: [main]
   repository_dispatch:
     types: [foo, orange]
 jobs:
