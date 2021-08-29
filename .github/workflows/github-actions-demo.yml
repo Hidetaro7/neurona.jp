@@ -8,7 +8,7 @@ jobs:
     name: test
     steps:
       - name: actions
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Touch secret env
         run: |
           touch .env
