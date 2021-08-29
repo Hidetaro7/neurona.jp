@@ -14,5 +14,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          yarn build
+      - name: Install Dependencies
+        run: yarn
+      - name: Build
+        run: yarn build
       - run: echo "🍏 This job's status is ${{ job.status }}."
