@@ -5,7 +5,14 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    name: test
     steps:
+      - name: actions
+      - uses: actions/checkout@v2
+      - name: Touch secret env
+        run: |
+          touch .env
+          echo ${{ secrets.XKEY }} >> .env
       - name: hoge
       - run: yarn
       - name: moge
