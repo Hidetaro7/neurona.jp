@@ -6,6 +6,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: actions
       - uses: actions/checkout@v2
       - name: Touch secret env
         run: |
