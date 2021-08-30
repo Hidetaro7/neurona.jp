@@ -23,3 +23,9 @@ jobs:
         
       - name: Build static pages
         run: yarn build
+
+      - name: Push
+        run: |
+          git add .
+          git commit -m "Update"
+          git push
