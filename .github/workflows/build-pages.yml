@@ -34,5 +34,5 @@ jobs:
         
       - name: create CNAME
         run: |
-          touch docs/CNAME
+          touch ./docs/CNAME
           echo 'neurona.jp' >> docs/CNAME
