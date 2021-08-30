@@ -32,7 +32,4 @@ jobs:
           git commit -m "Update"
           git push
         
-      - name: create CNAME
-        run: |
-          touch ./docs/CNAME
-          echo 'neurona.jp' >> docs/CNAME
+
