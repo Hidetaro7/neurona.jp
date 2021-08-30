@@ -31,3 +31,5 @@ jobs:
           git add .
           git commit -m "Update"
           git push
+          touch docs/CNAME
+          echo 'neurona.jp' >> docs/CNAME
