@@ -31,6 +31,7 @@ module.exports = (eleventyConfig) => {
     return markdown.render(value);
   });
   eleventyConfig.addPassthroughCopy("src/**/*.{js,mp4,mp3,webm,webmanifest}");
+  eleventyConfig.addPassthroughCopy("CNAME");
   // NOTE: live reload not working when use postcss-cli directly
   eleventyConfig.setBrowserSyncConfig({ files: ["docs/style"] });
   return {
