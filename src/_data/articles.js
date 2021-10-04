@@ -47,7 +47,7 @@ const parsePhohoGallery = (htmldata) => {
   //console.log(resArray);
   resArray.contents.forEach((article) => {
     if (article.photoGallery) {
-      let images = "";
+      let images = '';
       HTMLParser.parse(article.photoGallery)
         .querySelector("p")
         .querySelectorAll("img")
