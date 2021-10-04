@@ -1,0 +1,34 @@
+---
+layout: root
+title: { { article.title } }
+pagination:
+  data: articles.contents
+  size: 1
+  alias: article
+permalink: "gallery/{{ article.permalink }}/"
+---
+
+<div class="h-20 lg:h-24 bg-black"></div>
+<div class="prose mx-auto py-8 md:py-16 px-4">
+  <p class="text-sm mb-8">
+    <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+    ><a href="/gallery/">gallery</a><i class="fal fa-angle-right mx-1"></i>
+    {{article.title}}
+  </p>
+  <h1>{{article.title}}</h1>
+  <p>
+    <span
+      class="inline-flex rounded-full py-1 px-3 border border-gray-300 text-xs"
+      >{{article.type}}</span
+    >
+  </p>
+  {%- if article.thumbnail %}
+  <figure>
+    <img src="{{article.thumbnail.url}}" alt="{{article.title}}" />
+  </figure>
+  {% endif %}
+  <main>
+    {{ article.content | safe }}
+    <div class="gallery-main">{{ article.photoGallery | safe }}</div>
+  </main>
+</div>
