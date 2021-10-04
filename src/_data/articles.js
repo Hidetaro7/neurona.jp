@@ -50,7 +50,7 @@ const parsePhohoGallery = (htmldata) => {
       let images = '';
       HTMLParser.parse(article.photoGallery)
         .querySelector("p")
-        .querySelectorAll("img")
+        .querySelectorAll('img')
         .forEach((img) => {
           const attr = img.attributes;
           images += `<a href="${attr.src}"><img src="${attr.src}" alt="" width="${attr.width}" height="${attr.height}" /></a>`;
