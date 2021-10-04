@@ -16,7 +16,7 @@ module.exports = async () => {
     // console.log(res.data);
     const renderHTML = parsePhohoGallery(res.data);
     console.log(renderHTML);
-    console.log("--------------------");
+    console.log('--------------------');
     return renderHTML;
   } catch (error) {
     // eslint-disable-next-line no-console
