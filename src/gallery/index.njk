@@ -1,0 +1,53 @@
+---
+layout: root
+title: Gallery
+
+pagination:
+  data: articles
+  size: 100
+  alias: article
+---
+
+<div class="h-20 lg:h-24 bg-black"></div>
+<div class="container">
+  <div class="prose mx-auto max-w-none py-8">
+    <p class="text-sm mb-8">
+      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+      ><a href="/gallery/">Gallery</a>
+    </p>
+    <h1>Gallery</h1>
+  </div>
+  <ul class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+    {%- for article in articles.contents | reverse -%} {%- if article.type ==
+    'gallery' -%}
+    <li class="card overflow-hidden hover:opacity-80">
+      <a href="/gallery/{{article.permalink}}">
+        <img
+          src="{{article.thumbnail.url}}"
+          alt="article.title"
+          class="object-cover w-full h-64"
+        />
+      </a>
+      <div class="px-4 py-6">
+        <a class="font-bold text-lg" href="/gallery/{{article.permalink}}">
+          {{article.title}}
+        </a>
+      </div>
+    </li>
+    {%- endif -%} {%- endfor -%}
+  </ul>
+</div>
+
+<script>
+  const formatDate = (current_datetime) => {
+    let c_date = new Date(current_datetime);
+    let formatted_date =
+      c_date.getFullYear() +
+      "年" +
+      (c_date.getMonth() + 1) +
+      "月" +
+      c_date.getDate() +
+      "日";
+    return formatted_date;
+  };
+</script>

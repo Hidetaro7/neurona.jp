@@ -17,11 +17,12 @@ pagination:
     </p>
     <h1>News</h1>
     <ul>
-      {%- for article in articles.contents | reverse -%}
+      {%- for article in articles.contents | reverse -%} {%- if article.type !=
+      'gallery' -%}
       <li>
         <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
       </li>
-      {%- endfor -%}
+      {%- endif -%} {%- endfor -%}
     </ul>
   </div>
 </div>

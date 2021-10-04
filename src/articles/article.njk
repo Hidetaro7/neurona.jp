@@ -16,5 +16,11 @@ title: article.title
     {{article.title}}
   </p>
   <h1>{{article.title}}</h1>
+  <p>
+    <span
+      class="inline-flex rounded-full py-1 px-3 border border-gray-300 text-xs"
+      >{{article.type}}</span
+    >
+  </p>
   <main>{{ article.content | safe }}</main>
 </div>
