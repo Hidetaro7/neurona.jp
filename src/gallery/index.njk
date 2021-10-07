@@ -17,7 +17,7 @@ pagination:
     </p>
     <h1>Gallery</h1>
   </div>
-  <ul class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+  <ul class="gallery-list grid grid-cols-1 sm:grid-cols-3 gap-3">
     {%- for article in articles.contents | reverse -%} {%- if article.type ==
     'gallery' -%}
     <li class="card overflow-hidden hover:opacity-80">
@@ -25,7 +25,9 @@ pagination:
         <img
           src="{{article.thumbnail.url}}"
           alt="article.title"
-          class="object-cover w-full h-64"
+          class="object-cover w-full h-64 lazyload"
+          data-src="{{article.thumbnail.url}}"
+          loading="lazy"
         />
       </a>
       <div class="px-4 py-6">

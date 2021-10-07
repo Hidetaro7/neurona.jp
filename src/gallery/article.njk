@@ -1,34 +1,49 @@
 ---
 layout: root
-title: { { article.title } }
 pagination:
   data: articles.contents
   size: 1
   alias: article
 permalink: "gallery/{{ article.permalink }}/"
+eleventyComputed:
+  title: "{{ article.title }}"
 ---
 
-<div class="h-20 lg:h-24 bg-black"></div>
-<div class="prose mx-auto py-8 md:py-16 px-4">
-  <p class="text-sm mb-8">
-    <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
-    ><a href="/gallery/">gallery</a><i class="fal fa-angle-right mx-1"></i>
-    {{article.title}}
-  </p>
-  <h1>{{article.title}}</h1>
-  <p>
-    <span
-      class="inline-flex rounded-full py-1 px-3 border border-gray-300 text-xs"
-      >{{article.type}}</span
-    >
-  </p>
-  {%- if article.thumbnail %}
-  <figure>
-    <img src="{{article.thumbnail.url}}" alt="{{article.title}}" />
-  </figure>
-  {% endif %}
+<div
+  class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
+  style="background-image: url({{article.thumbnail.url}});"
+>
+  <div class="container">
+    <h1 class="text-white font-bold text-3xl md:text-5xl filter drop-shadow-md">
+      {{article.title}}
+    </h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="prose max-w-none py-8">
+    <p class="text-sm">
+      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+      ><a href="/gallery/">gallery</a><i class="fal fa-angle-right mx-1"></i>
+      {{article.title}}
+    </p>
+  </div>
   <main>
-    {{ article.content | safe }}
+    <article class="mb-8">{{ article.content | safe }}</article>
     <div class="gallery-main">{{ article.photoGallery | safe }}</div>
   </main>
 </div>
+
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="https://unpkg.com/lightgallery@2.2.1/css/lightgallery-bundle.min.css"
+/>
+<script src="https://unpkg.com/lightgallery@2.2.1/lightgallery.min.js"></script>
+<script
+  src="http://afarkas.github.io/lazysizes/lazysizes.min.js"
+  async=""
+></script>
+<script>
+  lightGallery(document.querySelector(".gallery-main"), {});
+</script>

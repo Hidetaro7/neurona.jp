@@ -5,7 +5,8 @@ pagination:
   size: 1
   alias: article
 permalink: "articles/{{ article.permalink }}/"
-title: article.title
+eleventyComputed:
+  title: "{{ article.title }}"
 ---
 
 <div class="h-20 lg:h-24 bg-black"></div>
