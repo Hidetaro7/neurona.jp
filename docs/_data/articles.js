@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { default: axios } = require("axios");
-const HTMLParser = require('node-html-parser');
+const HTMLParser = require("node-html-parser");
 
 require("dotenv").config();
 
@@ -12,11 +12,7 @@ module.exports = async () => {
         "X-API-KEY": process.env.XKEY,
       },
     });
-    // eslint-disable-next-line no-console
-    // console.log(res.data);
     const renderHTML = parsePhohoGallery(res.data);
-    console.log(renderHTML);
-    console.log('--------------------');
     return renderHTML;
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -24,27 +20,8 @@ module.exports = async () => {
   }
 };
 
-const parsePhohGallery2 = (htmldata) => {
-  const resArray = { contents: [] };
-  htmldata.contents.forEach((article) => {
-    if (article.photoGallery) {
-      const newData = { ...article };
-      const galleryRoot = HTMLParser.parse(article.photoGallery);
-      galleryRoot.querySelectorAll("img").forEach((img) => {
-        //console.log(img);
-        newData.photoGallery += `<a href="${img.src}"><img src="${img.src}" alt="" /></a>`;
-      });
-      resArray.contents.push(newData);
-    } else {
-      resArray.contents.push(article);
-    }
-    //console.log(resArray.contents);
-  });
-};
-
 const parsePhohoGallery = (htmldata) => {
   const resArray = { ...htmldata };
-  //console.log(resArray);
   resArray.contents.forEach((article) => {
     if (article.photoGallery) {
       let images = "";
@@ -53,12 +30,10 @@ const parsePhohoGallery = (htmldata) => {
         .querySelectorAll("img")
         .forEach((img) => {
           const attr = img.attributes;
-          images += `<a href="${attr.src}"><img src="${attr.src}" alt="" width="${attr.width}" height="${attr.height}" /></a>`;
+          images += `<a href="${attr.src}" data-lg-size="${attr.width}-${attr.height}"><img data-src="${attr.src}" class="lazyload" loading="lazy" alt="" width="${attr.width}" height="${attr.height}" /></a>`;
         });
       article.photoGallery = images;
     }
-    /* console.log(resArray);
-    console.log("--------------------"); */
   });
   return resArray;
 };

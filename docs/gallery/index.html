@@ -137,12 +137,14 @@
     </p>
     <h1>Gallery</h1>
   </div>
-  <ul class="grid grid-cols-1 sm:grid-cols-3 gap-3"><li class="card overflow-hidden hover:opacity-80">
+  <ul class="gallery-list grid grid-cols-1 sm:grid-cols-3 gap-3"><li class="card overflow-hidden hover:opacity-80">
       <a href="/gallery/20210722-gallery">
         <img
-          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/bca6704dcf4c40a0b0b891df3b228ba2/DSC00849.jpg"
+          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/8018a52c041e41a8b5e87694b068a445/DSC00957.jpg"
           alt="article.title"
-          class="object-cover w-full h-64"
+          class="object-cover w-full h-64 lazyload"
+          data-src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/8018a52c041e41a8b5e87694b068a445/DSC00957.jpg"
+          loading="lazy"
         />
       </a>
       <div class="px-4 py-6">
@@ -155,7 +157,9 @@
         <img
           src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/9b2010f24bbb4cc7b34180946076a2e8/DSC01141.jpg"
           alt="article.title"
-          class="object-cover w-full h-64"
+          class="object-cover w-full h-64 lazyload"
+          data-src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/9b2010f24bbb4cc7b34180946076a2e8/DSC01141.jpg"
+          loading="lazy"
         />
       </a>
       <div class="px-4 py-6">
@@ -166,9 +170,11 @@
     </li><li class="card overflow-hidden hover:opacity-80">
       <a href="/gallery/20210804-gallery">
         <img
-          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/009d9a53315d4c0297c272e0e8ef9c69/DSC01959.jpg"
+          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/2a4c6a1350604b0a8bda8349bf482ac5/DSC01959.jpg"
           alt="article.title"
-          class="object-cover w-full h-64"
+          class="object-cover w-full h-64 lazyload"
+          data-src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/2a4c6a1350604b0a8bda8349bf482ac5/DSC01959.jpg"
+          loading="lazy"
         />
       </a>
       <div class="px-4 py-6">
@@ -179,9 +185,11 @@
     </li><li class="card overflow-hidden hover:opacity-80">
       <a href="/gallery/20210928-gallery">
         <img
-          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/0587a8e77b6d478c9a01f02368a43cff/DSC09951.JPG"
+          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/58110135699c486aa044c8dee1f68c7a/DSC09951.JPG"
           alt="article.title"
-          class="object-cover w-full h-64"
+          class="object-cover w-full h-64 lazyload"
+          data-src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/58110135699c486aa044c8dee1f68c7a/DSC09951.JPG"
+          loading="lazy"
         />
       </a>
       <div class="px-4 py-6">
@@ -484,6 +492,13 @@
 </div>
 
     <script src="/script/lightbox.js"></script>
+
+    <script src="/script/lightgallery.min.js"></script>
+    <script src="/script/lazysizes.min.js" async=""></script>
+    <script>
+      lightGallery(document.querySelector(".gallery-main"), {});
+    </script>
+
     <script src="/script/index.js?ver=20210420"></script>
   </body>
 </html>
