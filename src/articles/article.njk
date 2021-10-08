@@ -7,6 +7,7 @@ pagination:
 permalink: "articles/{{ article.permalink }}/"
 eleventyComputed:
   title: "{{ article.title }}"
+  thumbnail: "{{ article.thumbnail.url }}"
 ---
 
 <div class="h-20 lg:h-24 bg-black"></div>
@@ -23,5 +24,9 @@ eleventyComputed:
       >{{article.type}}</span
     >
   </p>
-  <main>{{ article.content | safe }}</main>
+  <main>
+    {%- if article.thumbnail -%}
+    <img src="{{article.thumbnail.url}}" alt="{{article.title}}" /> {%- endif
+    -%} {{ article.content | safe }}
+  </main>
 </div>
