@@ -26,7 +26,7 @@ eleventyComputed:
   </p>
   <main>
     {%- if article.thumbnail -%}
-    <img src="{{article.thumbnail.url}}" alt="{{article.title}}" /> {%- endif
-    -%} {{ article.content | safe }}
+    <p><img src="{{article.thumbnail.url}}" alt="{{article.title}}" /></p>
+    {%- endif -%} {{ article.content | safe }}
   </main>
 </div>
