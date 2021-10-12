@@ -241,11 +241,12 @@ gallery-main
 */
 
 .gallery-main {
-  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1;
+  @apply grid gap-2 grid-cols-3 md:grid-cols-4 lg:grid-cols-5;
   a {
-    width: 100%;
+    padding-bottom: 100%;
+    @apply h-0 relative;
     img {
-      @apply w-full h-full m-0 rounded object-cover cursor-pointer;
+      @apply rounded-md object-cover w-full h-full absolute;
     }
   }
 }
