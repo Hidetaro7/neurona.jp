@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/style/style.css" />
     <meta property="og:url" content="https://neurona.jp" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="News | NEURONA.JP | ニューロナ" />
+    <meta property="og:title" content="【終了】8月14日（土） GUIL-JAM | NEURONA.JP | ニューロナ" />
     <meta
       property="og:description"
       content="Hello,underworld. We are underground pop artist “Neurona”. Music / Video / Illustration / CG art / Web App etc"
@@ -18,7 +18,7 @@
       integrity="sha384-yJpxAFV0Ip/w63YkZfDWDTU6re/Oc3ZiVqMa97pi8uPt92y0wzeK3UFM2yQRhEom"
       crossorigin="anonymous"
     />
-    <title>News | NEURONA.JP | ニューロナ</title>
+    <title>【終了】8月14日（土） GUIL-JAM | NEURONA.JP | ニューロナ</title>
     <meta
       name="description"
       content="Hello,underworld. We are underground pop artist “Neurona”. Music / Video / Illustration / CG art / Web App etc"
@@ -55,7 +55,7 @@
 
     <meta property="og:description" content="Hello,underworld. We are underground pop artist “Neurona”. Music / Video / Illustration / CG art / Web App etc" />
 <meta property="og:site_name" content="NEURONA.JP | ニューロナ" />
-<meta property="og:title" content="News" />
+<meta property="og:title" content="【終了】8月14日（土） GUIL-JAM" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:8080" />
 <meta property="twitter:card" content="summary" />
@@ -128,38 +128,43 @@
   </div>
 </div>
  
-<div class="h-20 lg:h-24 bg-black"></div>
-<div class="container">
-  <div class="prose mx-auto py-8">
-    <p class="text-sm mb-8">
-      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
-      ><a href="/articles/">News</a>
-    </p>
-    <h1>News</h1>
-    <ul><li>
-        <a href="/articles/20210814"> 【終了】8月14日（土） GUIL-JAM </a>
-      </li><li>
-        <a href="/articles/20210928"> 9月28日（火）LOFT X Koenji（ロフトテン高円寺） </a>
-      </li><li>
-        <a href="/articles/20210926"> 【10月10日まで配信録画チケット販売中】9月26日（日祝）GIRLS IN ROCK </a>
-      </li><li>
-        <a href="/articles/20211031"> 10月31日（日） ギルハロ2021-Day2- @ 渋谷ギルティ </a>
-      </li></ul>
+<div
+  class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
+  style="background-image: url();"
+>
+  <div class="container">
+    <h1 class="text-white font-bold text-3xl md:text-5xl filter drop-shadow-md">
+      【終了】8月14日（土） GUIL-JAM
+    </h1>
   </div>
 </div>
 
+<div class="container">
+  <div class="prose max-w-none py-8">
+    <p class="text-sm">
+      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+      ><a href="/gallery/">gallery</a><i class="fal fa-angle-right mx-1"></i>
+      【終了】8月14日（土） GUIL-JAM
+    </p>
+  </div>
+  <main>
+    <article class="mb-8"><p><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/6db39e9ae7c249cfb957598d1d2dbd68/0814.JPEG" alt="" width="1280" height="720"><br><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/249c2888fd534042abf999f557aab21f/20210814_%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85.jpeg" alt="" width="595" height="842"><br><span style="color:#262626">at 渋谷GUILTY</span><br><span style="color:#262626">OPEN ：17:00</span><br><span style="color:#262626">START：17:30</span><br><span style="color:#262626">前売：¥2,900</span><br><span style="color:#262626">当日：¥3,400</span><br><span style="color:#262626">1DRINK ¥500（ソフトドリンクのみ）</span><br><br><span style="color:#262626">配信チケットは</span><a style="color:#262626" href="https://www.mahocast.com/at/live/478/7254" target="_blank" rel="noopener noreferrer">こちら</a><span style="color:#262626">から ¥2,530</span><br><span style="color:#000000">※LIVE公演終了後も、アーカイブチケットの購入と視聴が可能です。（2週間）</span><br><br><a href="https://www.guilty.ne.jp/access.php" target="_blank" rel="noopener noreferrer">会場アクセス</a><br><br>出演<br><span style="color:#262626">・daTTTo</span><br><span style="color:#262626">・ニューロナ（17:30〜）</span><br><span style="color:#262626">・Junkbar</span></p></article>
+    <div class="gallery-main"></div>
+  </main>
+</div>
+
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="https://unpkg.com/lightgallery@2.2.1/css/lightgallery-bundle.min.css"
+/>
+<script src="https://unpkg.com/lightgallery@2.2.1/lightgallery.min.js"></script>
+<script
+  src="http://afarkas.github.io/lazysizes/lazysizes.min.js"
+  async=""
+></script>
 <script>
-  const formatDate = (current_datetime) => {
-    let c_date = new Date(current_datetime);
-    let formatted_date =
-      c_date.getFullYear() +
-      "年" +
-      (c_date.getMonth() + 1) +
-      "月" +
-      c_date.getDate() +
-      "日";
-    return formatted_date;
-  };
+  lightGallery(document.querySelector(".gallery-main"), {});
 </script>
 <footer class="py-16 mt-16 bg-gray-200">
   <div
