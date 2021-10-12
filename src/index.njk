@@ -84,14 +84,39 @@ title: NEURONA.JP | ニューロナ
   </div>
 </div>
 
-<div class="prose mx-auto py-8 px-4">
+<div class="container max-w-4xl py-8 px-4">
   <h2 class="text-4xl font-normal my-4">News</h2>
   <ul>
-    {%- for article in articles.contents | reverse -%}
-    <li>
-      <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
+    {%- for article in articles.contents | reverse -%} {%- if
+    article.type.indexOf("past") === -1 %}
+    <li class="mb-2">
+      <span
+        class="
+          rounded-full
+          bg-gray-100
+          py-1
+          px-4
+          font-bold
+          text-xs text-gray-400
+        "
+      >
+        {{article.type[0]}}</span
+      >
+      <a
+        href="
+      {%- if article.type[0] === 'gallery' %}
+        /gallery/
+      {%- elseif article.type[0] === 'schedule' -%}
+        /articles/
+      {%- endif -%}
+
+      {{article.permalink}}"
+        class="underline"
+      >
+        {{article.title}}
+      </a>
     </li>
-    {%- endfor -%}
+    {%- endif -%} {%- endfor -%}
   </ul>
 </div>
 
