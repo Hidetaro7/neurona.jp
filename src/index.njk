@@ -29,11 +29,26 @@ title: NEURONA.JP | ニューロナ
   ></a>
 </div>
 
+<div class="bg-black py-8 px-4 text-white">
+  <div class="container max-w-4xl">
+    <h2 class="text-4xl font-normal my-4 text-gray-500">Next Live</h2>
+    {%- for article in articles.contents -%} {%- if
+    article.type.indexOf("schedule") >= 0 %}
+    <div class="font-bold text-xl flex items-center">
+      <i class="fal fa-arrow-right mr-4"></i>
+      <a href="/articles/{{article.permalink}}" class="my-2 hover:opacity-70"
+        >{{article.title}}</a
+      >
+    </div>
+    {%- endif -%} {%- endfor -%}
+  </div>
+</div>
+
 <div class="container max-w-4xl py-8 px-4">
   <h2 class="text-4xl font-normal my-4">News</h2>
   <ul>
-    {%- for article in articles.contents | reverse -%} {%- if
-    article.type.indexOf("past") === -1 %}
+    {%- for article in articles.contents -%} {%- if article.type.indexOf("past")
+    === -1 %}
     <li class="mb-2">
       <span
         class="
