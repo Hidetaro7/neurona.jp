@@ -81,8 +81,8 @@ title: NEURONA.JP | ニューロナ
 <div class="container max-w-4xl py-8 px-4">
   <h2 class="text-4xl font-normal my-4">News</h2>
   <ul>
-    {%- for article in articles.contents -%} {%- if article.type.indexOf("past")
-    === -1 %}
+    {%- for article in articles.contents -%} {%- if
+    article.type.indexOf(/past|gallery/gi) === -1 %}
     <li class="mb-2">
       <span
         class="
@@ -142,9 +142,39 @@ title: NEURONA.JP | ニューロナ
   </div>
 </div>
 
-<div class="swiper-container mx-auto mt-6 xl:my-8 h-48 md:h-80 relative">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
+<div class="container mx-auto mt-6 xl:my-8 relative">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="youtube-wrapper">
+      <iframe
+        class="block mx-auto w-full h-full"
+        src="https://www.youtube.com/embed/hchzIl0ld7A?start=92"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="youtube-wrapper">
+      <iframe
+        class="block mx-auto w-full h-full"
+        src="https://www.youtube.com/embed/6dhXZTpcuyI?start=92"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="youtube-wrapper">
+      <iframe
+        class="block mx-auto w-full h-full"
+        src="https://www.youtube.com/embed/DLlxoecYdOs?start=92"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="youtube-wrapper">
       <iframe
         class="block mx-auto w-full h-full"
         src="https://www.youtube.com/embed/0ptLIbWYdU4?start=92"
@@ -154,7 +184,7 @@ title: NEURONA.JP | ニューロナ
         allowfullscreen
       ></iframe>
     </div>
-    <div class="swiper-slide">
+    <div class="youtube-wrapper">
       <iframe
         class="block mx-auto w-full h-full"
         src="https://www.youtube.com/embed/37lgHeFBn-Y"
@@ -164,7 +194,7 @@ title: NEURONA.JP | ニューロナ
         allowfullscreen
       ></iframe>
     </div>
-    <div class="swiper-slide">
+    <div class="youtube-wrapper">
       <iframe
         class="block mx-auto w-full h-full"
         src="https://www.youtube.com/embed/huZmKjAS5Xk"
@@ -174,7 +204,7 @@ title: NEURONA.JP | ニューロナ
         allowfullscreen
       ></iframe>
     </div>
-    <div class="swiper-slide">
+    <div class="youtube-wrapper">
       <iframe
         class="block mx-auto w-full h-full"
         src="https://www.youtube.com/embed/YJ7Cr9leTBk"
@@ -184,7 +214,7 @@ title: NEURONA.JP | ニューロナ
         allowfullscreen
       ></iframe>
     </div>
-    <div class="swiper-slide">
+    <div class="youtube-wrapper">
       <iframe
         class="block mx-auto w-full h-full"
         src="https://www.youtube.com/embed/pFMHy0yDgW4"
@@ -194,7 +224,7 @@ title: NEURONA.JP | ニューロナ
         allowfullscreen
       ></iframe>
     </div>
-    <div class="swiper-slide">
+    <div class="youtube-wrapper">
       <iframe
         class="block mx-auto w-full h-full"
         src="https://www.youtube.com/embed/X2lcs9VgeQk"
@@ -204,7 +234,7 @@ title: NEURONA.JP | ニューロナ
         allowfullscreen
       ></iframe>
     </div>
-    <div class="swiper-slide">
+    <div class="youtube-wrapper">
       <iframe
         class="block mx-auto w-full h-full"
         src="https://www.youtube.com/embed/AvBQDZ0sETQ"
@@ -215,8 +245,6 @@ title: NEURONA.JP | ニューロナ
       ></iframe>
     </div>
   </div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
 </div>
 <div class="container max-w-xl my-32">
   <h2 class="text-4xl font-bold text-center my-4">about NEURONA.JP</h2>
