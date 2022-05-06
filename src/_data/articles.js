@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { default: axios } = require("axios");
 const HTMLParser = require("node-html-parser");
 

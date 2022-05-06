@@ -8,20 +8,19 @@
  * passes jshint
  */
 (function (root, document) {
-  "use strict";
-  var addEventListener = "addEventListener";
-  var getElementById = "getElementById";
-  var getElementsByClassName = "getElementsByClassName";
-  var createElement = "createElement";
-  var classList = "classList";
-  var appendChild = "appendChild";
-  var dataset = "dataset";
-  var containerClass = "iframe-lightbox";
-  var isLoadedClass = "is-loaded";
-  var isOpenedClass = "is-opened";
-  var isShowingClass = "is-showing";
-  var IframeLightbox = function (elem, settings) {
-    var options = settings || {};
+  const addEventListener = "addEventListener";
+  const getElementById = "getElementById";
+  const getElementsByClassName = "getElementsByClassName";
+  const createElement = "createElement";
+  const classList = "classList";
+  const appendChild = "appendChild";
+  const dataset = "dataset";
+  const containerClass = "iframe-lightbox";
+  const isLoadedClass = "is-loaded";
+  const isOpenedClass = "is-opened";
+  const isShowingClass = "is-showing";
+  const IframeLightbox = function (elem, settings) {
+    const options = settings || {};
     this.trigger = elem;
     this.rate = options.rate || 500;
     this.el = document[getElementsByClassName](containerClass)[0] || "";
@@ -29,7 +28,7 @@
     this.content = this.el ? this.el[getElementsByClassName]("content")[0] : "";
     this.href = elem[dataset].src || "";
     this.paddingBottom = elem[dataset].paddingBottom || "";
-    //Event handlers
+    // Event handlers
     this.onOpened = options.onOpened;
     this.onIframeLoaded = options.onIframeLoaded;
     this.onLoaded = options.onLoaded;
@@ -38,18 +37,21 @@
     this.init();
   };
   IframeLightbox.prototype.init = function () {
-    var _this = this;
+    const _this = this;
     if (!this.el) {
       this.create();
     }
-    var debounce = function (func, wait) {
-      var timeout, args, context, timestamp;
+    const debounce = function (func, wait) {
+      let timeout;
+      let args;
+      let context;
+      let timestamp;
       return function () {
         context = this;
         args = [].slice.call(arguments, 0);
         timestamp = new Date();
         var later = function () {
-          var last = new Date() - timestamp;
+          const last = new Date() - timestamp;
           if (last < wait) {
             timeout = setTimeout(later, wait - last);
           } else {
@@ -62,19 +64,19 @@
         }
       };
     };
-    var handleOpenIframeLightbox = function (e) {
+    const handleOpenIframeLightbox = function (e) {
       e.preventDefault();
       _this.open();
     };
-    var debounceHandleOpenIframeLightbox = debounce(
+    const debounceHandleOpenIframeLightbox = debounce(
       handleOpenIframeLightbox,
       this.rate
     );
     this.trigger[addEventListener]("click", debounceHandleOpenIframeLightbox);
   };
   IframeLightbox.prototype.create = function () {
-    var _this = this,
-      bd = document[createElement]("div");
+    const _this = this;
+    const bd = document[createElement]("div");
     this.el = document[createElement]("div");
     this.content = document[createElement]("div");
     this.body = document[createElement]("div");
@@ -89,10 +91,10 @@
     this.contentHolder[appendChild](this.content);
     this.el[appendChild](this.contentHolder);
     document.body[appendChild](this.el);
-    bd[addEventListener]("click", function () {
+    bd[addEventListener]("click", () => {
       _this.close();
     });
-    var clearBody = function () {
+    const clearBody = function () {
       if (_this.isOpen()) {
         return;
       }
@@ -106,16 +108,9 @@
     this.callCallback(this.onCreated, this);
   };
   IframeLightbox.prototype.loadIframe = function () {
-    var _this = this;
+    const _this = this;
     this.iframeId = containerClass + Date.now();
-    this.body.innerHTML =
-      '<iframe src="' +
-      this.href +
-      '" name="' +
-      this.iframeId +
-      '" id="' +
-      this.iframeId +
-      '" onload="this.style.opacity=1;" style="opacity:0;border:none;" scrolling="no" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no" allow="autoplay"></iframe>';
+    this.body.innerHTML = `<iframe src="${this.href}" name="${this.iframeId}" id="${this.iframeId}" onload="this.style.opacity=1;" style="opacity:0;border:none;" scrolling="no" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no" allow="autoplay"></iframe>`;
     (function (iframeId, body) {
       document[getElementById](iframeId).onload = function () {
         this.style.opacity = 1;
@@ -148,8 +143,8 @@
     if (typeof func !== "function") {
       return;
     }
-    var caller = func.bind(this);
+    const caller = func.bind(this);
     caller(data);
   };
   root.IframeLightbox = IframeLightbox;
-})("undefined" !== typeof window ? window : this, document);
+})(typeof window !== "undefined" ? window : this, document);

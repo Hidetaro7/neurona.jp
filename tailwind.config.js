@@ -1,20 +1,37 @@
 const typography = require("@tailwindcss/typography");
-//const plugin = require("tailwindcss/plugin");
-const forms = require("./src/ui_components");
+const jumpu = require("@jumpu-ui/tailwindcss");
 
 module.exports = {
-  purge: ["src/**/*.js", "src/**/*.njk", "src/**/*.md"],
+  darkMode: "class",
+  content: ["./src/**/*.{js,njk,md}"],
   important: true,
   theme: {
     extend: {
+      colors: {
+        primary: {
+          50: "#E9F1F9",
+          100: "#C7DAEF",
+          200: "#91B6E1",
+          300: "#5990D1",
+          400: "#60A5FA",
+          500: "#0950C3",
+          600: "#2563EB",
+          700: "#113661",
+          800: "#081B30",
+          900: "#030B13",
+        },
+      },
       container: {
         center: true,
         padding: {
-          DEFAULT: "1rem",
+          DEFAULT: "2rem",
+          sm: "1rem",
+          md: "4rem",
+          lg: "1rem",
+          xl: "4rem",
         },
       },
     },
   },
-  variants: {},
-  plugins: [typography, forms],
+  plugins: [typography, ...jumpu],
 };
