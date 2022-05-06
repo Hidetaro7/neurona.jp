@@ -17,7 +17,7 @@ title: NEURONA.JP | ニューロナ
     justify-center
     items-center
   "
-  >
+>
   <a
     href="javascript:void(0);"
     class="iframe-lightbox-link hover:opacity-60 text-white opacity-50 text-8xl"
@@ -81,13 +81,10 @@ title: NEURONA.JP | ニューロナ
 <div class="container max-w-4xl py-8 px-4">
   <h2 class="text-4xl font-bold text-center my-4">Schedule</h2>
   <ul>
-    {%- for article in articles.contents | reverse -%}
-    {%- if article.type[0] === "schedule" %}
+    {%- for article in articles.contents | reverse -%} {%- if article.type[0]
+    === "schedule" %}
     <li class="mb-2">
-      <a
-        href="/articles/{{article.permalink}}"
-        class="underline"
-      >
+      <a href="/articles/{{article.permalink}}" class="underline">
         {{article.title}}
       </a>
     </li>
@@ -95,20 +92,47 @@ title: NEURONA.JP | ニューロナ
   </ul>
 </div>
 
-
 <div class="container max-w-4xl py-8 px-4">
   <h2 class="text-4xl font-bold text-center my-4">Photo Galleries</h2>
   <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    {%- for article in articles.contents -%}
-    {%- if article.type[0] !== "schedule" %}
+    {%- for article in articles.contents -%} {%- if article.type[0] !==
+    "schedule" %}
     <li>
       <a
         href="/gallery/{{article.permalink}}"
-        class="w-full bg-cover bg-center flex justify-center items-center text-white font-bold relative transform-gpu hover:scale-105 transition-all rounded hover:sepia"
+        class="
+          w-full
+          bg-cover bg-center
+          flex
+          justify-center
+          items-center
+          text-white
+          font-bold
+          relative
+          transform-gpu
+          hover:scale-105
+          transition-all
+          rounded
+          hover:sepia
+        "
         style="background-image: url({{article.thumbnail.url}}); padding-top: 100%"
       >
-        <span class="absolute top-0 left-0 right-0 bottom-0 p-8 flex justify-center items-center md:text-xl">
-        {{article.title}}</span>
+        <span
+          class="
+            absolute
+            top-0
+            left-0
+            right-0
+            bottom-0
+            p-8
+            flex
+            justify-center
+            items-center
+            md:text-xl
+          "
+        >
+          {{article.title}}</span
+        >
       </a>
     </li>
     {%- endif -%} {%- endfor -%}
