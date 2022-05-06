@@ -1,4 +1,3 @@
-
 name: Build Pages
 on:
   push:
@@ -12,15 +11,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
+
       - name: Touch secret env
         run: |
           touch .env
           echo ${{ secrets.XKEY }} >> .env
-          
+
       - name: Install yarn and dependencies
         run: yarn
-        
+
       - name: Build static pages
         run: yarn build
 
@@ -31,4 +30,3 @@ jobs:
           git add .
           git commit -m "Update!" || echo "No changes to commit"
           git push
-

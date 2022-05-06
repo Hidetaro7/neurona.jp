@@ -1,7 +1,7 @@
 const globby = require("globby");
 const { basename, dirname } = require("path");
 const Image = require("@11ty/eleventy-img");
-const CacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
+// const CacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 
 (async () => {
   const images = await globby(

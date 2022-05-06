@@ -56,7 +56,7 @@ menuButton.addEventListener("click", () => {
 
 [].forEach.call(
   document.getElementsByClassName("iframe-lightbox-link"),
-  function (el) {
+  (el) => {
     el.lightbox = new IframeLightbox(el);
   }
 );
