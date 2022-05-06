@@ -79,35 +79,36 @@ title: NEURONA.JP | ニューロナ
 </section>
 
 <div class="container max-w-4xl py-8 px-4">
-  <h2 class="text-4xl font-normal my-4">News</h2>
+  <h2 class="text-4xl font-bold text-center my-4">Schedule</h2>
   <ul>
-    {%- for article in articles.contents -%} {%- if
-    article.type.indexOf(/past|gallery/gi) === -1 %}
+    {%- for article in articles.contents | reverse -%}
+    {%- if article.type[0] === "schedule" %}
     <li class="mb-2">
-      <span
-        class="
-          rounded-full
-          bg-gray-100
-          py-1
-          px-4
-          font-bold
-          text-xs text-gray-400
-        "
-      >
-        {{article.type[0]}}</span
-      >
       <a
-        href="
-      {%- if article.type[0] === 'gallery' %}
-        /gallery/
-      {%- elseif article.type[0] === 'schedule' -%}
-        /articles/
-      {%- endif -%}
-
-      {{article.permalink}}"
+        href="/articles/{{article.permalink}}"
         class="underline"
       >
         {{article.title}}
+      </a>
+    </li>
+    {%- endif -%} {%- endfor -%}
+  </ul>
+</div>
+
+
+<div class="container max-w-4xl py-8 px-4">
+  <h2 class="text-4xl font-bold text-center my-4">Archives</h2>
+  <ul class="grid grid-cols-3 gap-4">
+    {%- for article in articles.contents -%}
+    {%- if article.type[0] !== "schedule" %}
+    <li>
+      <a
+        href="/gallery/{{article.permalink}}"
+        class="w-full bg-cover bg-center flex justify-center items-center text-white font-bold relative transform-gpu hover:scale-105 transition-all rounded hover:sepia"
+        style="background-image: url({{article.thumbnail.url}}); padding-top: 100%"
+      >
+        <span class="absolute top-0 left-0 right-0 bottom-0 p-8 flex justify-center items-center text-xl">
+        {{article.title}}</span>
       </a>
     </li>
     {%- endif -%} {%- endfor -%}
