@@ -1,7 +1,7 @@
 /*!
  * modified Simple lightbox effect in pure JS
  * @see {@link https://github.com/squeral/lightbox}
- * @see {@link https://github.com/squeral/lightbox/blob/master/lightbox-05232e22e94b523a4db8bd6b47c67e47.js}
+ * @see {@link https://github.com/squeral/lightbox/blob/master/lightbox.js}
  * @params {Object} elem Node element
  * @params {Object} [rate] debounce rate, default 500ms
  * new IframeLightbox(elem)

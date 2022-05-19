@@ -2,4 +2,3 @@
 .cssdist
 node_modules
 .env
-.cache
