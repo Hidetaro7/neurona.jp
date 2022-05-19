@@ -20,7 +20,7 @@ title: ブランド
 
 ![ニューロナのアーティスト写真](/image/artist_photo.jpg)
 
-<a href="/download/neurona_photo.jpg.zip" download title="ダウンロード">ダウンロード（8.2MB／JPEG形式）</a>
+<a href="/download/neurona_photo.jpg.zip" download title="ダウンロード">ダウンロード（JPEG形式）</a>
 
 ## ロゴマーク
 

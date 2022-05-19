@@ -1,5 +1,5 @@
 const typography = require("@tailwindcss/typography");
-const jumpu = require("@jumpu-ui/tailwindcss");
+const jumpuui = require("@jumpu-ui/tailwindcss");
 
 module.exports = {
   darkMode: "class",
@@ -33,5 +33,5 @@ module.exports = {
       },
     },
   },
-  plugins: [typography, ...jumpu],
+  plugins: [typography, ...jumpuui],
 };

@@ -15,6 +15,10 @@ html {
     "Hiragino Sans", Meiryo, sans-serif;
 }
 
+.notosans-black {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
 .is-headerfixed {
   .app-header {
     @apply bg-gray-900 bg-opacity-70;
