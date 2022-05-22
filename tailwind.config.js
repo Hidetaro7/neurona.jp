@@ -24,11 +24,11 @@ module.exports = {
       container: {
         center: true,
         padding: {
-          DEFAULT: "2rem",
+          DEFAULT: "1rem",
           sm: "1rem",
-          md: "4rem",
+          md: "1rem",
           lg: "1rem",
-          xl: "4rem",
+          xl: "1rem",
         },
       },
     },
