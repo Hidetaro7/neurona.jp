@@ -35,6 +35,12 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("CNAME");
   // NOTE: live reload not working when use postcss-cli directly
   eleventyConfig.setBrowserSyncConfig({ files: ["docs/style"] });
+  eleventyConfig.addShortcode(
+    "metadataFormat",
+    function (primaryData, altData) {
+      return !primaryData ? altData : primaryData;
+    }
+  );
   return {
     dir: {
       input: "src",
