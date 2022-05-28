@@ -1,6 +1,6 @@
 ---
 layout: root
-title: ブランド
+title: ブランド | ニューロナ
 ---
 
 <div class="h-20 lg:h-24 bg-black"></div>
