@@ -10,5 +10,6 @@
   "scss.validate": false,
   "emmet.includeLanguages": {
     "nunjucks": "html"
-  }
+  },
+  "githubPullRequests.ignoredPullRequestBranches": ["master"]
 }
