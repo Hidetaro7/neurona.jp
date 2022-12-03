@@ -3,12 +3,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css"
-      integrity="sha384-yJpxAFV0Ip/w63YkZfDWDTU6re/Oc3ZiVqMa97pi8uPt92y0wzeK3UFM2yQRhEom"
-      crossorigin="anonymous"
-    />
+    <script src="https://kit.fontawesome.com/652b3f25f9.js" crossorigin="anonymous"></script>
     <title>ニューロナ</title>
     <meta
       name="description"
@@ -105,7 +100,7 @@
         title="Youtube"
         target="_blank"
         aria-describedby="tooltip-Youtube"
-        href="https://www.youtube.com/channel/UCRKVZiebYGhWRCDxY3OA8cg"
+        href="https://www.youtube.com/channel/UCRKVZiebYGhWRCDxY3OA8cg" rel="noopener"
       >
         <i class="fab fa-youtube text-2xl"></i>
         <span id="tooltip-Youtube" role="tooltip">Youtube</span>
@@ -115,7 +110,7 @@
         title="Twitter"
         target="_blank"
         aria-describedby="tooltip-Twitter"
-        href="https://twitter.com/neurona_jp"
+        href="https://twitter.com/neurona_jp" rel="noopener"
       >
         <i class="fab fa-twitter text-2xl"></i>
         <span id="tooltip-Twitter" role="tooltip">Twitter</span>
@@ -126,6 +121,7 @@
         target="_blank"
         aria-describedby="tooltip-Instagram"
         href="https://www.instagram.com/neurona_jp/"
+         rel="noopener"
       >
         <i class="fab fa-instagram text-2xl"></i>
         <span id="tooltip-Instagram" role="tooltip">Instagram</span>
@@ -135,6 +131,7 @@
         title="猫又ショップ"
         target="_blank"
         href="https://neurona.base.shop/"
+         rel="noopener"
         aria-describedby="tooltip-NekomataShop"
       >
         <img
@@ -196,39 +193,52 @@
     </div></div>
 </div>
 
-<section class="bg-gray-100 py-16">
-  <div class="container">
-    <div class="relative h-0 overflow-hidden" style="padding-bottom: 56.25%">
-      <iframe
-        class="absolute top-0 left-0 w-full h-full"
-        src="https://www.youtube.com/embed/0kbLI09jXxo?start=85"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
+<div class="container grid grid-cols-1 lg:grid-cols-2 gap-4  py-8">
+  <section class="bg-gray-100">
+    <div class="container">
+      <div class="relative h-0 overflow-hidden" style="padding-bottom: 56.25%">
+        <iframe
+          class="absolute top-0 left-0 w-full h-full"
+          src="https://www.youtube.com/embed/0kbLI09jXxo?start=85"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
 
-    <h2 class="text-3xl mdtext-4xl text-center my-8 font-bold">
-      Re:Shinjuku projectに取り上げられました
+      <h2 class="text-3xl mdtext-4xl text-center my-8 font-bold">
+        Re:Shinjuku projectに取り上げられました
+      </h2>
+
+      <div class="prose mx-auto text-center">
+        <p>
+          2022年1月16日（日）、新宿 Cat’s
+          holeで行われたニューロナのライブが、新宿区文化観光産業部文化観光課
+          文化芸術復興支援事業が担当する動画配信サイトに取り上げられました。
+        </p>
+        <p>
+          <a
+            href="https://re-shinjuku.jp/movie/%e3%83%8b%e3%83%a5%e3%83%bc%e3%83%ad%e3%83%8a-%e7%8c%ab%e3%81%ae%e7%88%aa%e7%a0%94%e3%81%8e-%e5%ba%8f%e7%ab%a0-%e3%80%80%ef%bc%a0%e6%96%b0%e5%ae%bf-cats-hole/"
+            >Re:Shinjuku projectで詳しく見る</a
+          ><br />
+          <span class="text-xs">（1分25秒あたりからライブ本番開始です）</span>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center">
+    <h2 class="text-center">
+      <img class="lg:w-8/12 inline-block" src="/image/nekomata_shop_banner.jpg" alt="猫又ショップ" />
     </h2>
+    <p class="text-lg text-center mb-4">ニューロナのグッズが買える！オンラインストア</p>
+    <p class="text-center">
+      <a class="jumpu-button" href="https://neurona.base.shop/" target="_blank" rel="noopener"><i class="fa-solid fa-chevron-right mr-4"></i>猫又ショップでショッピング！</a>
+    </p>
+    <img class="my-8 h-96" src="/image/fig-nekomata.png" alt="猫又ショップの商品の写真">
 
-    <div class="prose mx-auto text-center">
-      <p>
-        2022年1月16日（日）、新宿 Cat’s
-        holeで行われたニューロナのライブが、新宿区文化観光産業部文化観光課
-        文化芸術復興支援事業が担当する動画配信サイトに取り上げられました。
-      </p>
-      <p>
-        <a
-          href="https://re-shinjuku.jp/movie/%e3%83%8b%e3%83%a5%e3%83%bc%e3%83%ad%e3%83%8a-%e7%8c%ab%e3%81%ae%e7%88%aa%e7%a0%94%e3%81%8e-%e5%ba%8f%e7%ab%a0-%e3%80%80%ef%bc%a0%e6%96%b0%e5%ae%bf-cats-hole/"
-          >Re:Shinjuku projectで詳しく見る</a
-        ><br />
-        <span class="text-xs">（1分25秒あたりからライブ本番開始です）</span>
-      </p>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <div class="container py-8 px-4">
   <h2 class="text-4xl notosans-black text-center mb-8">ライブ・ギャラリー</h2>
@@ -949,11 +959,11 @@
       container
       max-w-4xl
       text-center
-      md:flex
+      xl:flex
       justify-center
-      md:justify-between
+      xl:justify-between
       flex-col
-      md:flex-row
+      xl:flex-row
       text-gray-600
       px-16
       lg:px-0
@@ -964,12 +974,11 @@
         logo
         text-center
         mb-16
-        lg:mb-0
-        lg:h-full
-        lg:flex
-        justify-center
+        flex
+        justify-between
         items-center
-        col-span-1
+        flex-col
+        gap-y-16
       "
     >
       <img
@@ -977,6 +986,8 @@
         src="/image/neurona_logo_jp_black.svg"
         alt="ニューロナ"
       />
+
+      <a class="inline-block w-6/12 sm:w-2/12 xl:w-6/12 border-2 border-gray-700" href="https://neurona.base.shop/" target="_blank" rel="noopener"><img class="" src="/image/nekomata_shop_banner.jpg" alt="猫又ショップ" /></a>
     </div>
     <div
       class="
