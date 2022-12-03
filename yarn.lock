@@ -134,10 +134,10 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@jumpu-ui/tailwindcss@^1.0.1-alpha.2":
-  version "1.0.1-alpha.4"
-  resolved "https://registry.yarnpkg.com/@jumpu-ui/tailwindcss/-/tailwindcss-1.0.1-alpha.4.tgz#b3d0d2321baca120d68f59c496430651bff64d04"
-  integrity sha512-I99rloQ3x+DE6hs+KrqMKaPWOuFooD2rDsJr3VUffN8sNRDI0/n7+NTpB5OYyAdXQJQWk80hKPvjuHaHEAVrLA==
+"@jumpu-ui/tailwindcss@^1.0.1-alpha.5":
+  version "1.0.1-alpha.5"
+  resolved "https://registry.yarnpkg.com/@jumpu-ui/tailwindcss/-/tailwindcss-1.0.1-alpha.5.tgz#939f1ef128216bdf9a6e35271cd0b0a47d8257f7"
+  integrity sha512-BZCoCpHgxYzViQ9xLc8W/50+3unNt1x+zSN/aYBMFTjkjM7nzjm5fgwmO5k9YpQOf0JkSV02/J4rRUDtFW0LAA==
   dependencies:
     mini-svg-data-uri "^1.4.4"
 
@@ -3593,15 +3593,15 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier-plugin-md-nocjsp@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-md-nocjsp/-/prettier-plugin-md-nocjsp-1.1.0.tgz#02b767e88a7fed475d575f7357529990c2dc9e3a"
-  integrity sha512-BkbNELDAol2rViOxYrxvoep6BqtL0t3QWHqwMQHkQlZK/lgxxXtiTbqMGhgIVW3wCq8pToHiUYN18SHp4/Kr/A==
+prettier-plugin-md-nocjsp@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-md-nocjsp/-/prettier-plugin-md-nocjsp-1.4.0.tgz#a82dad2adbd9655df046d4e8d75ec69876bcfa90"
+  integrity sha512-w8N5N7w5lSVj+kX4d9fYU3xeFdxh/CkoYHy7CojtZJCkwOZXrTBvymJMnnOjBLNseTJ24j0q+BlmpkTNq+rxbg==
 
-prettier@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
-  integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
+prettier@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.0.tgz#c7df58393c9ba77d6fba3921ae01faf994fb9dc9"
+  integrity sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==
 
 pretty-hrtime@^1.0.3:
   version "1.0.3"
