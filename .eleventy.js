@@ -1,23 +1,24 @@
-const globby = require("globby");
-const { basename, dirname } = require("path");
-const Image = require("@11ty/eleventy-img");
-// const CacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
+import fg from "fast-glob";
+import { basename, dirname } from "path";
+import Image from "@11ty/eleventy-img";
 
-(async () => {
-  const images = await globby(
-    ["src/**/*.{jpeg,jpg,png,webp,gif,tiff,avif,svg}"],
-    { gitignore: true }
-  );
+const optimizeImages = async () => {
+  const images = await fg(["src/**/*.{jpeg,jpg,png,webp,gif,tiff,avif,svg}"], {
+    ignore: ["docs", "**/node_modules"],
+  });
   for (const image of images) {
     await Image(image, {
       filenameFormat: () => basename(image),
       formats: [null],
-      outputDir: dirname(image).replace(/^src/, "docs"),
+      sharpOptions: {
+        animated: true,
+      },
+      outputDir: dirname(image).replace(/^src/, "dist"),
     });
   }
-})();
+};
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   /* if (process.env.NODE_ENV === "production") {
     eleventyConfig.addPlugin(CacheBuster({ outputDirectory: "docs" }));
   } */
@@ -41,6 +42,7 @@ module.exports = (eleventyConfig) => {
       return !primaryData ? altData : primaryData;
     }
   );
+  eleventyConfig.on("beforeBuild", optimizeImages);
   return {
     dir: {
       input: "src",
