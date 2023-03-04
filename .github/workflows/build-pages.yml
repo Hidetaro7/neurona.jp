@@ -11,7 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
+        with:
+          node-version: '16'
       - name: Touch secret env
         run: |
           touch .env
