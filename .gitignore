@@ -1,4 +1,0 @@
-*.log
-.cssdist
-node_modules
-.env
