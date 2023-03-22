@@ -3,6 +3,8 @@ name: ビルドのテスト
 on:
   push:
     branches: [ master ]
+  repository_dispatch:
+    types: [foo, orange]
 
 jobs:
   build:
