@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           
-      - name: Touch secret env
+      - name: Touch secret env ${{ secrets.XKEY }}
         run: |
           touch .env
           echo ${{ secrets.XKEY }} >> .env
