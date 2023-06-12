@@ -5,7 +5,7 @@ title: ブランド | ニューロナ
 
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="container">
-  <div class="prose mx-auto max-w-none py-8">
+  <div class="prose mx-auto max-w-3xl py-8">
     <p class="text-sm mb-8">
       <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
       ><a href="/brand/">Brand</a>
@@ -20,7 +20,9 @@ title: ブランド | ニューロナ
 
 ![ニューロナのアーティスト写真](/image/artist_photo.jpg)
 
-<a href="/download/neurona_photo.jpg.zip" download title="ダウンロード">ダウンロード（JPEG形式）</a>
+<p class="text-center">
+<a class="jumpu-button text-xl" href="/download/neurona_photo.jpg.zip" download title="ダウンロード">アーティスト写真のダウンロード（JPEG形式）</a>
+</p>
 
 ## ロゴマーク
 
