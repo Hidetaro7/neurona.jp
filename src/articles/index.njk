@@ -17,8 +17,8 @@ pagination:
     </p>
     <h1>News</h1>
     <ul>
-      {%- for article in articles.contents | reverse -%} {%- if article.type[0] !==
-      'gallery' -%}
+      {%- for article in articles.contents | reverse -%} {%- if article.type[0]
+      !== 'gallery' -%}
       <li>
         {%- if article.type[0] === 'past' -%}
         <span
