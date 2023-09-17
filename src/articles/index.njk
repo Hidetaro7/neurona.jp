@@ -16,16 +16,25 @@ pagination:
       ><a href="/articles/">News</a>
     </p>
     <h1>News</h1>
+    <h2>最新</h2>
     <ul>
-      {%- for article in articles.contents | reverse -%} {%- if article.type[0] !==
-      'gallery' -%}
+      {%- for article in articles.contents | reverse -%} {%- if article.type[0] ===
+      'schedule' -%}
       <li>
-        {%- if article.type[0] === 'past' -%}
+        <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
+      </li>
+      {%- endif -%} {%- endfor -%}
+    </ul>
+
+    <h2>過去のイベント</h2>
+    <ul>
+      {%- for article in articles.contents -%} {%- if article.type[0] ===
+      'past' -%}
+      <li>
         <span
           class="rounded-full bg-gray-100 py-1 px-4 font-bold text-xs text-gray-400 mr-2"
           >終了</span
         >
-        {%- endif -%}
         <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
       </li>
       {%- endif -%} {%- endfor -%}
