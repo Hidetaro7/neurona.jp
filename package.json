@@ -1,75 +1,65 @@
 {
   "name": "website-boilerplate",
   "description": "a boilerplate of website provided with npm scripts",
-  "version": "2.0.0",
+  "version": "1.5.2",
   "author": "tuqulore inc.",
   "bugs": {
     "url": "https://github.com/tuqulore/website-boilerplate/issues"
   },
-  "engines": {
-    "node": ">=16 || < 17"
-  },
   "dependencies": {
-    "serve-handler": "^6.1.3"
-  },
-  "resolutions": {
-    "fast-glob": "^3.2.11"
+    "axios": "^1.6.2",
+    "node-html-parser": "^6.1.11",
+    "serve-handler": "6.1.5"
   },
   "devDependencies": {
-    "@11ty/eleventy": "1.0.1",
-    "@11ty/eleventy-img": "2.0.0",
-    "@jumpu-ui/tailwindcss": "^1.0.1-alpha.5",
-    "@tailwindcss/line-clamp": "^0.2.1",
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "10.2.6",
-    "axios": "^0.21.1",
-    "cachekill": "^3.0.2",
-    "cssnano": "^5.1.5",
-    "dotenv": "^16.0.1",
-    "eleventy-plugin-error-overlay": "^0.1.2",
-    "eslint": "7.27.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-formatter-rdjson": "1.0.5",
-    "globby": "11.0.3",
-    "html-minifier": "^4.0.0",
-    "jsdom": "^19.0.0",
-    "markdown-it": "^12.1.0",
-    "markdown-it-anchor": "^8.3.1",
-    "markdown-it-toc-done-right": "^4.2.0",
-    "node-html-parser": "^5.3.3",
+    "@11ty/eleventy": "2.0.1",
+    "@11ty/eleventy-fetch": "^4.0.0",
+    "@11ty/eleventy-img": "3.1.8",
+    "@11ty/is-land": "^4.0.0",
+    "@iconify/json": "^2.2.90",
+    "@iconify/tailwind": "^0.1.3",
+    "@jumpu-ui/tailwindcss": "1.0.1-alpha.6",
+    "@lerna-lite/cli": "^2.1.0",
+    "@lerna-lite/version": "^2.1.0",
+    "@supercharge/promise-pool": "^3.0.0",
+    "@tailwindcss/typography": "0.5.10",
+    "autoprefixer": "10.4.16",
+    "cssnano": "6.0.1",
+    "dotenv-cli": "^7.2.1",
+    "eslint": "8.54.0",
+    "eslint-config-prettier": "8.10.0",
+    "fast-glob": "3.3.2",
     "npm-run-all": "4.1.5",
-    "postcss": "^8.4.12",
-    "postcss-cli": "^9.1.0",
-    "postcss-csso": "^6.0.0",
-    "postcss-import": "^14.1.0",
-    "postcss-mixins": "^9.0.2",
-    "prefixer": "^0.0.3",
-    "prettier": "^2.8.0",
-    "prettier-plugin-md-nocjsp": "^1.4.0",
-    "rimraf": "3.0.2",
-    "tailwindcss": "^3.0.23"
+    "postcss": "8.4.31",
+    "postcss-import": "15.1.0",
+    "postcss-import-ext-glob": "^2.1.1",
+    "postcss-load-config": "4.0.2",
+    "prettier": "3.1.0",
+    "qs": "^6.11.2",
+    "rimraf": "5.0.5",
+    "tailwindcss": "3.3.5"
+  },
+  "engines": {
+    "node": "18"
   },
   "homepage": "https://github.com/tuqulore/website-boilerplate#readme",
   "keywords": [
+    "eleventy",
     "website"
   ],
   "license": "MIT",
+  "packageManager": "yarn@1.22.21",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tuqulore/website-boilerplate.git"
   },
   "scripts": {
-    "build": "NODE_ENV=production run-s clean build:{eleventy,style}",
-    "build:eleventy": "eleventy",
-    "build:cachekill": "cachekill -r -s 'docs/**/!(*.html)' -t 'docs/**/*.{js,css,html}'",
-    "build:style": "postcss 'src/style/**/[^._]*' --dir docs/style --ext css",
-    "clean": "rimraf docs",
-    "dev": "run-p dev:*",
-    "dev:eleventy": "eleventy --serve",
-    "dev:style": "postcss 'src/style/**/[^._]*' --dir docs/style --watch --ext css",
-    "fix": "eslint --fix .",
-    "format": "prettier --verbose --write '**/*.{js,json,md,njk,css,scss,pcss,yaml}'",
-    "lint": "eslint .",
-    "lint:rdjson": "eslint --format rdjson ."
+    "build": "NODE_ENV=production run-s clean build:eleventy",
+    "build:eleventy": "dotenv -c production -- eleventy",
+    "clean": "rimraf dist",
+    "dev": "dotenv -c development -- eleventy --serve",
+    "format": "prettier --write . '**/*.njk'",
+    "lint": "eslint --fix .",
+    "versionup": "lerna version --no-git-tag-version"
   }
 }

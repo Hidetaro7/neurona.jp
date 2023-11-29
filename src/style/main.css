@@ -1,11 +1,15 @@
-@tailwind base;
+@import "tailwindcss/base";
 
-@import "variables";
-@import "mixins";
-@import "base";
+@import "tailwindcss/components";
 
-@tailwind components;
-@tailwind utilities;
+@import-glob "components/**/*.css";
+
+@import "tailwindcss/utilities";
+
+/* see https://alpinejs.dev/directives/cloak */
+[x-cloak] {
+  display: none !important;
+}
 
 @import lightgallery-bundle.min.css;
 
@@ -265,7 +269,7 @@ gallery-main
     }
   }
 }
-.lazyload,
+/* .lazyload,
 .lazyloading {
   @apply opacity-0 transition-all transform-gpu translate-y-4;
 }
@@ -274,3 +278,4 @@ gallery-main
   @apply opacity-100 hover:opacity-90 translate-y-0;
   transition: 0.8s 0.4s;
 }
+ */

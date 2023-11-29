@@ -1,4 +1,5 @@
 const typography = require("@tailwindcss/typography");
+const { addDynamicIconSelectors } = require("@iconify/tailwind");
 const jumpuui = require("@jumpu-ui/tailwindcss");
 
 module.exports = {
@@ -33,5 +34,5 @@ module.exports = {
       },
     },
   },
-  plugins: [typography, ...jumpuui],
+  plugins: [typography, addDynamicIconSelectors(), ...jumpuui],
 };

@@ -1,11 +1,12 @@
 const handler = require("serve-handler");
 const http = require("http");
 
-const server = http.createServer((request, response) =>
-  handler(request, response, {
+const server = http.createServer((request, response) => {
+  return handler(request, response, {
     public: "docs",
-  })
-);
+    etag: true,
+  });
+});
 
 const port = process.env.PORT ?? 8080;
 const baseUrl = process.env.BASE_URL ?? "http://localhost";

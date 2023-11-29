@@ -1,5 +1,8 @@
 *.log
+.cache
 .cssdist
+.env*.local
+docs
 node_modules
 .env
-docs
+.env.local
