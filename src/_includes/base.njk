@@ -15,9 +15,7 @@
   </head>
   <body>
     {% include 'partials/header.njk' %}
-    <div class="mx-auto min-h-[60vh] mb-4">
-      {{ content | safe }}
-    </div>
+    <div class="mx-auto min-h-[60vh] mb-4">{{ content | safe }}</div>
     {% include 'partials/footer.njk' %}
   </body>
 </html>

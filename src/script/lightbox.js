@@ -70,7 +70,7 @@
     };
     const debounceHandleOpenIframeLightbox = debounce(
       handleOpenIframeLightbox,
-      this.rate
+      this.rate,
     );
     this.trigger[addEventListener]("click", debounceHandleOpenIframeLightbox);
   };
