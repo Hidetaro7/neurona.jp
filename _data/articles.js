@@ -6,11 +6,14 @@ require("dotenv").config();
 // eslint-disable-next-line consistent-return
 module.exports = async () => {
   try {
-    const res = await axios.get("https://tuqulore.microcms.io/api/v1/neurona", {
-      headers: {
-        "X-API-KEY": process.env.XKEY,
-      },
-    });
+    const res = await axios.get(
+      "https://tuqulore.microcms.io/api/v1/neurona?limit=100",
+      {
+        headers: {
+          "X-API-KEY": process.env.XKEY,
+        },
+      }
+    );
     const renderHTML = parsePhohoGallery(res.data);
     return renderHTML;
   } catch (error) {
