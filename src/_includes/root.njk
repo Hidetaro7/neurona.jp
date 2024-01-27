@@ -52,9 +52,7 @@
   </head>
   <body>
     {% include "header.njk" %}
-    <div data-pagefind-body>
-    {{ content | safe }}
-    </div>
+    <div data-pagefind-body>{{ content | safe }}</div>
     {% include "footer.njk" %}
     <div class="drawer-menu">{% include "global-nav.njk" %}</div>
 
@@ -68,9 +66,9 @@
 
     <script src="/script/index.js?ver=20210420"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      new PagefindUI({ element: "#search" });
-    });
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
     </script>
   </body>
 </html>
