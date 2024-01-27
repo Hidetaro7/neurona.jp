@@ -48,9 +48,14 @@
       rel="stylesheet"
     />
     {% include 'ogp.njk' %}
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
-    {% include "header.njk" %} {{ content | safe }}{% include "footer.njk" %}
+    {% include "header.njk" %}
+    <div data-pagefind-body>
+    {{ content | safe }}
+    </div>
+    {% include "footer.njk" %}
     <div class="drawer-menu">{% include "global-nav.njk" %}</div>
 
     <script src="/script/lightbox.js"></script>
@@ -62,5 +67,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new PagefindUI({ element: "#search" });
+    });
+    </script>
   </body>
 </html>

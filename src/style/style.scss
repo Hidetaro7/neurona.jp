@@ -274,3 +274,46 @@ gallery-main
   @apply opacity-100 hover:opacity-90 translate-y-0;
   transition: 0.8s 0.4s;
 }
+
+.pagefind-ui {
+  @apply relative mr-4;
+  &__search-input {
+    @apply jumpu-input;
+  }
+  &__search-clear {
+    @apply jumpu-icon-button absolute top-1/2 right-4 transform -translate-y-1/2;
+  }
+  &__hidden {
+    @apply hidden;
+  }
+  &__form {
+    margin-block-end: 0;
+  }
+  &__drawer {
+    @apply bg-white/80 backdrop-blur-xl top-full right-0 translate-y-1 rounded-xl p-8 max-w-4xl w-[600px] z-50 absolute max-h-[calc(_100dvh_-_64px_)] overflow-y-auto;
+  }
+  &__message {
+    @apply text-gray-700 text-sm px-4;
+  }
+  &__result {
+    @apply flex gap-4 px-4 my-4;
+  }
+  &__result-thumb {
+    @apply shrink-0 w-16;
+    img {
+      @apply rounded-2xl object-cover w-full aspect-square;
+    }
+  }
+  &__result-inner {
+    @apply flex flex-col justify-center items-start;
+  }
+  &__result-title {
+    @apply font-bold leading-tight hover:underline mb-1;
+  }
+  &__result-excerpt {
+    @apply text-xs text-gray-700 leading-4;
+  }
+  &__button {
+    @apply jumpu-text-button w-full text-sm py-4;
+  }
+}
