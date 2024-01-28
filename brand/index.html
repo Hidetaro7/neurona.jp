@@ -58,6 +58,7 @@
   content="https://neurona.jp/image/hero-image.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- <div class="h-20 lg:h-24 bg-black"></div>
+
+    <div data-pagefind-body><div class="h-20 lg:h-24 bg-black"></div>
 <div class="container">
   <div class="prose mx-auto max-w-3xl py-8">
     <p class="text-sm mb-8">
@@ -187,7 +194,8 @@ Please change the value as appropriate.</p>
 <pre><code>&lt;img src=&quot;https://neurona.jp/image/neurona_logo_black.svg&quot; alt=&quot;neurona logo mark&quot; width=&quot;200&quot; /&gt;
 </code></pre>
 </div></div></div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -460,5 +468,10 @@ Please change the value as appropriate.</p>
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

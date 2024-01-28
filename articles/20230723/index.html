@@ -58,6 +58,7 @@
   content="https://neurona.jp/image/hero-image.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><p>渋谷Live Stage GUILTY<br>「GUIL-JAM」<br>※同時配信有り予定<br>OPEN18:00 /START 18:30<br>前売¥2900<br>当日¥3400（＋1Drink）<br><br><strong>チケット予約は</strong><a href="unsafe:neurona.jp@gmail.com"><strong>こちら</strong></a><strong>まで</strong><br><strong>予約枚数・取り置きのお名前を教えてください</strong><br><br>○ACT<br>・Electric Snufkin<br>・田中万葉<br>・ニューロナ<br>・Iris?<br><br>【配信詳細／購入URL】<br><a href="https://www.mahocast.com/at/live/478/9979" target="_blank" rel="noopener noreferrer">https://www.mahocast.com/at/live/478/9979</a><br>※2023.8.6 23:59までアーカイブ視聴可能<br><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/286b8e6ab95c48c9adb6914323840fb2/20230723.jpeg" alt="" width="1280" height="720"></p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

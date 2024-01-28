@@ -58,6 +58,7 @@
   content="https://neurona.jp/image/hero-image.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><p><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/1d44d63d4da242df86e0e41e50f941f4/IMG_4135.JPG" alt="" width="1152" height="2048"><br><span style="color:#0f1419">powered by BLAZE LEGION</span><br><span style="color:#0f1419">YouTube生配信ライブ</span><br><span style="color:#0f1419">『CiTLiNe program "IntroductioN"』</span><br><br>2023年3月26日(日)17:00より<br>配信URLは<a href="https://www.youtube.com/live/usXRy9gLGIY?feature=share" target="_blank" rel="noopener noreferrer">こちら</a><br><br><span style="color:#0f1419">MC＆ACT</span><br><span style="color:#0f1419">CiTLiNe</span><br><br><span style="color:#0f1419">ACT</span></p><ul><li><span style="color:#0f1419">ICE-ink</span></li><li><span style="color:#0f1419">嘉山茜</span></li><li><span style="color:#0f1419">擬人化にゃんた</span></li><li><span style="color:#0f1419">小松美恵</span></li><li><span style="color:#0f1419">SHACALANDA</span></li><li><span style="color:#0f1419">ニューロナ</span></li><li><span style="color:#0f1419">ロザリア (from [薔薇の宮殿-Rose'n Palace-])</span></li></ul><p><br></p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

@@ -58,6 +58,7 @@
   content="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/5949a7c8f7ae4bb5a969c659a1c23d5b/E11E1C7D-C6CF-4DE7-8444-A444EFA401E9.jpeg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><p><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/5949a7c8f7ae4bb5a969c659a1c23d5b/E11E1C7D-C6CF-4DE7-8444-A444EFA401E9.jpeg" alt="2022年7月10日（日） Cartilage主催「眼鏡歌謡祭 vol.9」@高円寺Club ROOTS" /></p><p><span style="color:#0f1419">2022.7.10(日)＠</span>高円寺Club ROOTS<br><br><span style="color:#0f1419">ROOTS17th.Anniv</span><br><span style="color:#0f1419">Cartilage Pre.</span><br><span style="color:#0f1419">『眼鏡歌謡祭 vol.9』</span><br><br><span style="color:#0f1419">出演</span><br><span style="color:#0f1419">・Cartilage</span><br><span style="color:#0f1419">・FinDeMarbi</span><br><span style="color:#0f1419">・極楽ドルチェ</span><br><span style="color:#0f1419">・ニューロナ</span><br><span style="color:#0f1419">・しにぞこナイツ</span><br><br><span style="color:#0f1419">OP17:45/ST18:00(配信17:50〜)</span><br><span style="color:#0f1419">adv￥2,000/door￥2,500 +1D</span><br><br><br></p><h2 id="h91a36ab5e1">ライブハウスへ来場される方</h2><p>事前に前売りチケットをご予約いただけるとお得です。<br>こちらの <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTJXZBgT1fR6l7QGSDCWp7ndBz8JkbTpzCZ9BO45gG5bSOxg/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">Google フォーム</a>でご予約ください。</p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

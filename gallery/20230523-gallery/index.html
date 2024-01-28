@@ -58,6 +58,7 @@
   content="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/40cb406a00d1450682dd672c8a4fb571/23.JPG"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div
   class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
   style="background-image: url(https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/40cb406a00d1450682dd672c8a4fb571/23.JPG);"
@@ -188,7 +195,8 @@
 <script>
   lightGallery(document.querySelector(".gallery-main"), {});
 </script>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -461,5 +469,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

@@ -58,6 +58,7 @@
   content="https://neurona.jp/image/hero-image.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><p><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/0179b14a492b4f7f9723db5ab20684f2/IMG_EF73D156AEC5-1.jpeg" alt="" width="1109" height="1479"><br>Tomoの、猫又ともすけとしてソロでのイベント出演です。<br>今回からは弾き語りではなく、絵を描きながら歌う予定です。<br><br>2023年5月27日(土)＠中野新橋アトリエペガサス<br>時間：13:30〜スタート<br>※Tomoの出番は15:00〜です<br><span style="color:#0f1419">料金：飲み放題4000円</span><br><br>中野新橋アトリエペガサス　アクセスは<a href="https://www.mapion.co.jp/phonebook/M51010/13114/99677251_ipcbl/" target="_blank" rel="noopener noreferrer">こちら</a><br></p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

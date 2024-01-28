@@ -58,6 +58,7 @@
   content="https://neurona.jp/image/hero-image.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="container">
   <div class="prose mx-auto max-w-none py-8">
@@ -432,10 +439,10 @@
     </li><li class="card overflow-hidden hover:opacity-80">
       <a href="/gallery/20230723-gallery">
         <img
-          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/4b6477911c4945158b6dba6e197638e1/20230723_%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%AD%E3%83%8A%20(179).JPG"
+          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/a6eeff29c6df404d9b5c58fe548e854d/20230723_179.JPG"
           alt="article.title"
           class="object-cover w-full h-64 lazyload"
-          data-src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/4b6477911c4945158b6dba6e197638e1/20230723_%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%AD%E3%83%8A%20(179).JPG"
+          data-src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/a6eeff29c6df404d9b5c58fe548e854d/20230723_179.JPG"
           loading="lazy"
         />
       </a>
@@ -447,10 +454,10 @@
     </li><li class="card overflow-hidden hover:opacity-80">
       <a href="/gallery/20230729-gallery">
         <img
-          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/c33cbda715144c4abdd2a590519d8692/20230729_%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%AD%E3%83%8A%20(135).JPG"
+          src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/285658a57d2b4bd482ddf0ade08b75d7/20230729_135.JPG"
           alt="article.title"
           class="object-cover w-full h-64 lazyload"
-          data-src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/c33cbda715144c4abdd2a590519d8692/20230729_%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%AD%E3%83%8A%20(135).JPG"
+          data-src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/285658a57d2b4bd482ddf0ade08b75d7/20230729_135.JPG"
           loading="lazy"
         />
       </a>
@@ -505,7 +512,8 @@
     return formatted_date;
   };
 </script>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -778,5 +786,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

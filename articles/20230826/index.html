@@ -58,6 +58,7 @@
   content="https://neurona.jp/image/hero-image.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><p>2023/8/26(土)＠新宿Cat’s Hole<br><span style="color:#0f1419">Mission Mode9 主催 </span><br><span style="color:#0f1419">「El Dorado」</span><br><br>ACT</p><ul><li><span style="color:#0f1419">Mission Mode9</span></li><li><span style="color:#0f1419">藤絵もんぶらん</span></li><li><span style="color:#0f1419">ニューロナ</span></li><li><span style="color:#0f1419">GateNo.14</span></li><li><span style="color:#0f1419">RASTEIN</span></li></ul><p><br>開場：17:00<br>開演：17:30<br><br>チケット<br>前売 ¥3,500(D代別) /当日 ¥4,000(D代別) <br>ご予約は<a style="background-color:#ffffff" href="https://tuqulore.microcms.io/apis/neurona/neurona.jp@gmail.com" target="_blank" rel="noopener noreferrer">こちら</a>まで<br><br>配信 ¥3,500<br><span style="color:#4c4c4c">※購入の際、お目当ての出演者名を「ニューロナ」とメッセージしてね！</span><br>https://twitcasting.tv/catshole/shopcart/246844<br><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/7b4080b63c6046f3b5992716a61fce8e/20230826_%E3%83%95%E3%83%A9%E3%82%A4%E3%83%A4%E3%83%BC.jpg" alt="" width="960" height="1280"><br></p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

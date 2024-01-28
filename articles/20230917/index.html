@@ -58,6 +58,7 @@
   content="https://neurona.jp/image/hero-image.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><h2 id="h73998c1393">SHIBUYA COMPLEX#16<br>【Day1】2023年9月17日（日）<br>【Day2】2023年9月18日（月祝）</h2><h3 id="h746b022933">OPEN 13:00 START 13:30</h3><ul><li>前売券 ¥3000(1Drink ¥600)</li><li>当日券 ¥3500(1Drink ¥600)</li><li>2日間通し券…¥5000(1Drink ¥600)</li><li>配信チケット…¥2200（税込／手数料別）</li></ul><p><br></p><h4 id="h2054289055">チケット予約URL</h4><p>Day1…<a href="https://tiget.net/events/265059" target="_blank" rel="noopener noreferrer">https://tiget.net/events/265059</a><br>Day2…<a href="https://tiget.net/events/265061" target="_blank" rel="noopener noreferrer">https://tiget.net/events/265061</a><br>2日間通し券…<a href="https://tiget.net/events/265062" target="_blank" rel="noopener noreferrer">https://tiget.net/events/265062</a><br></p><h4 id="h2b0ad90f98">配信詳細／購入URL</h4><p>Day1 …<a href="https://www.mahocast.com/at/live/478/10106" target="_blank" rel="noopener noreferrer">https://www.mahocast.com/at/live/478/10106</a><br>Day2…<a href="https://www.mahocast.com/at/live/478/10107" target="_blank" rel="noopener noreferrer">https://www.mahocast.com/at/live/478/10107</a><br>※2023.10.1 23:59までアーカイブ視聴可能（購入期限は9.30 21:00までとなります）<br><br>【ACT】<br>○9月17日（日）<br>・Iris?<br>・えくおとさず<br>・Cartilage<br>・危険物品<br>・GURISLAMAR<br>・クロメ<br>・s-o-a<br>・DAMIA<br>・ニューロナ<br>・HPPJ<br><br>○9月18日（月祝）<br>・Electric Snufkin<br>・黒ック<br>・サンズトラック<br>・Tha pino noir<br>・Junkbar<br>・田中万葉<br>・VERONICA VERONICO<br>・前西原夕子<br>・YAS33<br>・幽霊会社みちづれ<br><br>&nbsp;◆FOOD…GOOD FOOD SARAH（SHIBUYA LA17）<br><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/eab5b55aabb04317969e5910487f3ccb/SC16.jpeg" alt="" width="1280" height="720"></p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

@@ -58,6 +58,7 @@
   content="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/8bb20518582143369aeb041d33fac61a/IMG_4116.JPG"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><p><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/8bb20518582143369aeb041d33fac61a/IMG_4116.JPG" alt="2023年3月19日(日)飯能イーストコート" /></p><p><span style="color:#000000">THE LINER NOTEZ主催</span><br><span style="color:#000000">LINER MUSIC VOLUME4</span><br><span style="color:#000000">THE LINER NOTEZ×ニューロナ　ツーにゃんマンライブ！</span><br><br><span style="color:#000000">撮影：</span><br><a style="color:#000000" href="unsafe:potofu.me/memoko">めもこ</a>さん<br><a href="https://lit.link/rigmaria" target="_blank" rel="noopener noreferrer">りぐまりあ</a>さん</p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

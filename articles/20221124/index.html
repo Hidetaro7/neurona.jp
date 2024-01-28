@@ -58,6 +58,7 @@
   content="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/fad6b2ff491b4abaa4ce5e7487dddc63/_12A1217.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><p><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/fad6b2ff491b4abaa4ce5e7487dddc63/_12A1217.jpg" alt="ニューロナ 猫又ショップをオープンしました" /></p><p>BASEにて、ニューロナのグッズの購入が可能になりました。<br>12月配信開始予定のニューロナ5周年アルバムのお試しCDや猫をモチーフにしたグッズなど置いています。チェックしてね。<br><a href="https://neurona.base.shop/" target="_blank" rel="noopener noreferrer"><strong>ニューロナ 猫又ショップ</strong></a><br><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/36d717b92eae44f0ac3e6fb7b5e08d26/%E3%81%97%E3%81%A3%E3%81%BB%E3%82%9A%E3%82%AA%E3%83%AC%E3%83%B3%E3%82%B7%E3%82%99_%EF%BC%93%E3%81%A4.jpg" alt="" width="1200" height="1200"><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/1ef62ab0f2e74e8482b1a98bb8e9ff86/%E3%83%8F%E3%82%99%E3%83%83%E3%83%81%E7%8C%AB_02.jpg" alt="" width="1200" height="1200"><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/fa757650db0243d795f4495709c323d8/CD_01.jpg" alt="" width="1280" height="1280"></p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>

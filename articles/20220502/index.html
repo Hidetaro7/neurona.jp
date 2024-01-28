@@ -58,6 +58,7 @@
   content="https://neurona.jp/image/hero-image.jpg"
 />
 
+    <script src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div class="app-header">
@@ -96,8 +97,13 @@
         </li>
       </ul>
     </div>
-
+    <div class="">
+      <div id="search"></div>
+    </div>
     <div class="links">
+      <a href="/search" class="jumpu-icon-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a>
       <a
         class=""
         title="Youtube"
@@ -149,7 +155,8 @@
     </div>
   </div>
 </div>
- 
+
+    <div data-pagefind-body>
 <div class="h-20 lg:h-24 bg-black"></div>
 <div class="prose mx-auto py-8 md:py-16 px-4">
   <p class="text-sm mb-8">
@@ -167,7 +174,8 @@
   <main><p><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/6b02d201cc374aee9ef68cbdf4bdb717/8FC5248F-521D-4B70-B395-D40CF9BD0F4A.jpeg" alt="" width="1280" height="720"><br>OPEN：18:30 / START：19:00<br><span style="color:#262626">前売：</span>¥2,900<br><span style="color:#262626">当日：</span>¥3,400<br>＋1Drink ¥600<br><br>配信チケット…￥2,530（税込/手数料別）<br>※2022.5/16　23:59までアーカイブ視聴可能です。<br><br>	出演アーティスト</p><ul><li>datto </li><li>ニューロナ</li><li>YAS33</li></ul><p><br></p><h2 id="h6176aa6887">渋谷ギルティに来場される方</h2><p><a style="background-color:#ffffff" href="https://www.guilty.ne.jp/access.php" target="_blank" rel="noopener noreferrer">会場アクセス</a><br>事前に前売りチケットをご予約いただけるとお得です。<br>こちらの <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTJXZBgT1fR6l7QGSDCWp7ndBz8JkbTpzCZ9BO45gG5bSOxg/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">Google フォーム</a>でご予約ください。<br></p><h2 id="h5cc679ef1d">配信でライブ閲覧をご希望の方</h2><p>まほキャストという配信サービスから見られます。<strong>TwitterかLINEアカウントで簡単にログイン</strong>できます。<br>事前にログインをお試しいただくことをオススメします。</p><ul><li>事前購入・詳細は<a href="https://www.mahocast.com/at/live/478/8308" target="_blank" rel="noopener noreferrer">こちら</a></li><li>視聴ページは<a href="https://www.mahocast.com/lv/detail/8308" target="_blank" rel="noopener noreferrer">こちら</a></li></ul><p><img src="https://images.microcms-assets.io/assets/a00706f6599a46bdb991daa9d5f16392/249c2888fd534042abf999f557aab21f/20210814_%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85.jpeg" alt="" width="595" height="842"></p>
   </main>
 </div>
-<footer class="py-16 mt-16 bg-gray-200">
+</div>
+    <footer class="py-16 mt-16 bg-gray-200">
   <div
     class="container max-w-4xl text-center xl:flex justify-center xl:justify-between flex-col xl:flex-row text-gray-600 px-16 lg:px-0"
   >
@@ -440,5 +448,10 @@
     </script>
 
     <script src="/script/index.js?ver=20210420"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
   </body>
 </html>
