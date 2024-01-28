@@ -1,0 +1,23 @@
+---
+layout: root
+title: 検索
+---
+
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<div class="h-20 lg:h-24 bg-black"></div>
+
+<div class="prose mx-auto my-20 min-h-[50vh] px-4">
+
+  <h1>{{title}}</h1>
+
+<div id="search"></div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  new PagefindUI({ element: "#search" });
+});
+</script>
