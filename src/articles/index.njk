@@ -18,9 +18,8 @@ pagination:
     <h1>News</h1>
     <h2>最新</h2>
     <ul>
-
-      {%- for article in articles.contents | reverse -%} {%- if article.type[0] ===
-      'schedule' -%}
+      {%- for article in articles.contents | reverse -%} {%- if article.type[0]
+      === 'schedule' -%}
       <li>
         <a href="/articles/{{article.permalink}}"> {{article.title}} </a>
       </li>
@@ -29,8 +28,8 @@ pagination:
 
     <h2>過去のイベント</h2>
     <ul>
-      {%- for article in articles.contents -%} {%- if article.type[0] ===
-      'past' -%}
+      {%- for article in articles.contents -%} {%- if article.type[0] === 'past'
+      -%}
 
       <li>
         <span

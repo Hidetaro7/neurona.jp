@@ -50,7 +50,9 @@
     {% include 'ogp.njk' %}
   </head>
   <body>
-    {% include "header.njk" %} {{ content | safe }}{% include "footer.njk" %}
+    {% include "header.njk" %}
+    <div data-pagefind-body>{{ content | safe }}</div>
+    {% include "footer.njk" %}
     <div class="drawer-menu">{% include "global-nav.njk" %}</div>
 
     <script src="/script/lightbox.js"></script>

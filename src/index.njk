@@ -175,9 +175,9 @@ title: ニューロナ
 <div class="container py-8 px-4">
   <h2 class="text-4xl notosans-black text-center mb-8">ライブ・ギャラリー</h2>
   <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-    {%- for article in articles.contents -%} {%- if article.type[0] !==
-    "schedule" %}
-    <li>
+    {%- for article in articles.contents -%} {%- if article.type[0] ===
+    "gallery" %}
+    <li class="bg-gray-500">
       <a
         href="/gallery/{{article.permalink}}"
         class="w-full bg-cover bg-center flex justify-center items-center text-white font-bold relative transform-gpu hover:scale-105 transition-all rounded hover:sepia"
