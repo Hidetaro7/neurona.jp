@@ -11,5 +11,5 @@
   "emmet.includeLanguages": {
     "nunjucks": "html"
   },
-  "githubPullRequests.ignoredPullRequestBranches": ["master"]
+  "githubPullRequests.ignoredPullRequestBranches": ["main"]
 }
