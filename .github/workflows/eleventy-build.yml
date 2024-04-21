@@ -2,7 +2,7 @@ name: ビルドのテスト
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   repository_dispatch:
     types: [foo, orange]
 
