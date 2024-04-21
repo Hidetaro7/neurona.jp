@@ -8,19 +8,19 @@ https://neurona.jp/
 ### npmパッケージをインストールする
 
 ```
-$ yarn
+$ pnpm
 ```
 
 ### ローカルサーバーを立てて開発する
 
 ```
-$ yarn dev
+$ pnpm dev
 ```
 
 ### デプロイ用にビルドする
 
 ```
-$ yarn build
+$ pnpm build
 ```
 
 ## GitHubワークフロー

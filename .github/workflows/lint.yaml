@@ -9,10 +9,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 14
-          cache: yarn
+          node-version: 20
+          cache: pnpm
       - uses: reviewdog/action-setup@v1
-      - run: yarn install --check-files --frozen-lockfile --non-interactive
-      - run: yarn --silent lint:rdjson | reviewdog -f=rdjson -reporter=github-pr-review -fail-on-error=true
+      - run: pnpm install --check-files --frozen-lockfile --non-interactive
+      - run: pnpm --silent lint:rdjson | reviewdog -f=rdjson -reporter=github-pr-review -fail-on-error=true
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}

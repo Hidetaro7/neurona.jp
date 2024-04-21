@@ -2,13 +2,12 @@ name: ビルドのテスト
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   repository_dispatch:
     types: [foo, orange]
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     strategy:
@@ -21,13 +20,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          
+
       - name: Touch secret env ${{ secrets.XKEY }}
         run: |
           touch .env
           echo "XKEY=${{ secrets.XKEY }}" >> .env
-      - run: yarn
-      - run: yarn build
+      - run: pnpm
+      - run: pnpm build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

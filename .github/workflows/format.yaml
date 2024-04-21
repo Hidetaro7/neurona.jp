@@ -11,12 +11,12 @@ jobs:
           ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v2
         with:
-          node-version: 14
-          cache: yarn
-      - run: yarn install --check-files --frozen-lockfile --non-interactive
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --check-files --frozen-lockfile --non-interactive
       - id: format
         run: |
-          yarn format
+          pnpm format
           echo "::set-output name=status::$(git status --porcelain)"
       - if: steps.format.outputs.status != ''
         run: |
