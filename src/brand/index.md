@@ -19,7 +19,7 @@ description: ニューロナのアーティスト写真やロゴマークのダ�
 
 ## アーティスト写真
 
-![ニューロナのアーティスト写真](/image/artist_photo.jpg)
+![ニューロナのアーティスト写真](/download/neurona_photo.jpg)
 
 <p class="text-center">
 <a class="jumpu-button text-xl" href="/download/neurona_photo.jpg.zip" download title="ダウンロード">アーティスト写真のダウンロード（JPEG形式）</a>
