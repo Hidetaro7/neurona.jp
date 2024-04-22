@@ -7,10 +7,10 @@
       src="https://kit.fontawesome.com/652b3f25f9.js"
       crossorigin="anonymous"
     ></script>
-    <title>{{ title }}</title>
+    <title>{{ title or site.name }}</title>
     <meta
       name="description"
-      content="Hello,underworld. We are underground pop artist “Neurona”. Music / Video / Illustration / CG art / Web App etc"
+      content="{{ description or site.description }}"
     />
     <link
       rel="stylesheet"
