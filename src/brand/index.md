@@ -1,6 +1,7 @@
 ---
 layout: root
-title: ブランド | ニューロナ
+title: ブランド
+description: ニューロナのアーティスト写真やロゴマークのダウンロードができます
 ---
 
 <div class="h-20 lg:h-24 bg-black"></div>

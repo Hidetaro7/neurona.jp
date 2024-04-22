@@ -6,8 +6,9 @@ pagination:
   alias: article
 permalink: "gallery/{{ article.permalink }}/"
 eleventyComputed:
-  title: "ニューロナ ライブ・ギャラリー {{ article.title }}"
+  title: "{{ article.title }}"
   thumbnail: "{{article.thumbnail.url}}"
+  description: "{{ article.title }}のライブ写真や動画を掲載しています。"
 ---
 
 <div
