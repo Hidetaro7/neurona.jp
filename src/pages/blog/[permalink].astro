@@ -1,4 +1,5 @@
 ---
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getBlogs, getBlogByPermalink } from "../../library/microcms";
 
 // 詳細記事ページの全パスを取得
@@ -16,20 +17,27 @@ const { permalink } = Astro.params;
 const blog = await getBlogByPermalink(permalink);
 const article = blog.contents[0];
 
+// desc
+
+const createDescription = (content: string) => {
+  const text = content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, "");
+  return text.slice(0, 120);
+};
+
+// date
+
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString("ja-JP", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
 ---
-
-
-<html lang="ja">
-	<head>
-		<meta charset="utf-8">
-	</head>
-
-	<body>
-		<main>
-     
+<BaseLayout title={article.title} description={createDescription(article.content)}>
+  <article class="prose">
     <h1 class="title">{article.title}</h1>
-    <p class="publishedAt">公開日時：{blog.publishedAt}</p>
+    <p class="publishedAt">公開日時：{formatDate(article.publishedAt)}</p>
     <div class="post" set:html={article.content}></div>
-  </main>
-	</body>
-</html>
+  </article>
+</BaseLayout>

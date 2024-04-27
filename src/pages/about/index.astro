@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import nightclub from '../../assets/photo-nightclub.jpg';
+---
+
+<BaseLayout title="私たちについて | ニューロナ" description="私たちについて">
+	<section>
+		<h1>私たちについて</h1>
+        <p>ニューロナです！</p>
+        <Image src={nightclub} class="w-1/3" alt="Nightclub" />
+	</section>
+</BaseLayout>
