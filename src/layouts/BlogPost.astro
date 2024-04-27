@@ -1,0 +1,21 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="ja">
+	<head>
+		
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article>
+					<slot />
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>

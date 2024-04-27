@@ -1,0 +1,29 @@
+---
+
+
+import { getBlogs } from "../../library/microcms";
+const response = await getBlogs({ fields: ["id", "title", "permalink"] });
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<main>
+			<section>
+				<ul>
+				{
+					response.contents.map((content: any) => (
+					<li>
+					{content.type}
+						<a href={`/blog/${content.permalink}`}>{content.title}</a>
+					</li>
+					))
+				}
+				</ul>
+			</section>
+		</main>
+	</body>
+</html>
