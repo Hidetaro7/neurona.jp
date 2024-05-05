@@ -1,30 +1,41 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import Logo from "../components/Logo.astro";
+import { Icon } from 'astro-iconify'
 ---
 
-<header class="sticky top-0 h-16">
-	<div class="container flex items-center justify-between gap-4 h-full">
-			<a href="/" class="w-28 text-black dark:text-white">
+<header class="sticky top-0 h-20">
+	<div class="container flex items-center justify-between h-full">
+			<a href="/" class="w-28 text-black dark:text-white mr-12">
 				<Logo />
 			</a>
-			<div class="flex gap-x-4">
+			<div class="flex justify-center gap-x-4 grow">
 				<HeaderLink href="/about">MESSAGE</HeaderLink>
 				<HeaderLink href="/video">VIDEO</HeaderLink>
 				<HeaderLink href="/music">Music</HeaderLink>
 				<HeaderLink href="/article">News</HeaderLink>
 			</div>
-			<div class="shrink">
-				<div class="toggle-switch w-8 h-4">
-					<input id="change-dark" type="checkbox" />
-					<label for="change-dark">
-						<span class="w-4 h-4"></span>
-					</label>
-				</div>
-			</div>
-			<nav class="flex items-center">
+			<nav class="flex items-center shrink gap-x-4">
+				<a href="https://www.youtube.com/channel/UCRKVZiebYGhWRCDxY3OA8cg">
+					<Icon name="fa6-brands:youtube" size="1.5rem" />
+				</a>
+				<a href="https://twitter.com/neurona_jp">
+					<Icon name="fa6-brands:x-twitter" size="1.5rem" />
+				</a>
+				<a href="https://www.instagram.com/neurona_jp/">
+					<Icon name="fa6-brands:instagram" size="1.5rem" />
+				</a>
 				
+				<div class="shrink">
+					<div class="toggle-switch w-8 h-4">
+						<input id="change-dark" type="checkbox" />
+						<label for="change-dark" class="!absolute top-0">
+							<span class="w-4 h-4"></span>
+						</label>
+					</div>
+				</div>
 			</nav>
+
 	</div>
 </header>
 

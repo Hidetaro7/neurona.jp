@@ -4,6 +4,10 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", Meiryo, sans-serif;
+}
+
 .sr-only {
   border: 0;
   padding: 0;
