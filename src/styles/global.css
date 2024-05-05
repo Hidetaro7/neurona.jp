@@ -25,3 +25,37 @@ body {
   /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
 }
+
+.bread-crumb {
+  @apply my-4 text-xs;
+  a {
+    @apply mx-2 first:ml-0;
+  }
+}
+
+.playing-bars {
+  @apply flex justify-center items-center gap-0.5;
+  height: 100%;
+  span {
+    @apply w-1 h-4 bg-white;
+    animation: playing 0.4s 0.5s infinite;
+    &:nth-child(2) {
+      animation-delay: 0.8s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+  }
+}
+
+@keyframes playing {
+  0% {
+    transform: scaleY(0.2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.2);
+  }
+}

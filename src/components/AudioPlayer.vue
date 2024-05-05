@@ -50,7 +50,7 @@ const play = () => {
   >
     <div class="flex gap-x-4">
       <div
-        class="w-11 aspect-square bg-white rounded shrink-0 place-content-center grid"
+        class="w-11 aspect-square bg-white rounded shrink-0 place-content-center grid bg-[url(/photo-square.jpg)] bg-cover bg-center bg-no-repeat"
       >
         <Icon
           v-show="!isPlaying"
@@ -59,12 +59,14 @@ const play = () => {
         />
         <div
           v-show="isPlaying"
-          class="rounded-full w-8 aspect-square border border-gray-400 place-content-center grid relative"
+          class="rounded-full w-10 aspect-square border border-gray-400 place-content-center grid relative"
         >
-          <Icon icon="fxemoji:catside" class="text-xl animate-spin" />
+          <div class="playing-bars">
+            <span></span><span></span><span></span>
+          </div>
 
           <div
-            class="rounded-full w-8 aspect-square border-t-2 border-primary-700 absolute z-10 animate-spin"
+            class="rounded-full w-10 aspect-square border-t-4 border-white absolute z-10 animate-spin"
           ></div>
         </div>
       </div>

@@ -35,9 +35,13 @@ const formatDate = (date: string) => {
 };
 ---
 <BaseLayout title={article.title} description={createDescription(article.content)}>
-  <article class="prose">
+  <article class="max-w-3xl mx-auto">
+    <div class="bread-crumb">
+      <a href="/">ホーム</a> &gt;
+      <a href="/articles">ブログ</a>
+    </div>
     <h1 class="title">{article.title}</h1>
     <p class="publishedAt">公開日時：{formatDate(article.publishedAt)}</p>
-    <div class="post" set:html={article.content}></div>
+    <div set:html={article.content}></div>
   </article>
 </BaseLayout>

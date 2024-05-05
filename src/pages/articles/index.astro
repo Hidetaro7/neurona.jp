@@ -5,13 +5,13 @@ const response = await getBlogs({ fields: ["id", "title", "permalink"] });
 ---
 
 <BaseLayout title="News" description="ニューロナの活動のお知らせです">
-	<section class="prose">
+	<section>
 		<ul>
 		{
 			response.contents.map((content: any) => (
 			<li>
 			{content.type}
-				<a href={`/blog/${content.permalink}`}>{content.title}</a>
+				<a href={`/articles/${content.permalink}`}>{content.title}</a>
 			</li>
 			))
 		}
