@@ -21,4 +21,7 @@ export default defineConfig({
     service: passthroughImageService(),
   },
   outDir: "./docs",
+  devToolbar: {
+    enabled: false,
+  },
 });

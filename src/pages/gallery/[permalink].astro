@@ -38,10 +38,11 @@ const formatDate = (date: string) => {
   <article class="max-w-3xl mx-auto">
     <div class="bread-crumb">
       <a href="/">ホーム</a> &gt;
-      <a href="/articles">NEWS</a>
+      <a href="/gallery">GALLERY</a>
     </div>
     <h1 class="title">{article.title}</h1>
     <p class="publishedAt">公開日時：{formatDate(article.publishedAt)}</p>
     <div set:html={article.content}></div>
+    <div set:html={article.photoGallery}></div>
   </article>
 </BaseLayout>

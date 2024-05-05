@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getBlogs } from "../../library/microcms";
+
+import { Image } from "astro:assets";
+const response = await getBlogs({ filters:'type[contains]gallery', fields: ["id", "title", "permalink", "thumbnail"], limit: 1000});
+---
+
+<BaseLayout title="News" description="ニューロナの活動のお知らせです">
+	<section>
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+		{
+			response.contents.map((content: any) => (
+			<a href={`/gallery/${content.permalink}`} class="no-underline hover:opacity-80">
+				<Image class="m-0 aspect-video" src={content.thumbnail.url} alt={content.title} width={content.thumbnail.width} height={content.thumbnail.height} />
+				
+				<div class="font-bold text-center my-4 leading-tight">
+				{content.title}
+				</div>
+			</a>
+			))
+		}
+		</div>
+	</section>
+</BaseLayout>

@@ -1,18 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getBlogs } from "../../library/microcms";
-const response = await getBlogs({ fields: ["id", "title", "permalink"] });
+const response = await getBlogs({ fields: ["id", "title", "permalink", "type"],filters:'type[not_contains]gallery',limit:1000 });
 ---
 
 <BaseLayout title="News" description="ニューロナの活動のお知らせです">
-	<section>
+	<section class="max-w-2xl mx-auto">
 		<ul>
 		{
 			response.contents.map((content: any) => (
-			<li>
-			{content.type}
-				<a href={`/articles/${content.permalink}`}>{content.title}</a>
-			</li>
+					<li>
+						<span class="tag text-black rounded-full mr-2">
+					{content.type}</span>
+						<a href={`/articles/${content.permalink}`}>{content.title}</a>
+					</li>
 			))
 		}
 		</ul>
