@@ -3,12 +3,14 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import AudioPlayer from '../components/AudioPlayer.vue';
+import { ViewTransitions } from 'astro:transitions';
 const props = Astro.props
 ---
 
 <html lang="ja" class="dark">
 	<head>
 		<BaseHead title={props.title} description={props.description} />
+		<ViewTransitions />
 	</head>
 
 	<body class={`prose dark:prose-invert bg-gray-100 dark:bg-gray-900 max-w-none ${props.bgImage} bg-cover bg-center min-h-dvh flex jusity-start flex-col`}>
@@ -20,6 +22,8 @@ const props = Astro.props
 				</article>
 			</main>
 			
-			<AudioPlayer client:load />
+			<div transition:persist>
+				<AudioPlayer client:load />
+			</div>
 	</body>
 </html>
