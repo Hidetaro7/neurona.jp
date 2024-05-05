@@ -30,17 +30,6 @@ export type BlogResponse = {
 export const getBlogs = async (queries?: MicroCMSQueries) => {
   return await client.get<BlogResponse>({ endpoint: "neurona", queries });
 };
-export const getBlogDetail = async (
-  contentId: string,
-  queries?: MicroCMSQueries
-) => {
-  return await client.getListDetail<Blog>({
-    endpoint: "neurona",
-    contentId,
-    queries,
-  });
-};
-
 export const getBlogByPermalink = async (permalink) => {
   return await client.get({
     endpoint: "neurona",

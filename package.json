@@ -13,7 +13,16 @@
     "@astrojs/mdx": "^2.3.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vue": "^4.1.0",
+    "@iconify/vue": "^4.1.2",
+    "@jumpu-ui/tailwindcss": "1.0.1-alpha.6",
+    "@tailwindcss/typography": "^0.5.13",
     "astro": "^4.7.0",
-    "microcms-js-sdk": "^3.1.1"
+    "astro-iconify": "^1.2.0",
+    "microcms-js-sdk": "^3.1.1",
+    "sass": "^1.75.0",
+    "tailwindcss": "^3.4.3",
+    "vue": "^3.4.25"
   }
 }

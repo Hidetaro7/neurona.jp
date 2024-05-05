@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "title": "Z.A.C.O",
+    "src": "/songs/zaco.mp3"
+  },
+  {
+    "id": 1,
+    "title": "Promise",
+    "src": "/songs/promise.mp3"
+  },
+  {
+    "id": 2,
+    "title": "わたしはねこ",
+    "src": "/songs/queen.mp3"
+  },
+  {
+    "id": 3,
+    "title": "四足のヒーロー",
+    "src": "/songs/yonsoku.mp3"
+  },
+  {
+    "id": 4,
+    "title": "ねこねこ、ねこね",
+    "src": "/songs/nekonekonekone.mp3"
+  },
+  {
+    "id": 5,
+    "title": "SHIMOBE",
+    "src": "/songs/shimobe.mp3"
+  }
+]
