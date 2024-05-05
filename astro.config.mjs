@@ -20,4 +20,5 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
+  outDir: "./docs",
 });
