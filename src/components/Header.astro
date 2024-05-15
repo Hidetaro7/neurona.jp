@@ -1,0 +1,55 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import Logo from "../components/Logo.astro";
+import { Icon } from 'astro-iconify'
+---
+
+<header class="sticky top-0 h-20" transition:persist>
+	<div class="container flex items-center justify-between h-full">
+		<a href="/" class="w-28 text-black dark:text-white mr-12 shrink-0">
+			<Logo />
+		</a>
+		<div class="md:flex justify-center gap-x-4 grow hidden">
+			<HeaderLink href="/about">ABOUT US</HeaderLink>
+			<HeaderLink href="/gallery">GALLERY</HeaderLink>
+			<HeaderLink href="/articles">NEWS</HeaderLink>
+		</div>
+		<nav class="md:flex items-center shrink gap-x-4 hidden">
+			<a href="https://www.youtube.com/channel/UCRKVZiebYGhWRCDxY3OA8cg">
+				<Icon name="fa6-brands:youtube" size="1.5rem" />
+			</a>
+			<a href="https://twitter.com/neurona_jp">
+				<Icon name="fa6-brands:x-twitter" size="1.5rem" />
+			</a>
+			<a href="https://www.instagram.com/neurona_jp/">
+				<Icon name="fa6-brands:instagram" size="1.5rem" />
+			</a>
+			
+			<div class="shrink">
+				<div class="toggle-switch w-8 h-4">
+					<input id="change-dark" type="checkbox" />
+					<label for="change-dark" class="!absolute top-0">
+						<span class="w-4 h-4"></span>
+					</label>
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<script>
+		const toggleSwitch = document.querySelector('.toggle-switch input');
+		toggleSwitch?.addEventListener('change', () => {
+			document.documentElement.classList.toggle('dark');
+		});
+		const header = document.querySelector('header');
+		window.addEventListener("scroll", () => {
+			header?.classList.toggle('scrolled-header', window.scrollY > 0);
+		});
+</script>
+
+<style>
+	.scrolled-header {
+		@apply shadow backdrop-blur-lg;
+	}
+</style>

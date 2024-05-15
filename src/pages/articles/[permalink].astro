@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getBlogs, getBlogByPermalink } from "../../library/microcms";
+
+// 詳細記事ページの全パスを取得
+export async function getStaticPaths() {
+  const response = await getBlogs({ fields: ["permalink"], limit: 1000 });
+  return response.contents.map((content: any) => ({
+    params: {
+      permalink: content.permalink,
+    },
+  }));
+}
+
+//記事の詳細情報を取得
+const { permalink } = Astro.params;
+const blog = await getBlogByPermalink(permalink);
+const article = blog.contents[0];
+
+// desc
+
+const createDescription = (content: string) => {
+  const text = content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, "");
+  return text.slice(0, 120);
+};
+
+// date
+
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString("ja-JP", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+---
+<BaseLayout title={article.title} description={createDescription(article.content)}>
+  <article class="max-w-3xl mx-auto">
+    <div class="bread-crumb">
+      <a href="/">ホーム</a> &gt;
+      <a href="/articles">NEWS</a>
+    </div>
+    <h1 class="title">{article.title}</h1>
+    <p class="publishedAt">公開日時：{formatDate(article.publishedAt)}</p>
+    <div set:html={article.content}></div>
+  </article>
+</BaseLayout>

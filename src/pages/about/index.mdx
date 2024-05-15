@@ -1,0 +1,46 @@
+---
+---
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import nightclub from "../../assets/photo-nightclub.jpg";
+
+<BaseLayout title="私たちについて | ニューロナ" description="私たちについて">
+
+# 私たちについて
+
+<div class="sm:flex gap-16">
+
+<div class="sm:w-1/3 shrink-0">
+  <Image src={nightclub} class="w-full" alt="Nightclub" />
+</div>
+
+<section>
+
+## ニューロナ
+
+2017 年 12 月結成。ボーカル Tomo とサウンドクリエイター Hideki からなる、アンダーグラウンドポップユニット。本業がクリエイターのため音楽だけではなく Web やアプリ、ミュージックビデオなども自らで制作。
+
+結成時は Tomo が化学物質過敏症という病で、柔軟剤や洗剤・整髪料・タバコなどに対するアレルギー及び中毒様の症状を起こすためライブハウスでの公演が不可能であり、SNS 投稿、音源配信、インターネットライブのみという限定された環境で Instagram を中心に活動。
+2020 年 8 月、Tomo の病が寛解。
+
+コロナ禍の影響で仙台のライブハウスの経営が難しくなっているということを受け、チャリティープロジェクト「仙台ライブハウス支援プロジェクト【仙台 EFFECT】」に参加しコンピレーションアルバム「Butterfly Effect」に音源提供。翌 9 月には仙台のライブハウス space Zero にて、自宅収録の配信で参加。配信のみとはいえ、初めてライブハウスイベントへの参加が実現。
+2021 年 7 月 22 日・23 日、ライブハウス space Zero＆SSM 主催の 2Days ライブに出演。バーチャルからリアルの世界への出現が叶った。
+
+今後は社会情勢も見つつ、よりリアルの場でのライブ活動を視野にいれている。
+
+これまでのリリースしたオリジナル曲は 30 曲以上に上り、絶版作品のミニアルバムやシングル含め、累計 12 作品ある。
+
+## NEURONA.JP
+
+Formed in December 2017. He is active mainly in music distribution online, and since 2018, he has been performing online live with Tomo, a vocalist, and Hideki, a guitar and composer, mainly on Instagram.
+He creates performance videos and music videos by himself and posts them on SNS. There is no activity such as live house, and he enthusiastically produces music from pop music to hard music.
+
+It was scheduled to be the first live concert at Sendai Space Zero in January 2021, but due to the state of emergency, it was recorded as a video.
+In the future, while watching the social situation, We are also considering live activities as well as producing new genres of music.
+
+So far, more than 30 original songs have been released, and there are a total of 12 songs including out-of-print mini-albums and singles.
+
+</section>
+</div>
+</BaseLayout>
