@@ -46,6 +46,12 @@ body {
       animation-delay: 0.2s;
     }
   }
+  &.mini-bar {
+    @apply w-6;
+    span {
+      @apply w-0.5 h-2;
+    }
+  }
 }
 
 @keyframes playing {

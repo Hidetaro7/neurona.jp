@@ -15,15 +15,14 @@ const props = Astro.props
 
 	<body class={`prose dark:prose-invert bg-gray-100 dark:bg-gray-900 max-w-none ${props.bgImage} bg-cover bg-center min-h-dvh flex jusity-start flex-col`}>
 		<Header />
+		<main class="grow container py-12">
+			<article>
+				<slot />
+			</article>
+		</main>
 		
-			<main class="grow container py-12">
-				<article>
-					<slot />
-				</article>
-			</main>
-			
-			<div transition:persist>
-				<AudioPlayer client:load />
-			</div>
+		<div transition:persist>
+			<AudioPlayer client:load />
+		</div>
 	</body>
 </html>
