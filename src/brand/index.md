@@ -31,7 +31,7 @@ description: ニューロナのアーティスト写真やロゴマークのダ�
 
 #### 白背景用
 
-<div class="jumpu-card p-4">
+<div class="jumpu-card p-4 flex justify-center">
 
 ![ニューロナのロゴマーク（日本国内向け）](/image/neurona_logo_jp_black.svg)
 
@@ -42,7 +42,7 @@ description: ニューロナのアーティスト写真やロゴマークのダ�
 
 #### 黒背景用
 
-<div class="jumpu-card p-4 bg-black">
+<div class="jumpu-card p-4 bg-black flex justify-center">
 
 ![ニューロナのロゴマーク（日本国内向け）](/image/neurona_logo_jp_white.svg)
 
