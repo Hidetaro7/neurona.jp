@@ -29,12 +29,27 @@ description: ニューロナのアーティスト写真やロゴマークのダ�
 
 ### 日本国内向け
 
-![ニューロナのロゴマーク（日本国内向け）](/image/neurona_jp_logo.png)
+#### 白背景用
+
+<div class="jumpu-card p-4">
+
+![ニューロナのロゴマーク（日本国内向け）](/image/neurona_logo_jp_black.svg)
+
+</div>
 
 <i class="fal fa-download mr-1"></i>
-<a href="/download/neurona_jp_logo.ai.zip" download title="ダウンロード">ダウンロード（213KB／Adobe Illustrator形式）</a>  
+<a href="/image/neurona_logo_jp_black.svg" download title="白背景用ダウンロード">白背景用ダウンロード（1KB／SVG形式）</a>
+
+#### 黒背景用
+
+<div class="jumpu-card p-4 bg-black">
+
+![ニューロナのロゴマーク（日本国内向け）](/image/neurona_logo_jp_white.svg)
+
+</div>
+
 <i class="fal fa-download mr-1"></i>
-<a href="/image/neurona_logo_jp_black.svg" download title="ダウンロード">ダウンロード（1KB／SVG形式）</a>
+<a href="/image/neurona_logo_jp_white.svg" download title="黒背景用ダウンロード">黒背景用ダウンロード（1KB／SVG形式）</a>
 
 Webページに直接反映される場合は以下のHTMLタグを貼り付けてください。  
 この例では横幅200pxになるように設定しています、適宜数値を変更してください。
