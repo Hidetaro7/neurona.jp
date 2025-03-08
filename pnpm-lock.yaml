@@ -44,8 +44,8 @@ devDependencies:
     specifier: 10.2.6
     version: 10.2.6(postcss@8.4.38)
   axios:
-    specifier: ^0.28.0
-    version: 0.28.1
+    specifier: ^1.0.0
+    version: 1.8.2
   cachekill:
     specifier: ^3.0.2
     version: 3.0.2
@@ -911,8 +911,8 @@ packages:
       possible-typed-array-names: 1.0.0
     dev: true
 
-  /axios@0.28.1:
-    resolution: {integrity: sha512-iUcGA5a7p0mVb4Gm/sy+FSECNkPFT4y7wt6OM/CDpO/OnNCvSs3PoMG8ibrC9jRoGYU0gUK5pXVC4NPXq6lHRQ==}
+  /axios@1.8.2:
+    resolution: {integrity: sha512-ls4GYBm5aig9vWx8AWDSGLpnpDQRtWAfrjU+EuytuODrFBkqesN2RkOQCBzrA1RQNHw1SmRMSDDDSwzNAYQ6Rg==}
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
