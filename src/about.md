@@ -13,7 +13,10 @@ description: ニューロナとは何者か？について紹介しています�
 
 # ニューロナについて
 
-![ニューロナ](/image/members-front.jpg)
+
+<div class="aspect-video">
+<iframe class="w-full h-full" width="560" height="315" src="https://www.youtube.com/embed/O-a9I5kAfJw?si=yl55BavGAcvj2F5T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## 結成
 
@@ -54,6 +57,8 @@ Zero＆SSM主催の2Daysライブに出演。
 翌 2023年 7月、リーダーのちくわが死去。立て続けに大切なメンバーとの別れを余儀なくされたとき、チケットノルマを達成するため都内で活動することよりも、大切な猫との時間と楽しむことの尊さについて真剣に考えはじめていた。
 
 多くのアーティストはファンとの交流などに様々な工夫や努力に向かったり、また、解散していくアーティストもいたりと、大きな変化が訪れていたなかで、ニューロナが決めたことは、地元、神奈川県茅ヶ崎市界隈で好きな猫や人たちと、好きな音楽とともに暮らすことだった。
+
+![ニューロナ](/image/members-front.jpg)
 
 ## 別れから、新しいメンバーとの出会い
 
