@@ -36,7 +36,7 @@ title: ニューロナ あんぐらねこねこ音楽団
     <h2 class="text-4xl my-4 text-gray-500 notosans-black">
       次のねこ時間は...
     </h2>
-    {%- for article in articles.contents | reverse -%} {%- if
+    {%- for article in articles.contents -%} {%- if
     article.type.indexOf("schedule") >= 0 %}
     <div class="font-bold text-xl flex items-center">
       <i class="fal fa-arrow-right mr-4"></i>
