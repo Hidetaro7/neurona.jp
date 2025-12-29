@@ -1,0 +1,95 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import { getArticles } from '@/lib/microcms';
+import type { Article } from '@/lib/types';
+
+const title = 'ニューロナ - 記事一覧';
+const description = 'ニューロナの記事一覧ページ';
+const thumbnail = '/image/ogp_image.png';
+
+// Fetch articles data from microCMS with error handling
+let articles: Article[] = [];
+let hasError = false;
+
+try {
+  articles = await getArticles();
+} catch (error) {
+  console.error('Failed to fetch articles from microCMS:', error);
+  hasError = true;
+}
+
+// Sort articles by publishedAt date (newest first)
+articles.sort((a, b) => {
+  const dateA = new Date(a.publishedAt);
+  const dateB = new Date(b.publishedAt);
+  return dateB.getTime() - dateA.getTime();
+});
+
+// Format date function
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(date);
+}
+---
+
+<RootLayout {title} {description} {thumbnail}>
+  <div class="h-20 lg:h-24 bg-black"></div>
+  <div class="container mx-auto py-8 md:py-16 px-4">
+    <div class="prose max-w-none mx-auto mb-8">
+      <p class="text-sm mb-8">
+        <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i>
+        <span>News</span>
+      </p>
+      <h1 class="text-4xl md:text-5xl notosans-black text-center mb-8">記事一覧</h1>
+    </div>
+
+    {hasError ? (
+      <div class="text-center py-16">
+        <p class="text-gray-500 text-lg">データの取得に失敗しました。</p>
+      </div>
+    ) : articles.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {articles.map((article) => (
+          <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+            <a href={`/articles/${article.permalink}`} class="block">
+              {article.thumbnail && (
+                <div class="aspect-video bg-gray-200 overflow-hidden">
+                  <img
+                    src={article.thumbnail.url}
+                    alt={article.title}
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div class="p-4">
+                <div class="mb-2">
+                  {article.type && article.type.length > 0 && (
+                    <span class="inline-flex rounded-full py-1 px-3 border border-gray-300 text-xs">
+                      {article.type.join(', ')}
+                    </span>
+                  )}
+                </div>
+                <h2 class="text-lg font-bold mb-2 line-clamp-2 hover:text-fuchsia-700 transition-colors">
+                  {article.title}
+                </h2>
+                <p class="text-sm text-gray-500">
+                  <i class="far fa-calendar-alt mr-1"></i>
+                  {formatDate(article.publishedAt)}
+                </p>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <div class="text-center py-16">
+        <p class="text-gray-500 text-lg">現在、記事はありません。</p>
+      </div>
+    )}
+  </div>
+</RootLayout>
