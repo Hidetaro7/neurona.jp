@@ -2,6 +2,7 @@
 import RootLayout from '@/layouts/RootLayout.astro';
 import { getGalleries } from '@/lib/microcms';
 import type { Gallery } from '@/lib/types';
+import { formatDate } from '@/utils/dateFormatter';
 
 export async function getStaticPaths() {
   try {
@@ -27,17 +28,7 @@ const description = gallery.description || `${gallery.title}のライブ写真�
 
 // Format date for display
 // Note: Some galleries may only have createdAt, so we fallback to it if publishedAt is not available
-const formatDate = (dateString?: string) => {
-  if (!dateString) return '';
-  const date = new Date(dateString);
-  return date.toLocaleDateString('ja-JP', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-};
-
-const publishedDate = formatDate(gallery.publishedAt || gallery.createdAt);
+const publishedDate = formatDate(gallery.publishedAt || gallery.createdAt || '');
 ---
 
 <RootLayout
