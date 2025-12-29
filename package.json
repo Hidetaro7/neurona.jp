@@ -33,7 +33,7 @@
     "@typescript-eslint/parser": "^8.50.1",
     "astro": "^5.16.6",
     "autoprefixer": "10.2.6",
-    "axios": "^0.28.0",
+    "axios": "^0.30.0",
     "cachekill": "^3.0.2",
     "cssnano": "^5.1.5",
     "dotenv": "^16.6.1",
