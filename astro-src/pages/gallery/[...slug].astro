@@ -26,6 +26,7 @@ const { gallery } = Astro.props;
 const description = gallery.description || `${gallery.title}のライブ写真や動画を掲載しています。`;
 
 // Format date for display
+// Note: Some galleries may only have createdAt, so we fallback to it if publishedAt is not available
 const formatDate = (dateString?: string) => {
   if (!dateString) return '';
   const date = new Date(dateString);
