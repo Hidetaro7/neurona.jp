@@ -2,6 +2,7 @@
 import RootLayout from '@/layouts/RootLayout.astro';
 import { getArticles } from '@/lib/microcms';
 import type { Article } from '@/lib/types';
+import { formatDate } from '@/utils/dateFormatter';
 
 const title = 'ニューロナ - 記事一覧';
 const description = 'ニューロナの記事一覧ページ';
@@ -24,15 +25,6 @@ try {
   hasError = true;
 }
 
-// Format date function
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat('ja-JP', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).format(date);
-}
 ---
 
 <RootLayout {title} {description} {thumbnail}>
