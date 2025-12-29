@@ -1,68 +1,90 @@
 /**
- * microCMS API Client using fetch API
+ * microCMS API Client using Fetch API
  * No axios dependency required
+ * Based on src/_data/articles.js implementation
  */
 
-interface MicroCMSConfig {
-  serviceDomain: string;
-  apiKey: string;
-}
+import { parse } from 'node-html-parser';
+import type { Article, Gallery, MicroCMSResponse } from './types';
 
-interface FetchOptions {
-  endpoint: string;
-  queries?: Record<string, string | number>;
-}
+const API_ENDPOINT = import.meta.env.MICROCMS_API_ENDPOINT;
+const API_KEY = import.meta.env.MICROCMS_API_KEY;
 
-export class MicroCMSClient {
-  private config: MicroCMSConfig;
-
-  constructor(config: MicroCMSConfig) {
-    this.config = config;
-  }
-
-  /**
-   * Fetch data from microCMS API using native fetch
-   */
-  async get<T>(options: FetchOptions): Promise<T> {
-    const { endpoint, queries = {} } = options;
-    
-    const queryString = new URLSearchParams(
-      Object.entries(queries).reduce((acc, [key, value]) => {
-        acc[key] = String(value);
-        return acc;
-      }, {} as Record<string, string>)
-    ).toString();
-
-    const url = `https://${this.config.serviceDomain}.microcms.io/api/v1/${endpoint}${
-      queryString ? `?${queryString}` : ''
-    }`;
-
-    const response = await fetch(url, {
-      headers: {
-        'X-MICROCMS-API-KEY': this.config.apiKey,
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`microCMS API error: ${response.status} ${response.statusText}`);
+/**
+ * Parse photo gallery HTML and transform img tags
+ * Converts img tags to lightbox-compatible anchors with lazy loading
+ */
+export function parsePhohoGallery(htmldata: any): any {
+  const resArray = { ...htmldata };
+  resArray.contents.forEach((article: Article) => {
+    if (article.photoGallery) {
+      let images = '';
+      const parsed = parse(article.photoGallery);
+      const pTag = parsed.querySelector('p');
+      if (pTag) {
+        pTag.querySelectorAll('img').forEach((img) => {
+          const { src, width, height } = img.attributes;
+          images += `<a href="${src}" data-lg-size="${width}-${height}"><img data-src="${src}" class="lazyload" loading="lazy" alt="" width="${width}" height="${height}" /></a>`;
+        });
+        article.photoGallery = images;
+      }
     }
-
-    return response.json();
-  }
+  });
+  return resArray;
 }
 
 /**
- * Example usage:
- * 
- * import { MicroCMSClient } from '@/lib/microcms';
- * 
- * const client = new MicroCMSClient({
- *   serviceDomain: import.meta.env.MICROCMS_SERVICE_DOMAIN,
- *   apiKey: import.meta.env.MICROCMS_API_KEY,
- * });
- * 
- * const articles = await client.get({
- *   endpoint: 'articles',
- *   queries: { limit: 10 },
- * });
+ * Fetch all articles from microCMS
+ * @returns Promise<Article[]> - Array of all articles
  */
+export async function getArticles(): Promise<Article[]> {
+  const response = await fetch(
+    `${API_ENDPOINT}/neurona?limit=100`,
+    {
+      headers: {
+        'X-API-KEY': API_KEY,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`microCMS API error: ${response.status}`);
+  }
+
+  const data: MicroCMSResponse<Article> = await response.json();
+  const renderHTML = parsePhohoGallery(data);
+  return renderHTML.contents;
+}
+
+/**
+ * Fetch a single article by slug (permalink)
+ * @param slug - The article slug/permalink
+ * @returns Promise<Article | undefined> - The article or undefined if not found
+ */
+export async function getArticleBySlug(slug: string): Promise<Article | undefined> {
+  const articles = await getArticles();
+  return articles.find((article) => article.permalink === slug);
+}
+
+/**
+ * Fetch all gallery data from microCMS
+ * @returns Promise<Gallery[]> - Array of all galleries
+ */
+export async function getGalleries(): Promise<Gallery[]> {
+  const response = await fetch(
+    `${API_ENDPOINT}/neurona?limit=100`,
+    {
+      headers: {
+        'X-API-KEY': API_KEY,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`microCMS API error: ${response.status}`);
+  }
+
+  const data: MicroCMSResponse<Gallery> = await response.json();
+  const renderHTML = parsePhohoGallery(data);
+  return renderHTML.contents;
+}
