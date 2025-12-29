@@ -1,0 +1,90 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import GlobalNav from '@/components/GlobalNav.astro';
+import OGP from '@/components/OGP.astro';
+import { site } from '@/lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  thumbnail?: string;
+}
+
+const { title, description, thumbnail } = Astro.props;
+
+const pageTitle = title || site.name;
+const pageDescription = description || site.description;
+---
+
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <script
+      is:inline
+      src="https://kit.fontawesome.com/652b3f25f9.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css"
+    />
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.js"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.css"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/image/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/image/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/image/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/image/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <OGP title={title} description={description} thumbnail={thumbnail} />
+  </head>
+  <body>
+    <Header />
+    <div data-pagefind-body>
+      <slot />
+    </div>
+    <Footer />
+    <div class="drawer-menu">
+      <GlobalNav />
+    </div>
+
+    <script is:inline src="/script/lightbox.js"></script>
+
+    <script is:inline src="/script/lightgallery.min.js"></script>
+    <script is:inline src="/script/lazysizes.min.js" async></script>
+    <script is:inline>
+      lightGallery(document.querySelector('.gallery-main'), {});
+    </script>
+
+    <script is:inline src="/script/index.js?ver=20210420"></script>
+  </body>
+</html>

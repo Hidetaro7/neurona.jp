@@ -1,0 +1,29 @@
+---
+import { site } from '@/lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  thumbnail?: string;
+  ogpImage?: string;
+}
+
+const { 
+  title, 
+  description, 
+  thumbnail, 
+  ogpImage 
+} = Astro.props;
+
+const ogImageUrl = thumbnail || ogpImage || site.ogpImage;
+const fullTitle = title || site.name;
+const fullDescription = description || site.description;
+---
+
+<meta property="og:description" content={fullDescription} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={site.origin} />
+<meta property="twitter:card" content="summary" />
+<meta property="og:image" content={ogImageUrl} />
