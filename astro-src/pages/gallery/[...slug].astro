@@ -23,7 +23,7 @@ interface Props {
 const { gallery } = Astro.props;
 
 // Get description from title if not available
-const description = gallery.description || `${gallery.title} - ニューロナのライブギャラリー`;
+const description = gallery.description || `${gallery.title}のライブ写真や動画を掲載しています。`;
 
 // Format date for display
 const formatDate = (dateString?: string) => {
@@ -44,30 +44,41 @@ const publishedDate = formatDate(gallery.publishedAt || gallery.createdAt);
   description={description}
   thumbnail={gallery.thumbnail?.url}
 >
-  <div class="h-20 lg:h-24 bg-black"></div>
-  <div class="prose mx-auto py-8 md:py-16 px-4">
-    <p class="text-sm mb-8">
-      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i>
-      <a href="/">Gallery</a><i class="fal fa-angle-right mx-1"></i>
-      {gallery.title}
-    </p>
-    <h1>{gallery.title}</h1>
-    {publishedDate && (
-      <p class="text-gray-600 text-sm">
-        <time datetime={gallery.publishedAt || gallery.createdAt}>
-          {publishedDate}
-        </time>
+  <div
+    class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
+    style={`background-image: url(${gallery.thumbnail?.url});`}
+  >
+    <div class="container">
+      <h1 class="text-white font-bold text-3xl md:text-5xl filter drop-shadow-md">
+        {gallery.title}
+      </h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="prose max-w-none py-8">
+      <p class="text-sm">
+        <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+        ><a href="/gallery/">gallery</a><i class="fal fa-angle-right mx-1"></i>
+        {gallery.title}
       </p>
-    )}
-    {gallery.description && (
-      <p class="lead">{gallery.description}</p>
-    )}
+    </div>
     <main>
-      {gallery.photoGallery && (
-        <div class="gallery-main" set:html={gallery.photoGallery} />
+      {publishedDate && (
+        <article class="mb-8 prose mx-auto">
+          <p class="text-gray-600 text-sm">
+            <time datetime={gallery.publishedAt || gallery.createdAt}>
+              {publishedDate}
+            </time>
+          </p>
+        </article>
       )}
-      {!gallery.photoGallery && (
-        <p class="text-gray-500">写真がありません。</p>
+      {gallery.photoGallery ? (
+        <div class="gallery-main" set:html={gallery.photoGallery} />
+      ) : (
+        <div class="prose mx-auto">
+          <p class="text-gray-500">写真がありません。</p>
+        </div>
       )}
     </main>
   </div>
