@@ -1,0 +1,62 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import { getArticles } from '@/lib/microcms';
+import type { Article } from '@/lib/types';
+
+const title = 'ギャラリー - ニューロナ';
+const description = 'ニューロナのライブ・ギャラリーです。ライブの写真や動画を掲載しています。';
+const thumbnail = '/image/ogp_image.png';
+
+// Fetch articles data from microCMS with error handling
+let articles: Article[] = [];
+let hasError = false;
+
+try {
+  articles = await getArticles();
+} catch (error) {
+  console.error('Failed to fetch articles from microCMS:', error);
+  hasError = true;
+}
+
+// Filter articles by gallery type
+const galleryArticles = articles.filter(article => article.type?.includes('gallery'));
+---
+
+<RootLayout {title} {description} {thumbnail}>
+  <div class="h-20 lg:h-24 bg-black"></div>
+  <div class="container">
+    <div class="prose mx-auto max-w-none py-8">
+      <p class="text-sm mb-8">
+        <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+        ><a href="/gallery/">Gallery</a>
+      </p>
+      <h1>Gallery</h1>
+    </div>
+    {hasError ? (
+      <p class="text-center text-gray-500 py-8">データの取得に失敗しました。</p>
+    ) : galleryArticles.length > 0 ? (
+      <ul class="gallery-list grid grid-cols-1 sm:grid-cols-3 gap-3 pb-8">
+        {galleryArticles.map((article) => (
+          <li class="card overflow-hidden hover:opacity-80">
+            <a href={`/gallery/${article.permalink}`}>
+              <img
+                src={article.thumbnail?.url}
+                alt={article.title}
+                class="object-cover w-full h-64 lazyload"
+                data-src={article.thumbnail?.url}
+                loading="lazy"
+              />
+            </a>
+            <div class="px-4 py-6">
+              <a class="font-bold text-lg" href={`/gallery/${article.permalink}`}>
+                {article.title}
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="text-center text-gray-500 py-8">現在、ギャラリー情報はありません。</p>
+    )}
+  </div>
+</RootLayout>
