@@ -1,4 +1,5 @@
 const typography = require("@tailwindcss/typography");
+const lineClamp = require("@tailwindcss/line-clamp");
 const jumpuui = require("@jumpu-ui/tailwindcss");
 
 module.exports = {
@@ -36,5 +37,5 @@ module.exports = {
       },
     },
   },
-  plugins: [typography, ...jumpuui],
+  plugins: [typography, lineClamp, ...jumpuui],
 };
