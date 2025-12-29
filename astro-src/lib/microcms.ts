@@ -7,8 +7,8 @@
 import { parse } from 'node-html-parser';
 import type { Article, Gallery, MicroCMSResponse } from './types';
 
-const API_ENDPOINT = import.meta.env.MICROCMS_API_ENDPOINT;
-const API_KEY = import.meta.env.MICROCMS_API_KEY;
+const API_ENDPOINT = process.env.MICROCMS_API_ENDPOINT || '';
+const API_KEY = process.env.MICROCMS_API_KEY || '';
 
 /**
  * Parse photo gallery HTML and transform img tags
