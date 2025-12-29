@@ -1,0 +1,74 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import { getGalleries } from '@/lib/microcms';
+import type { Gallery } from '@/lib/types';
+
+export async function getStaticPaths() {
+  try {
+    const galleries = await getGalleries();
+    return galleries.map((gallery) => ({
+      params: { slug: gallery.permalink },
+      props: { gallery },
+    }));
+  } catch (error) {
+    console.error('Failed to fetch galleries for static paths:', error);
+    return [];
+  }
+}
+
+interface Props {
+  gallery: Gallery;
+}
+
+const { gallery } = Astro.props;
+
+// Get description from title if not available
+const description = gallery.description || `${gallery.title} - ニューロナのライブギャラリー`;
+
+// Format date for display
+const formatDate = (dateString?: string) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
+
+const publishedDate = formatDate(gallery.publishedAt || gallery.createdAt);
+---
+
+<RootLayout
+  title={gallery.title}
+  description={description}
+  thumbnail={gallery.thumbnail?.url}
+>
+  <div class="h-20 lg:h-24 bg-black"></div>
+  <div class="prose mx-auto py-8 md:py-16 px-4">
+    <p class="text-sm mb-8">
+      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i>
+      <a href="/">Gallery</a><i class="fal fa-angle-right mx-1"></i>
+      {gallery.title}
+    </p>
+    <h1>{gallery.title}</h1>
+    {publishedDate && (
+      <p class="text-gray-600 text-sm">
+        <time datetime={gallery.publishedAt || gallery.createdAt}>
+          {publishedDate}
+        </time>
+      </p>
+    )}
+    {gallery.description && (
+      <p class="lead">{gallery.description}</p>
+    )}
+    <main>
+      {gallery.photoGallery && (
+        <div class="gallery-main" set:html={gallery.photoGallery} />
+      )}
+      {!gallery.photoGallery && (
+        <p class="text-gray-500">写真がありません。</p>
+      )}
+    </main>
+  </div>
+</RootLayout>

@@ -20,6 +20,9 @@ export interface Gallery {
   permalink: string;
   photoGallery: string;
   thumbnail: { url: string };
+  description?: string;
+  publishedAt?: string;
+  createdAt?: string;
 }
 
 export interface MicroCMSResponse<T> {

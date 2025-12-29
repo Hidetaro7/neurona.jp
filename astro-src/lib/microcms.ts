@@ -88,3 +88,13 @@ export async function getGalleries(): Promise<Gallery[]> {
   const renderHTML = parsePhohoGallery(data);
   return renderHTML.contents;
 }
+
+/**
+ * Fetch a single gallery by slug (permalink)
+ * @param slug - The gallery slug/permalink
+ * @returns Promise<Gallery | undefined> - The gallery or undefined if not found
+ */
+export async function getGalleryBySlug(slug: string): Promise<Gallery | undefined> {
+  const galleries = await getGalleries();
+  return galleries.find((gallery) => gallery.permalink === slug);
+}
