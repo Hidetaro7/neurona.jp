@@ -13,17 +13,16 @@ let hasError = false;
 
 try {
   articles = await getArticles();
+  // Sort articles by publishedAt date (newest first)
+  articles.sort((a, b) => {
+    const dateA = new Date(a.publishedAt);
+    const dateB = new Date(b.publishedAt);
+    return dateB.getTime() - dateA.getTime();
+  });
 } catch (error) {
   console.error('Failed to fetch articles from microCMS:', error);
   hasError = true;
 }
-
-// Sort articles by publishedAt date (newest first)
-articles.sort((a, b) => {
-  const dateA = new Date(a.publishedAt);
-  const dateB = new Date(b.publishedAt);
-  return dateB.getTime() - dateA.getTime();
-});
 
 // Format date function
 function formatDate(dateString: string): string {
