@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "fast-glob": "^3.2.11",
+    "highlight.js": "^11.11.1",
+    "marked": "^17.0.1",
+    "marked-highlight": "^2.2.3",
     "optional": "^0.1.4",
     "pagefind": "^1.0.4"
   },

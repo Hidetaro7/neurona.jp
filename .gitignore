@@ -10,3 +10,4 @@ dist/
 
 # TypeScript
 *.tsbuildinfo
+package-lock.json

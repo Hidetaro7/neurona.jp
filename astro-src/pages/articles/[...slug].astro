@@ -1,0 +1,95 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import { getArticles } from '@/lib/microcms';
+import type { Article } from '@/lib/types';
+import { marked, type Tokens } from 'marked';
+import { markedHighlight } from 'marked-highlight';
+import hljs from 'highlight.js';
+
+// Configure marked with syntax highlighting
+marked.use(
+  markedHighlight({
+    langPrefix: 'hljs language-',
+    highlight(code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+      return hljs.highlight(code, { language }).value;
+    },
+  })
+);
+
+// Configure marked to handle links
+marked.use({
+  renderer: {
+    link(token: Tokens.Link) {
+      const { href, title, text } = token;
+      const isExternal = href.startsWith('http://') || href.startsWith('https://');
+      const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+      const titleAttr = title ? ` title="${title}"` : '';
+      return `<a href="${href}"${titleAttr}${target}>${text}</a>`;
+    },
+  },
+});
+
+export async function getStaticPaths() {
+  try {
+    const articles = await getArticles();
+    return articles.map((article) => ({
+      params: { slug: article.permalink },
+      props: { article },
+    }));
+  } catch (error) {
+    console.error('Failed to fetch articles for static paths:', error);
+    return [];
+  }
+}
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+
+// Render markdown content to HTML
+const content = marked.parse(article.content);
+
+// Get description from content (first 100 characters)
+// Remove markdown syntax characters (# * ` [ ]) before creating description
+const description = article.content.replace(/[#*`\[\]]/g, '').substring(0, 100);
+---
+
+<RootLayout
+  title={article.title}
+  description={description}
+  thumbnail={article.thumbnail?.url}
+>
+  <div class="h-20 lg:h-24 bg-black"></div>
+  <div class="prose mx-auto py-8 md:py-16 px-4">
+    <!-- Add highlight.js CSS inline for syntax highlighting -->
+    <style is:inline>
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css');
+    </style>
+    <p class="text-sm mb-8">
+      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+      ><a href="/articles/">News</a><i class="fal fa-angle-right mx-1"></i>
+      {article.title}
+    </p>
+    <h1>{article.title}</h1>
+    <p>
+      {article.type && article.type.length > 0 && (
+        <span
+          class="inline-flex rounded-full py-1 px-3 border border-gray-300 text-xs"
+        >
+          {article.type.join(', ')}
+        </span>
+      )}
+    </p>
+    <main>
+      {article.thumbnail && (
+        <p>
+          <img src={article.thumbnail.url} alt={article.title} />
+        </p>
+      )}
+      <div set:html={content} />
+    </main>
+  </div>
+</RootLayout>
