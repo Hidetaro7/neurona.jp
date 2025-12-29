@@ -3,3 +3,10 @@
 node_modules
 .env
 docs
+
+# Astro build artifacts
+dist/
+.astro/
+
+# TypeScript
+*.tsbuildinfo

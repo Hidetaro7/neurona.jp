@@ -3,7 +3,10 @@ const jumpuui = require("@jumpu-ui/tailwindcss");
 
 module.exports = {
   darkMode: "class",
-  content: ["./src/**/*.{js,njk,md}"],
+  content: [
+    "./src/**/*.{js,njk,md}",
+    "./astro-src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"
+  ],
   important: true,
   theme: {
     extend: {
