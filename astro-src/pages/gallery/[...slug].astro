@@ -1,0 +1,77 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import { getGalleries } from '@/lib/microcms';
+import type { Gallery } from '@/lib/types';
+import { formatDate } from '@/utils/dateFormatter';
+
+export async function getStaticPaths() {
+  try {
+    const galleries = await getGalleries();
+    return galleries.map((gallery) => ({
+      params: { slug: gallery.permalink },
+      props: { gallery },
+    }));
+  } catch (error) {
+    console.error('Failed to fetch galleries for static paths:', error);
+    return [];
+  }
+}
+
+interface Props {
+  gallery: Gallery;
+}
+
+const { gallery } = Astro.props;
+
+// Get description from title if not available
+const description = gallery.description || `${gallery.title}のライブ写真や動画を掲載しています。`;
+
+// Format date for display
+// Note: Some galleries may only have createdAt, so we fallback to it if publishedAt is not available
+const publishedDate = formatDate(gallery.publishedAt || gallery.createdAt || '');
+---
+
+<RootLayout
+  title={gallery.title}
+  description={description}
+  thumbnail={gallery.thumbnail?.url}
+>
+  <div
+    class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
+    style={`background-image: url(${gallery.thumbnail?.url});`}
+  >
+    <div class="container">
+      <h1 class="text-white font-bold text-3xl md:text-5xl filter drop-shadow-md">
+        {gallery.title}
+      </h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="prose max-w-none py-8">
+      <p class="text-sm">
+        <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
+        ><a href="/gallery/">gallery</a><i class="fal fa-angle-right mx-1"></i>
+        {gallery.title}
+      </p>
+    </div>
+    <main>
+      {publishedDate && (
+        <article class="mb-8 prose mx-auto">
+          <p class="text-gray-600 text-sm">
+            <time datetime={gallery.publishedAt || gallery.createdAt}>
+              {publishedDate}
+            </time>
+          </p>
+        </article>
+      )}
+      {gallery.photoGallery ? (
+        <div class="gallery-main" set:html={gallery.photoGallery} />
+      ) : (
+        <div class="prose mx-auto">
+          <p class="text-gray-500">写真がありません。</p>
+        </div>
+      )}
+    </main>
+  </div>
+</RootLayout>
