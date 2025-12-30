@@ -1,0 +1,298 @@
+/* ============================================
+ * Main CSS for neurona.jp
+ * Modern CSS with Tailwind v4 preparation
+ * ============================================ */
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Third-party CSS */
+/* lightgallery is loaded globally as it's used across multiple pages and initialized in RootLayout */
+@import "./lightgallery-bundle.min.css";
+
+/* CSS Custom Properties (Variables) */
+:root {
+  --size-font: 100%;
+}
+
+/* Base Styles */
+@layer base {
+  :root {
+    font-size: var(--size-font);
+  }
+
+  body,
+  html {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans", Meiryo, sans-serif;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Font utilities */
+  .notosans-black {
+    font-family: "Noto Sans JP", sans-serif;
+  }
+
+  /* Header styles */
+  .is-headerfixed .app-header {
+    @apply bg-fuchsia-600 bg-opacity-70 backdrop-blur-md;
+  }
+
+  .app-header {
+    @apply fixed top-0 w-screen bg-transparent z-30;
+
+    & .links {
+      @apply flex gap-1 sm:gap-6 text-white;
+
+      & a {
+        @apply jumpu-icon-button text-white hover:text-gray-100 hover:bg-gray-100 hover:bg-opacity-10;
+      }
+    }
+  }
+
+  /* Global Navigation */
+  .global-nav {
+    @apply hidden lg:flex items-center;
+
+    & li a {
+      @apply block py-2 px-4 font-bold text-center relative text-white;
+
+      &::after {
+        content: "";
+        @apply absolute bottom-0 left-1/2 transition-all transform -translate-x-1/2 bg-gray-300 h-0.5 w-0;
+      }
+
+      &:hover {
+        @apply opacity-80;
+
+        &::after {
+          @apply w-full;
+        }
+      }
+    }
+  }
+
+  /* Release Items */
+  .release-items iframe {
+    @apply h-96;
+  }
+
+  /* Information Section */
+  .information dl {
+    @apply grid grid-cols-2 auto-cols-fr;
+
+    & dt {
+      @apply text-gray-600 text-sm;
+    }
+
+    & dd {
+      @apply col-start-2 col-end-8;
+    }
+  }
+
+  /* Jackets Grid */
+  .jackets {
+    @apply grid grid-cols-5 md:grid-cols-8 lg:grid-cols-11 gap-2 grid-rows-2;
+
+    & img {
+      @apply inline-block m-0 rounded-lg;
+    }
+  }
+
+  /* Footer Links */
+  .footer-links {
+    & dl {
+      @apply inline-flex mb-8 md:ml-6;
+    }
+
+    & dt {
+      @apply mb-4 font-bold text-xs text-gray-400 w-32 text-left;
+    }
+
+    & li {
+      @apply mb-2 text-left;
+
+      & a:hover {
+        @apply underline;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .footer-links dl {
+      @apply block mb-0;
+    }
+  }
+
+  /* YouTube Wrapper */
+  .youtube-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* Button Trigger (Hamburger Menu) */
+  .btn-trigger {
+    position: relative;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+
+    & span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 4px;
+      display: inline-block;
+      transition: all 0.5s;
+      box-sizing: border-box;
+    }
+
+    & span:nth-of-type(1) {
+      top: 0;
+    }
+
+    & span:nth-of-type(2) {
+      top: calc(50% - 1px);
+    }
+
+    & span:nth-of-type(3) {
+      bottom: 0;
+    }
+  }
+
+  /* Button Animation #btn07 */
+  #btn07 span:nth-of-type(1) {
+    animation: btn07-bar01 0.25s forwards;
+  }
+
+  @keyframes btn07-bar01 {
+    0% {
+      transform: translateY(7px) rotate(45deg);
+    }
+    50% {
+      transform: translateY(7px) rotate(0);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+
+  #btn07 span:nth-of-type(2) {
+    transition: all 0.25s 0.25s;
+    opacity: 1;
+  }
+
+  #btn07 span:nth-of-type(3) {
+    animation: btn07-bar03 0.25s forwards;
+  }
+
+  @keyframes btn07-bar03 {
+    0% {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+    50% {
+      transform: translateY(-7px) rotate(0);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+
+  #btn07.active span:nth-of-type(1) {
+    animation: active-btn07-bar01 0.25s forwards;
+  }
+
+  @keyframes active-btn07-bar01 {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(7px) rotate(0);
+    }
+    100% {
+      transform: translateY(7px) rotate(45deg);
+    }
+  }
+
+  #btn07.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  #btn07.active span:nth-of-type(3) {
+    animation: active-btn07-bar03 0.25s forwards;
+  }
+
+  @keyframes active-btn07-bar03 {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(-7px) rotate(0);
+    }
+    100% {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+
+  /* Drawer Menu */
+  .drawer-menu {
+    @apply -translate-x-full transition-all transform-gpu w-screen h-screen overflow-y-auto overflow-x-hidden p-8 bg-gray-900 bg-opacity-80 fixed text-white top-0 left-0 z-10 pt-24;
+
+    &.active {
+      @apply translate-x-0;
+    }
+
+    & dl {
+      @apply mt-12;
+
+      & dt {
+        @apply font-bold text-gray-400;
+      }
+
+      & li a {
+        @apply py-2 text-lg inline-block font-bold;
+      }
+    }
+  }
+
+  /* Gallery Main */
+  .gallery-main {
+    @apply grid gap-2 grid-cols-3 md:grid-cols-4 lg:grid-cols-5;
+
+    & a {
+      padding-bottom: 100%;
+      @apply h-0 relative;
+
+      & img {
+        @apply rounded-md object-cover w-full h-full absolute;
+      }
+    }
+  }
+
+  /* Lazy Loading States */
+  .lazyload,
+  .lazyloading {
+    @apply opacity-0 transition-all transform-gpu translate-y-4;
+  }
+
+  .lazyloaded {
+    @apply opacity-100 hover:opacity-90 translate-y-0;
+    transition: 0.8s 0.4s;
+  }
+}

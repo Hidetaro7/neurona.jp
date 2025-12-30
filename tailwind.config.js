@@ -6,7 +6,8 @@ module.exports = {
   darkMode: "class",
   content: [
     "./src/**/*.{js,njk,md}",
-    "./astro-src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"
+    "./astro-src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./astro-src/styles/**/*.css"
   ],
   important: true,
   theme: {
