@@ -4,6 +4,21 @@ description: ニューロナとは何者か？について紹介しています�
 ---
 
 import RootLayout from '@/layouts/RootLayout.astro';
+import { Image } from 'astro:assets';
+
+import membersFront from '@/assets/images/members-front.jpg';
+import jacketAi from '@/assets/images/jacket-ai.jpg';
+import jacketNagasugita from '@/assets/images/jacket-nagasugita.jpg';
+import jacketUtsusemi from '@/assets/images/jacket-utsusemi.jpg';
+import jacketIdentity from '@/assets/images/jacket-identity.jpg';
+import jacketRiot from '@/assets/images/jacket-riot.jpg';
+import jacketSoranihabureba from '@/assets/images/jacket-soranihabureba.jpg';
+import jacketNigetara from '@/assets/images/jacket-nigetara.jpg';
+import jacketEstate from '@/assets/images/jacket-estate.jpg';
+import jacketUtsuyume from '@/assets/images/jacket-utsuyume.jpg';
+import jacketHebimusume from '@/assets/images/jacket-hebimusume.jpg';
+import jacketYonsoku from '@/assets/images/jacket-yonsoku.jpg';
+import jacketFifth from '@/assets/images/jacket-5th-anniversary.jpg';
 
 <RootLayout title={frontmatter.title} description={frontmatter.description}>
 
@@ -61,7 +76,7 @@ Zero＆SSM主催の2Daysライブに出演。
 
 多くのアーティストはファンとの交流などに様々な工夫や努力に向かったり、また、解散していくアーティストもいたりと、大きな変化が訪れていたなかで、ニューロナが決めたことは、地元、神奈川県茅ヶ崎市界隈で好きな猫や人たちと、好きな音楽とともに暮らすことだった。
 
-![ニューロナ](/image/members-front.jpg)
+<Image src={membersFront} alt="ニューロナ" format="webp" loading="lazy" widths={[800, 1200]} sizes="(max-width: 768px) 800px, 1200px" />
 
 ## 別れから、新しいメンバーとの出会い
 
@@ -72,33 +87,18 @@ Zero＆SSM主催の2Daysライブに出演。
 これまでにオリジナル曲は30曲以上、13枚目の音源をリリース。
 
 <div class="jackets">
-<img
-  src="/image/jacket-ai.jpg"
-  alt="突き放すよこれが愛だ君への愛だ-EP（ニューロナ）"
-/>
-<img
-  src="/image/jacket-nagasugita.jpg"
-  alt="ナガスギタ春（ニューロナ）"
-/>
-<img src="/image/jacket-utsusemi.jpg" alt="空蝉（ニューロナ）" />
-<img
-  src="/image/jacket-identity.jpg"
-  alt="放出アイデンティティ（ニューロナ）"
-/>
-<img src="/image/jacket-riot.jpg" alt="玉虫色ライオット（ニューロナ）" />
-<img
-  src="/image/jacket-soranihabureba.jpg"
-  alt="ソラニハブレバ（ニューロナ）"
-/>
-<img
-  src="/image/jacket-nigetara.jpg"
-  alt="逃げたらいーじゃん（ニューロナ）"
-/>
-<img src="/image/jacket-estate.jpg" alt="エスターテ（ニューロナ）" />
-<img src="/image/jacket-utsuyume.jpg" alt="UTSUYUME（ニューロナ）" />
-<img src="/image/jacket-hebimusume.jpg" alt="蛇娘（ニューロナ）" />
-<img src="/image/jacket-yonsoku.jpg" alt="四足のヒーロー（ニューロナ）" />
-<img src="/image/jacket-5th-anniversary.jpg" alt="ニューロナ 5th Anniversary 2017-2022" />
+<Image src={jacketAi} alt="突き放すよこれが愛だ君への愛だ-EP（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketNagasugita} alt="ナガスギタ春（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketUtsusemi} alt="空蝉（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketIdentity} alt="放出アイデンティティ（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketRiot} alt="玉虫色ライオット（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketSoranihabureba} alt="ソラニハブレバ（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketNigetara} alt="逃げたらいーじゃん（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketEstate} alt="エスターテ（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketUtsuyume} alt="UTSUYUME（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketHebimusume} alt="蛇娘（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketYonsoku} alt="四足のヒーロー（ニューロナ）" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
+<Image src={jacketFifth} alt="ニューロナ 5th Anniversary 2017-2022" format="webp" loading="lazy" widths={[200, 400]} sizes="200px" />
 </div>
 
 
