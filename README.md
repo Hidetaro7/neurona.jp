@@ -87,12 +87,46 @@ pnpm build
   - `pages/` - ページファイル（.astro）
   - `layouts/` - レイアウトコンポーネント
   - `components/` - 再利用可能なコンポーネント
+  - `styles/` - グローバルCSSファイル
+    - `main.css` - メインCSSファイル（Tailwind + カスタムスタイル）
+    - `lightgallery-bundle.min.css` - ライトギャラリーCSS
 - `public/` - 静的アセット
 - `dist/` - Astroビルド出力（.gitignoreに含まれる）
 
 ### 11ty（レガシー）
 - `src/` - 11tyのソースファイル
 - `docs/` - 11tyビルド出力（.gitignoreに含まれる）
+
+## CSS構成
+
+このプロジェクトは **SCSS を廃止** し、**モダンなCSS + Tailwind CSS v3** の構成に移行しました。
+
+### 主な特徴
+
+- ✅ SCSS完全廃止（`_variables.scss`, `_base.scss`, `_mixins.scss` などを削除）
+- ✅ モダンCSS機能を活用（CSSネスト、CSS変数、@layer）
+- ✅ Tailwind CSS v4 への移行準備が整っています
+- ✅ `astro-src/styles/main.css` で集中管理
+
+### スタイルの読み込み
+
+すべてのページで `RootLayout.astro` を通じて自動的にスタイルが読み込まれます：
+
+```typescript
+import '@/styles/main.css';
+```
+
+### カスタムスタイルの追加
+
+カスタムコンポーネントスタイルは `main.css` の `@layer components` に追加してください：
+
+```css
+@layer components {
+  .your-custom-class {
+    /* スタイル定義 */
+  }
+}
+```
 
 ## 技術スタック（Astro）
 

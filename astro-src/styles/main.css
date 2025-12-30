@@ -9,6 +9,7 @@
 @tailwind utilities;
 
 /* Third-party CSS */
+/* lightgallery is loaded globally as it's used across multiple pages and initialized in RootLayout */
 @import "./lightgallery-bundle.min.css";
 
 /* CSS Custom Properties (Variables) */
