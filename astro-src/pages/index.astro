@@ -2,6 +2,15 @@
 import RootLayout from '@/layouts/RootLayout.astro';
 import { getArticles } from '@/lib/microcms';
 import type { Article } from '@/lib/types';
+import { Image } from 'astro:assets';
+
+// Import images
+import jacketFifth from '@/assets/images/jacket-5th-anniversary.jpg';
+import figNekomata from '@/assets/images/fig-nekomata.png';
+import topBgMembersDonotenter from '@/assets/images/top-bg-members-donotenter.jpg';
+import topBgMembers from '@/assets/images/top-bg-members.jpg';
+import cover2024 from '@/assets/images/cover_2024.webp';
+import cover2024Mb from '@/assets/images/cover_2024_mb.webp';
 
 const title = 'ニューロナ あんぐらねこねこ音楽団';
 const description = 'ニューロナの公式ページ';
@@ -26,7 +35,8 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
 <RootLayout {title} {description} {thumbnail}>
   <!-- Hero Section with Cover Image -->
   <div
-    class="lazyload bg-[url('/image/cover_2024_mb.webp')] lg:bg-[url('/image/cover_2024.webp')] bg-cover bg-center lg:bg-top bg-[length:150%_auto] lg:py-0 bg-no-repeat w-screen h-dvh relative bg-black flex justify-center items-center"
+    class="lazyload bg-cover bg-center lg:bg-top bg-[length:150%_auto] lg:py-0 bg-no-repeat w-screen h-dvh relative bg-black flex justify-center items-center"
+    style={`background-image: url(${cover2024Mb.src}); @media (min-width: 1024px) { background-image: url(${cover2024.src}); }`}
   >
     <div
       class="flex justify-center lg:justify-end items-center lg:items-center h-full container"
@@ -78,10 +88,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
   <!-- 5th Anniversary Album Section -->
   <section
     class="bg-cover lg:bg-center py-80 lazyload"
-    style="
-      background-image: url(/image/top-bg-members.jpg);
-      background-position: 30% center;
-    "
+    style={`background-image: url(${topBgMembers.src}); background-position: 30% center;`}
   >
     <div
       class="container flex flex-col justify-center items-center lg:items-end gap-8"
@@ -94,10 +101,14 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           <p class="text-xl text-center">11曲入り 完全リマスター フルアルバム</p>
           <p class="text-base text-center">2022.12.10 リリース</p>
         </div>
-        <img
-          src="/image/jacket-5th-anniversary.jpg"
+        <Image
+          src={jacketFifth}
           alt="ニューロナ 5th Anniversary 2017-2022"
           class="rounded-sm w-48 m-6 mx-auto"
+          widths={[192, 384]}
+          sizes="(max-width: 768px) 192px, 192px"
+          format="webp"
+          loading="lazy"
         />
         <div class="font-bold text-xl mb-2 sm:mb-0 text-white">
           <h3 class="text-3xl mt-0 mb-4">ニューロナ 5th Anniversary 2017-2022</h3>
@@ -147,10 +158,14 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           >猫又ショップでショッピング！</a
         >
       </p>
-      <img
-        class="my-8 h-96 object-contain"
-        src="/image/fig-nekomata.png"
+      <Image
+        src={figNekomata}
         alt="猫又ショップの商品の写真"
+        class="my-8 h-96 object-contain"
+        widths={[400, 800]}
+        sizes="(max-width: 768px) 400px, 400px"
+        format="webp"
+        loading="lazy"
       />
     </section>
     <section class="bg-gray-100 py-8">
@@ -482,9 +497,13 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
   </div>
 
   <!-- Bottom Image -->
-  <img
-    class="mt-16 h-[200px] md:h-[600px] object-cover mx-auto w-full"
-    src="/image/top-bg-members-donotenter.jpg"
+  <Image
+    src={topBgMembersDonotenter}
     alt="ニューロナ Tomoの写真"
+    class="mt-16 h-[200px] md:h-[600px] object-cover mx-auto w-full"
+    widths={[800, 1200, 1920]}
+    sizes="(max-width: 768px) 800px, (max-width: 1200px) 1200px, 1920px"
+    format="webp"
+    loading="lazy"
   />
 </RootLayout>

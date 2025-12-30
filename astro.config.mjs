@@ -8,6 +8,7 @@ export default defineConfig({
   site: 'https://neurona.jp',
   output: 'static',
   srcDir: './astro-src',
+  publicDir: './astro-src/public',
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -16,4 +17,9 @@ export default defineConfig({
     mdx(),
   ],
   outDir: './dist',
+  image: {
+    // Configure image optimization
+    formats: ['webp'],
+    quality: 80,
+  },
 });
