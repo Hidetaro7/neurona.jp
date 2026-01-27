@@ -7,8 +7,8 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://neurona.jp',
   output: 'static',
-  srcDir: './astro-src',
-  publicDir: './astro-src/public',
+  srcDir: './src',
+  publicDir: './src/public',
   integrations: [
     tailwind({
       applyBaseStyles: false,

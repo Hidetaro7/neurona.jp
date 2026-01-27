@@ -83,7 +83,8 @@ pnpm build
 ## プロジェクト構成
 
 ### Astroプロジェクト
-- `astro-src/` - Astroのソースファイル
+
+- `src/` - Astroのソースファイル
   - `pages/` - ページファイル（.astro）
   - `layouts/` - レイアウトコンポーネント
   - `components/` - 再利用可能なコンポーネント
@@ -94,6 +95,7 @@ pnpm build
 - `dist/` - Astroビルド出力（.gitignoreに含まれる）
 
 ### 11ty（レガシー）
+
 - `src/` - 11tyのソースファイル
 - `docs/` - 11tyビルド出力（.gitignoreに含まれる）
 
@@ -113,7 +115,7 @@ pnpm build
 すべてのページで `RootLayout.astro` を通じて自動的にスタイルが読み込まれます：
 
 ```typescript
-import '@/styles/main.css';
+import "@/styles/main.css";
 ```
 
 ### カスタムスタイルの追加
@@ -141,8 +143,9 @@ import '@/styles/main.css';
 このプロジェクトでは、microCMSやその他の外部APIとの通信に**fetch API**を使用しています。axiosは使用していません。
 
 例：
+
 ```typescript
-const response = await fetch('https://api.example.com/data');
+const response = await fetch("https://api.example.com/data");
 const data = await response.json();
 ```
 
