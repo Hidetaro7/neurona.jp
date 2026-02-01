@@ -1,0 +1,73 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import { getGalleries } from '@/lib/microcms';
+import type { Gallery } from '@/lib/types';
+import { formatDate } from '@/utils/dateFormatter';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+export async function getStaticPaths() {
+  try {
+    const galleries = await getGalleries();
+    return galleries.map((gallery: Gallery) => ({
+      params: { slug: gallery.permalink },
+      props: { gallery },
+    }));
+  } catch (error) {
+    console.error('Failed to fetch galleries for static paths:', error);
+    return [];
+  }
+}
+
+interface Props {
+  gallery: Gallery;
+}
+
+const { gallery } = Astro.props;
+
+// Get description from title if not available
+const description = gallery.description || `${gallery.title}のライブ写真や動画を掲載しています。`;
+
+// Format date for display
+// Note: Some galleries may only have createdAt, so we fallback to it if publishedAt is not available
+const publishedDate = formatDate(gallery.publishedAt || gallery.createdAt || '');
+
+---
+
+<RootLayout
+  title={gallery.title}
+  description={description}
+  thumbnail={gallery.thumbnail?.url}
+>
+  <div
+    class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
+    style={gallery.thumbnail?.url ? `background-image: url(${gallery.thumbnail.url});` : undefined}
+  >
+    <div class="page-container">
+      <h1 class="page-title">{gallery.title}</h1>
+    </div>
+  </div>
+  <div class="page-container">
+    <div class="page-header">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Gallery', href: '/gallery/' }, { label: gallery.title }]} />
+    </div>
+    <main>
+      {publishedDate && (
+        <article class="mb-8">
+          <p class="text-gray-600 text-sm">
+            <time datetime={gallery.publishedAt || gallery.createdAt}>
+              {publishedDate}
+            </time>
+          </p>
+        </article>
+      )}
+      {gallery.photoGallery ? (
+        <div class="gallery-main" set:html={gallery.photoGallery} />
+      ) : (
+        <div class="prose mx-auto">
+          <p class="text-gray-500">写真がありません。</p>
+        </div>
+      )}
+    </main>
+  </div>
+</RootLayout>
+

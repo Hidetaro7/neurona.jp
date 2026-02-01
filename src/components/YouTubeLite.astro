@@ -1,0 +1,78 @@
+---
+type Props = {
+  id: string;
+  title?: string;
+  start?: number;
+  class?: string;
+  wrapperClass?: string;
+  style?: string;
+};
+
+const {
+  id,
+  title = 'YouTube video player',
+  start = 0,
+  class: className = '',
+  wrapperClass = 'aspect-video',
+  style,
+} = Astro.props as Props;
+
+const thumbnail = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+const dataStart = start > 0 ? String(start) : '';
+---
+
+<div
+  class={`relative overflow-hidden bg-black ${wrapperClass}`}
+  style={style}
+  data-youtube-lite
+  data-ytid={id}
+  data-start={dataStart}
+  data-title={title}
+  data-iframe-class={className}
+>
+  <img
+    src={thumbnail}
+    alt={title}
+    loading="lazy"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <button
+    type="button"
+    class="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors"
+    aria-label={`Play ${title}`}
+    data-youtube-lite-button
+  >
+    <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/90 text-black text-2xl">
+      ▶
+    </span>
+  </button>
+</div>
+
+<script is:inline>
+  if (!window.__ytLiteInit) {
+    window.__ytLiteInit = true;
+    window.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!target || !(target instanceof HTMLElement)) return;
+      const button = target.closest('[data-youtube-lite-button]');
+      if (!button) return;
+      const wrapper = button.closest('[data-youtube-lite]');
+      if (!wrapper) return;
+      const id = wrapper.getAttribute('data-ytid');
+      const title = wrapper.getAttribute('data-title') || 'YouTube video player';
+      const start = wrapper.getAttribute('data-start');
+      const iframeClass = wrapper.getAttribute('data-iframe-class') || '';
+      if (!id) return;
+      const params = start ? `?start=${start}` : '';
+      const iframe = document.createElement('iframe');
+      iframe.className = `absolute inset-0 w-full h-full ${iframeClass}`.trim();
+      iframe.src = `https://www.youtube.com/embed/${id}${params}`;
+      iframe.title = title;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      wrapper.innerHTML = '';
+      wrapper.appendChild(iframe);
+    });
+  }
+</script>

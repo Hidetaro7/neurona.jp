@@ -1,0 +1,170 @@
+---
+// Header component - site header with navigation and social links
+
+const { isHome = false } = Astro.props;
+---
+
+<header
+  id="site-header"
+  class={`text-white z-10 sticky top-0 transition-colors duration-300 ${isHome ? 'bg-transparent' : 'bg-black'}`}
+>
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="flex-grow flex items-center justify-start">
+      <div class="lg:hidden mr-4">
+        <button
+          class="group relative inline-block w-5 h-4 cursor-pointer"
+          id="btn07"
+          type="button"
+          aria-controls="drawer-menu"
+          aria-expanded="false"
+        >
+          <span class="absolute left-0 w-full h-0.5 bg-white rounded transition-transform duration-300 top-0 group-[.active]:translate-y-[7px] group-[.active]:rotate-45"></span>
+          <span class="absolute left-0 w-full h-0.5 bg-white rounded transition-opacity duration-300 top-[calc(50%-1px)] group-[.active]:opacity-0"></span>
+          <span class="absolute left-0 w-full h-0.5 bg-white rounded transition-transform duration-300 bottom-0 group-[.active]:-translate-y-[7px] group-[.active]:-rotate-45"></span>
+        </button>
+      </div>
+
+      <h1 class="logo flex-shrink-0 mr-8">
+        <a href="/">
+          <img
+            class="w-24 lg:w-32 my-0 inline"
+            src="/image/neurona_logo_jp_white.svg"
+            alt="ニューロナ"
+          />
+        </a>
+      </h1>
+
+      <ul class="hidden lg:flex">
+        <li>
+          <a class="jumpu-text-button" href="/">Home</a>
+        </li>
+        <li>
+          <a class="jumpu-text-button" href="/about">About</a>
+        </li>
+        <li>
+          <a class="jumpu-text-button" title="News" href="/articles">News</a>
+        </li>
+        <li>
+          <a class="jumpu-text-button" title="Gallery" href="/gallery">Gallery</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hidden lg:flex items-center space-x-4">
+      <a
+        class="jumpu-icon-button"
+        title="Youtube"
+        target="_blank"
+        aria-describedby="tooltip-Youtube"
+        href="https://www.youtube.com/channel/UCRKVZiebYGhWRCDxY3OA8cg"
+        rel="noopener"
+      >
+        <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5a3 3 0 0 0-2.1 2.1A31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.5V8.5L15.8 12l-6.2 3.5Z"
+          />
+        </svg>
+        <span id="tooltip-Youtube" role="tooltip">Youtube</span>
+      </a>
+      <a
+        class="jumpu-icon-button"
+        title="X"
+        target="_blank"
+        aria-describedby="tooltip-X"
+        href="https://twitter.com/neurona_jp"
+        rel="noopener"
+      >
+        <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M18.9 2H22l-7 8 8 12h-6.3l-4.9-7.1L5.7 22H2l7.5-8.6L2 2h6.3l4.4 6.4L18.9 2Zm-1.1 18h1.7L7.2 4H5.4l12.4 16Z"
+          />
+        </svg>
+        <span id="tooltip-X" role="tooltip">X</span>
+      </a>
+      <a
+        class="jumpu-icon-button"
+        title="Instagram"
+        target="_blank"
+        aria-describedby="tooltip-Instagram"
+        href="https://www.instagram.com/neurona_jp/"
+        rel="noopener"
+      >
+        <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7Zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3Zm10.2 1.8a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"
+          />
+        </svg>
+        <span id="tooltip-Instagram" role="tooltip">Instagram</span>
+      </a>
+      <a
+        class="jumpu-icon-button"
+        title="猫又ショップ"
+        target="_blank"
+        href="https://neurona.base.shop/"
+        rel="noopener"
+        aria-describedby="tooltip-NekomataShop"
+      >
+        <img
+          class="w-8 m-0 rounded"
+          src="/image/nekomata_shop_logo.png"
+          alt="猫又ショップ"
+        />
+        <span id="tooltip-NekomataShop" role="tooltip">猫又ショップ</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+{isHome && (
+  <script is:inline>
+    const header = document.getElementById('site-header');
+    if (header) {
+      const onScroll = () => {
+        const scrolled = window.scrollY > 8;
+        header.classList.toggle('bg-black/90', scrolled);
+        header.classList.toggle('bg-transparent', !scrolled);
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+  </script>
+)}
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const drawerTrigger = document.getElementById('btn07');
+    const drawerMenu = document.getElementById('drawer-menu');
+    const bodyEl = document.body;
+    if (drawerTrigger && drawerMenu) {
+      const closeDrawer = () => {
+        drawerMenu.classList.remove('translate-x-0');
+        drawerMenu.classList.add('translate-x-full');
+        drawerTrigger.classList.remove('active');
+        drawerTrigger.setAttribute('aria-expanded', 'false');
+        bodyEl.classList.remove('overflow-hidden');
+      };
+      const toggleDrawer = () => {
+        const isOpen = drawerMenu.classList.toggle('translate-x-0');
+        drawerMenu.classList.toggle('translate-x-full', !isOpen);
+        drawerTrigger.classList.toggle('active', isOpen);
+        drawerTrigger.setAttribute('aria-expanded', String(isOpen));
+        bodyEl.classList.toggle('overflow-hidden', isOpen);
+      };
+      drawerTrigger.addEventListener('click', toggleDrawer);
+      drawerMenu.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!target || !(target instanceof HTMLElement)) return;
+        if (target.closest('.drawer-overlay') || target.closest('.drawer-close')) {
+          closeDrawer();
+          return;
+        }
+        if (target.tagName === 'A') {
+          closeDrawer();
+        }
+      });
+    }
+  });
+</script>

@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
+    "@jumpu-ui/tailwindcss": "^2.0.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro-iconify": "^1.2.0",
     "fast-glob": "^3.2.11",
     "highlight.js": "^11.11.1",
     "marked": "^17.0.1",
@@ -22,14 +25,10 @@
     "fast-glob": "^3.2.11"
   },
   "devDependencies": {
-    "@11ty/eleventy": "2.0.1",
-    "@11ty/eleventy-img": "4.0.2",
     "@astrojs/check": "^0.9.6",
     "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/tailwind": "^6.0.2",
-    "@jumpu-ui/tailwindcss": "1.0.1-alpha.6",
     "@tailwindcss/line-clamp": "^0.2.1",
-    "@tailwindcss/typography": "^0.5.2",
+    "@tailwindcss/typography": "v0.5.19",
     "@typescript-eslint/eslint-plugin": "^8.50.1",
     "@typescript-eslint/parser": "^8.50.1",
     "astro": "^5.16.6",
@@ -38,7 +37,6 @@
     "cachekill": "^3.0.2",
     "cssnano": "^5.1.5",
     "dotenv": "^16.6.1",
-    "eleventy-plugin-error-overlay": "^0.1.2",
     "eslint": "7.27.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-formatter-rdjson": "1.0.5",
@@ -63,7 +61,7 @@
     "rimraf": "3.0.2",
     "serve-handler": "^6.1.6",
     "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.19",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
   "homepage": "https://github.com/tuqulore/website-boilerplate#readme",
@@ -76,20 +74,15 @@
     "url": "git+https://github.com/tuqulore/website-boilerplate.git"
   },
   "scripts": {
-    "astro:dev": "astro dev",
-    "astro:build": "astro check && astro build",
-    "astro:preview": "astro preview",
-    "build": "NODE_ENV=production run-s clean build:{eleventy,style} && pagefind --site docs",
-    "build:eleventy": "eleventy",
-    "build:cachekill": "cachekill -r -s 'docs/**/!(*.html)' -t 'docs/**/*.{js,css,html}'",
-    "build:style": "postcss 'src/style/**/[^._]*' --dir docs/style --ext css",
-    "clean": "rimraf docs",
-    "dev": "run-p dev:*",
-    "dev:eleventy": "eleventy --serve",
-    "dev:style": "postcss 'src/style/**/[^._]*' --dir docs/style --watch --ext css",
+    "astro": "astro",
+    "build": "astro build",
+    "clean": "rimraf dist",
+    "dev": "astro dev",
     "fix": "eslint --fix .",
     "format": "prettier --verbose --write '**/*.{js,json,md,njk,css,scss,pcss,yaml}'",
     "lint": "eslint .",
-    "lint:rdjson": "eslint --format rdjson ."
+    "lint:rdjson": "eslint --format rdjson .",
+    "postbuild": "pagefind --site dist",
+    "preview": "astro preview"
   }
 }

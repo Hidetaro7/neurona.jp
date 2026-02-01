@@ -1,12 +1,13 @@
-const typography = require("@tailwindcss/typography");
-const lineClamp = require("@tailwindcss/line-clamp");
-const jumpuui = require("@jumpu-ui/tailwindcss");
+import typography from "@tailwindcss/typography";
+import lineClamp from "@tailwindcss/line-clamp";
+import jumpuui from "@jumpu-ui/tailwindcss";
 
-module.exports = {
+export default {
   darkMode: "class",
   content: [
     "./src/**/*.{js,njk,md}",
-    "./astro-src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"
+    "./astro-src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./astro-src/styles/**/*.css",
   ],
   important: true,
   theme: {

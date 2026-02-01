@@ -1,0 +1,65 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import GlobalNav from '@/components/GlobalNav.astro';
+import OGP from '@/components/OGP.astro';
+import { site } from '@/lib/site';
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  thumbnail?: string;
+}
+
+const { title, description, thumbnail } = Astro.props;
+const pageTitle = title || site.name;
+const pageDescription = description || site.description;
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index';
+---
+
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+
+    <OGP title={title} description={description} thumbnail={thumbnail} />
+  </head>
+  <body class="">
+    <Header isHome={isHome} />
+    <div data-pagefind-body>
+      <slot />
+    </div>
+    <Footer />
+    <div
+      id="drawer-menu"
+      class="fixed inset-0 z-40 text-white translate-x-full transition-transform duration-300 ease-out lg:hidden"
+    >
+      <button
+        class="drawer-overlay absolute inset-0 bg-black/70"
+        type="button"
+        aria-label="Close menu"
+      ></button>
+      <div class="drawer-panel relative z-10 h-full w-4/5 max-w-sm bg-black/95 p-8 pt-16 overflow-y-auto">
+        <button
+          class="drawer-close jumpu-icon-button absolute top-4 right-4 text-3xl leading-none text-white"
+          type="button"
+          aria-label="Close menu"
+        >
+          <span class="sr-only">Close</span>
+          <span aria-hidden="true">×</span>
+        </button>
+
+        <div class="prose prose-invert">
+          <GlobalNav />
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

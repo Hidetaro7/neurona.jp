@@ -1,0 +1,252 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import { getArticles } from '@/lib/microcms';
+import type { Article } from '@/lib/types';
+import { Image } from 'astro:assets';
+import YouTubeLite from '@/components/YouTubeLite.astro';
+
+// Import images
+import jacketFifth from '@/assets/images/jacket-5th-anniversary.jpg';
+import figNekomata from '@/assets/images/fig-nekomata.png';
+import topBgMembersDonotenter from '@/assets/images/top-bg-members-donotenter.jpg';
+import topBgMembers from '@/assets/images/top-bg-members.jpg';
+import cover2024 from '@/assets/images/cover_2024.webp';
+import cover2024Mb from '@/assets/images/cover_2024_mb.webp';
+
+const title = 'ニューロナ あんぐらねこねこ音楽団';
+const description = 'ニューロナの公式ページ';
+const thumbnail = '/image/ogp_image.png';
+
+// Fetch articles data from microCMS with error handling
+let articles: Article[] = [];
+let hasError = false;
+
+try {
+  articles = await getArticles();
+} catch (error) {
+  console.error('Failed to fetch articles from microCMS:', error);
+  hasError = true;
+}
+
+// Filter articles by type
+const scheduleArticles = articles.filter(article => article.type?.includes('schedule'));
+const galleryArticles = articles.filter(article => article.type?.includes('gallery'));
+---
+
+<RootLayout {title} {description} {thumbnail}>
+  <!-- Hero Section with Cover Image -->
+  <div
+    class="bg-cover bg-center lg:bg-top bg-[length:150%_auto] lg:py-0 bg-no-repeat w-screen h-dvh relative bg-black flex justify-center items-center"
+  >
+    <video class="absolute -top-20 inset-0 w-full h-full object-cover" src="/video/hero-video.small.mp4" autoplay muted loop playsinline></video>
+    <div
+      class="flex justify-center lg:justify-end items-center lg:items-center h-full container"
+    >
+      <div class="text-center inset-12 translate-y-12 xl:translate-y-40">
+        <p>
+          <img src="/image/cover_logo.svg" alt="ニューロナ" class="w-10/12 mx-auto">
+        </p>
+        <p class="text-2xl md:text-4xl text-white font-black my-4">
+      茅ヶ崎発、ねこねこ音楽隊
+      </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Section -->
+  <div class="bg-black pb-24 px-4 text-white">
+      <div class="grid grid-cols-2 gap-x-4 -translate-y-16 max-w-5xl mx-auto">
+        <YouTubeLite id="bytb3YJCGRE" title="YouTube video player" wrapperClass="aspect-video" />
+
+        <YouTubeLite id="a1WKK4ho6iY" title="YouTube video player" wrapperClass="aspect-video" />
+      </div>
+
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl mt-0 mb-4 text-gray-500 notosans-black">
+        次のねこ時間は...
+      </h2>
+      {hasError ? (
+        <p class="text-gray-400">データの取得に失敗しました。</p>
+      ) : scheduleArticles.length > 0 ? (
+        scheduleArticles.map((article) => (
+          <div class="font-bold text-xl flex items-center">
+            <i class="fal fa-arrow-right mr-4"></i>
+            <a href={`/articles/${article.permalink}`} class="my-2 hover:opacity-70">
+              {article.title}
+            </a>
+          </div>
+        ))
+      ) : (
+        <p class="text-gray-400">現在、スケジュール情報はありません。</p>
+      )}
+    </div>
+  </div>
+
+  <!-- 5th Anniversary Album Section -->
+  <section
+    class="bg-cover lg:bg-center py-80 lazyload"
+    style={`background-image: url(${topBgMembers.src}); background-position: 30% center;`}
+  >
+    <div
+      class="container flex flex-col justify-center items-center lg:items-end gap-8"
+    >
+      <div
+        class="text-center text-4xl md:text-5xl lg:text-7xl text-white lg:text-black"
+      >
+        <div class="notosans-black text-white">
+          <h2 class="mb-4 leading-none text-center">ニューロナ5年間の集大成</h2>
+          <p class="text-xl text-center">11曲入り 完全リマスター フルアルバム</p>
+          <p class="text-base text-center">2022.12.10 リリース</p>
+        </div>
+        <Image
+          src={jacketFifth}
+          alt="ニューロナ 5th Anniversary 2017-2022"
+          class="rounded-sm w-48 m-6 mx-auto"
+          widths={[192, 384]}
+          sizes="(max-width: 768px) 192px, 192px"
+          format="webp"
+          loading="lazy"
+        />
+        <div class="font-bold text-xl mb-2 sm:mb-0 text-white">
+          <h3 class="text-3xl mt-0 mb-4">ニューロナ 5th Anniversary 2017-2022</h3>
+          <YouTubeLite id="mP6iQkIZqTQ" title="YouTube video player" wrapperClass="aspect-video mb-6" />
+
+          <a
+            href="https://linkco.re/YEx3R3sd"
+            rel="noopener"
+            target="_blank"
+            class="jumpu-outlined-button text-white border-white lg:text-black lg:border-black hover:bg-gray-100 hover:bg-opacity-20"
+            >試聴・購入する</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop and Re:Shinjuku Section -->
+  <div class="container grid grid-cols-1 lg:grid-cols-2 gap-4 py-8">
+    <section class="flex flex-col items-center">
+      <h2 class="text-center">
+        <img
+          class="lg:w-8/12 inline-block"
+          src="/image/nekomata_shop_banner.jpg"
+          alt="猫又ショップ"
+        />
+      </h2>
+      <p class="text-lg text-center mb-4">
+        ニューロナのグッズが買える！オンラインストア
+      </p>
+      <p class="text-center">
+        <a
+          class="jumpu-button"
+          href="https://neurona.base.shop/"
+          target="_blank"
+          rel="noopener"
+          ><i class="fa-solid fa-chevron-right mr-4"></i
+          >猫又ショップでショッピング！</a
+        >
+      </p>
+      <Image
+        src={figNekomata}
+        alt="猫又ショップの商品の写真"
+        class="my-8 h-96 object-contain"
+        widths={[400, 800]}
+        sizes="(max-width: 768px) 400px, 400px"
+        format="webp"
+        loading="lazy"
+      />
+    </section>
+    <section class="bg-gray-100 py-8">
+      <div class="container">
+        <YouTubeLite
+          id="0kbLI09jXxo"
+          start={85}
+          title="YouTube video player"
+          wrapperClass="relative h-0 overflow-hidden"
+          style="padding-bottom: 56.25%"
+        />
+
+        <h2 class="text-3xl md:text-4xl text-center my-8 font-bold">
+          Re:Shinjuku projectに取り上げられました
+        </h2>
+
+        <div class="prose mx-auto text-center">
+          <p>
+            2022年1月16日（日）、新宿 Cat's
+            holeで行われたニューロナのライブが、新宿区文化観光産業部文化観光課
+            文化芸術復興支援事業が担当する動画配信サイトに取り上げられました。
+          </p>
+          <p>
+            <a
+              href="https://re-shinjuku.jp/movie/%e3%83%8b%e3%83%a5%e3%83%bc%e3%83%ad%e3%83%8a-%e7%8c%ab%e3%81%ae%e7%88%aa%e7%a0%94%e3%81%8e-%e5%ba%8f%e7%ab%a0-%e3%80%80%ef%bc%a0%e6%96%b0%e5%ae%bf-cats-hole/"
+              >Re:Shinjuku projectで詳しく見る</a
+            ><br />
+            <span class="text-xs">（1分25秒あたりからライブ本番開始です）</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="container py-8 px-4">
+    <h2 class="text-4xl notosans-black text-center mb-8">ライブ・ギャラリー</h2>
+    {hasError ? (
+      <p class="text-center text-gray-500">データの取得に失敗しました。</p>
+    ) : galleryArticles.length > 0 ? (
+      <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {galleryArticles.map((article) => (
+          <li class="bg-gray-500">
+            <a
+              href={`/gallery/${article.permalink}`}
+              class="w-full bg-cover bg-center flex justify-center items-center text-white font-bold relative transform-gpu hover:scale-105 transition-all rounded hover:sepia"
+              style={`background-image: url('${article.thumbnail?.url}'); padding-top: 100%`}
+            >
+              <span
+                class="absolute top-0 left-0 right-0 bottom-0 p-8 flex justify-center items-center md:text-xl"
+              >
+                {article.title}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="text-center text-gray-500">現在、ギャラリー情報はありません。</p>
+    )}
+  </div>
+
+  <!-- Video Gallery Section -->
+  <div class="container mx-auto mt-6 xl:my-8 relative">
+    <h2 class="text-center notosans-black text-4xl mb-8">動画でニューロナ</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <YouTubeLite id="hchzIl0ld7A" start={92} title="YouTube video player" />
+      <YouTubeLite id="6dhXZTpcuyI" start={92} title="YouTube video player" />
+      <YouTubeLite id="DLlxoecYdOs" start={92} title="YouTube video player" />
+      <YouTubeLite id="0ptLIbWYdU4" start={92} title="YouTube video player" />
+      <YouTubeLite id="37lgHeFBn-Y" title="YouTube video player" />
+      <YouTubeLite id="huZmKjAS5Xk" title="YouTube video player" />
+      <YouTubeLite id="YJ7Cr9leTBk" title="YouTube video player" />
+      <YouTubeLite id="pFMHy0yDgW4" title="YouTube video player" />
+      <YouTubeLite id="X2lcs9VgeQk" title="YouTube video player" />
+      <YouTubeLite id="AvBQDZ0sETQ" title="YouTube video player" />
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="container max-w-xl my-32 text-center prose">
+    <h2 class="text-4xl font-bold text-center my-4">about NEURONA.JP</h2>
+    <a href="/about" class="">私たち、ニューロナについて</a>
+  </div>
+
+  <!-- Bottom Image -->
+  <Image
+    src={topBgMembersDonotenter}
+    alt="ニューロナ Tomoの写真"
+    class="mt-16 h-[200px] md:h-[600px] object-cover mx-auto w-full"
+    widths={[800, 1200, 1920]}
+    sizes="(max-width: 768px) 800px, (max-width: 1200px) 1200px, 1920px"
+    format="webp"
+    loading="lazy"
+  />
+</RootLayout>
