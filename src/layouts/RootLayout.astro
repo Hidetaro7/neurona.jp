@@ -25,6 +25,8 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index';
 
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="preconnect" href="https://i.ytimg.com" />
 
     <OGP title={title} description={description} thumbnail={thumbnail} />
   </head>

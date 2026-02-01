@@ -6,6 +6,7 @@ description: ニューロナとは何者か？について紹介しています�
 import RootLayout from "@/layouts/RootLayout.astro";
 import { Image } from "astro:assets";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import YouTubeLite from "@/components/YouTubeLite.astro";
 
 import membersFront from "@/assets/images/members-front.jpg";
 import jacketAi from "@/assets/images/jacket-ai.jpg";
@@ -31,19 +32,7 @@ import jacketFifth from "@/assets/images/jacket-5th-anniversary.jpg";
     </div>
     <main class="prose max-w-none mx-auto">
 
-<div class="aspect-video">
-  <iframe
-    class="w-full h-full"
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/O-a9I5kAfJw?si=yl55BavGAcvj2F5T"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-  ></iframe>
-</div>
+<YouTubeLite id="O-a9I5kAfJw" title="YouTube video player" wrapperClass="aspect-video" />
 
 ## 結成
 
