@@ -25,7 +25,7 @@ export function parsePhohoGallery(htmldata: any): any {
       if (pTag) {
         pTag.querySelectorAll("img").forEach((img) => {
           const { src, width, height } = img.attributes;
-          images += `<a href="${src}" data-lg-size="${width}-${height}"><img data-src="${src}" class="lazyload" loading="lazy" alt="" width="${width}" height="${height}" /></a>`;
+          images += `<a href="${src}" data-lg-size="${width}-${height}"><img src="${src}" class="lazyload" loading="lazy" alt="" width="${width}" height="${height}" /></a>`;
         });
         article.photoGallery = images;
       }

@@ -35,9 +35,9 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
 <RootLayout {title} {description} {thumbnail}>
   <!-- Hero Section with Cover Image -->
   <div
-    class="lazyload bg-cover bg-center lg:bg-top bg-[length:150%_auto] lg:py-0 bg-no-repeat w-screen h-dvh relative bg-black flex justify-center items-center"
-    style={`background-image: url(${cover2024Mb.src}); @media (min-width: 1024px) { background-image: url(${cover2024.src}); }`}
+    class="bg-cover bg-center lg:bg-top bg-[length:150%_auto] lg:py-0 bg-no-repeat w-screen h-dvh relative bg-black flex justify-center items-center"
   >
+    <video class="absolute -top-20 inset-0 w-full h-full object-cover" src="/video/hero-video.mp4" autoplay muted loop playsinline></video>
     <div
       class="flex justify-center lg:justify-end items-center lg:items-center h-full container"
     >
@@ -45,7 +45,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
         <p>
           <img src="/image/cover_logo.svg" alt="ニューロナ" class="w-10/12 mx-auto">
         </p>
-        <p class="text-2xl md:text-4xl text-fuchsia-700  leading-tight font-black notosans-black my-4">
+        <p class="text-2xl md:text-4xl text-white font-black my-4">
       茅ヶ崎発、ねこねこ音楽隊
       </p>
       </div>
@@ -117,7 +117,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
               class="w-full h-full"
               src="https://www.youtube.com/embed/mP6iQkIZqTQ"
               title="YouTube video player"
-             
+
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
@@ -175,7 +175,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
             class="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/0kbLI09jXxo?start=85"
             title="YouTube video player"
-           
+
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
@@ -240,7 +240,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/hchzIl0ld7A?start=92"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -250,7 +250,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/6dhXZTpcuyI?start=92"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -260,7 +260,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/DLlxoecYdOs?start=92"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -270,7 +270,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/0ptLIbWYdU4?start=92"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -280,7 +280,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/37lgHeFBn-Y"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -290,7 +290,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/huZmKjAS5Xk"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -300,7 +300,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/YJ7Cr9leTBk"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -310,7 +310,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/pFMHy0yDgW4"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -320,7 +320,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/X2lcs9VgeQk"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -330,7 +330,7 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           class="block mx-auto w-full h-full"
           src="https://www.youtube.com/embed/AvBQDZ0sETQ"
           title="YouTube video player"
-         
+
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -342,158 +342,6 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
   <div class="container max-w-xl my-32 text-center prose">
     <h2 class="text-4xl font-bold text-center my-4">about NEURONA.JP</h2>
     <a href="/about" class="">私たち、ニューロナについて</a>
-  </div>
-
-  <!-- Released Albums Section -->
-  <div class="container mx-auto mt-16">
-    <section class="release prose max-w-none">
-      <h2 class="text-5xl text-center">RELEASED</h2>
-      <h3 class="text-4xl text-center mb-14">ALBUM / EP</h3>
-      <div class="release-items px-4 md:px-0 grid md:grid-cols-3 gap-4">
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E3%83%8A%E3%82%AC%E3%82%B9%E3%82%AE%E3%82%BF%E6%98%A5-ep/1527718465"
-        ></iframe>
-
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E7%A9%BA%E8%9D%89-ep/1529845355"
-        ></iframe>
-
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E7%8E%89%E8%99%AB%E8%89%B2%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%83%E3%83%88/1551296505"
-        ></iframe>
-
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E6%94%BE%E5%87%BA-%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E3%83%86%E3%82%A3%E3%83%86%E3%82%A3-ep/1520538261"
-        ></iframe>
-
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E9%80%83%E3%81%92%E3%81%9F%E3%82%89%E3%81%84%E3%83%BC%E3%81%98%E3%82%83%E3%82%93-ep/1490938738"
-        ></iframe>
-
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E8%9B%87%E5%A8%98-single/1531289684"
-        ></iframe>
-
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/utsuyume-single/1526294262"
-        ></iframe>
-      </div>
-
-      <h3 class="text-4xl text-center mb-14">SINGLE</h3>
-      <div class="release-items px-4 md:px-0 grid md:grid-cols-3 gap-4">
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E3%82%A8%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%86-single/1520534591"
-        ></iframe>
-
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E3%82%BD%E3%83%A9%E3%83%8B%E3%83%8F%E3%83%96%E3%83%AC%E3%83%90-single/1488200619"
-        ></iframe>
-
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *"
-         
-          height="450"
-          style="
-            width: 100%;
-            max-width: 660px;
-            overflow: hidden;
-            background: transparent;
-          "
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/jp/album/%E5%9B%9B%E8%B6%B3%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC-2020ver-single/1543863425"
-        ></iframe>
-      </div>
-    </section>
   </div>
 
   <!-- Bottom Image -->

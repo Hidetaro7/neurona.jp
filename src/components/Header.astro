@@ -1,83 +1,92 @@
 ---
 // Header component - site header with navigation and social links
+import { Icon } from 'astro-iconify'
+
+const { isHome = false } = Astro.props;
 ---
 
-<div class="app-header">
-  <div class="container px-6 h-20 lg:h-24 flex items-center justify-between">
+<header
+  id="site-header"
+  class={`text-white z-10 sticky top-0 transition-colors duration-300 ${isHome ? 'bg-transparent' : 'bg-black'}`}
+>
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
     <div class="flex-grow flex items-center justify-start">
       <div class="lg:hidden mr-4">
-        <div class="btn-trigger" id="btn07">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <button
+          class="group relative inline-block w-5 h-4 cursor-pointer"
+          id="btn07"
+          type="button"
+          aria-controls="drawer-menu"
+          aria-expanded="false"
+        >
+          <span class="absolute left-0 w-full h-0.5 bg-white rounded transition-transform duration-300 top-0 group-[.active]:translate-y-[7px] group-[.active]:rotate-45"></span>
+          <span class="absolute left-0 w-full h-0.5 bg-white rounded transition-opacity duration-300 top-[calc(50%-1px)] group-[.active]:opacity-0"></span>
+          <span class="absolute left-0 w-full h-0.5 bg-white rounded transition-transform duration-300 bottom-0 group-[.active]:-translate-y-[7px] group-[.active]:-rotate-45"></span>
+        </button>
       </div>
 
       <h1 class="logo flex-shrink-0 mr-8">
         <a href="/">
           <img
-            class="w-24 lg:w-32 my-0 inline "
+            class="w-24 lg:w-32 my-0 inline"
             src="/image/neurona_logo_jp_white.svg"
             alt="ニューロナ"
           />
         </a>
       </h1>
 
-      <ul class="flex">
+      <ul class="hidden lg:flex">
         <li>
-          <a href="/">Home</a>
+          <a class="jumpu-text-button" href="/">Home</a>
         </li>
         <li>
-          <a href="/about">About</a>
+          <a class="jumpu-text-button" href="/about">About</a>
         </li>
         <li>
-          <a title="News" href="/articles">News</a>
+          <a class="jumpu-text-button" title="News" href="/articles">News</a>
         </li>
         <li>
-          <a title="Gallery" href="/gallery">Gallery</a>
+          <a class="jumpu-text-button" title="Gallery" href="/gallery">Gallery</a>
         </li>
       </ul>
     </div>
 
-    <div class="links">
-      <a href="/search" class="jumpu-icon-button">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </a>
+    <div class="hidden lg:flex items-center space-x-4">
       <a
-        class=""
+        class="jumpu-icon-button"
         title="Youtube"
         target="_blank"
         aria-describedby="tooltip-Youtube"
         href="https://www.youtube.com/channel/UCRKVZiebYGhWRCDxY3OA8cg"
         rel="noopener"
       >
-        <i class="fab fa-youtube text-xl"></i>
+        <Icon  name="uil:youtube" size="1.6rem" />
         <span id="tooltip-Youtube" role="tooltip">Youtube</span>
       </a>
       <a
-        class=""
-        title="Twitter"
+        class="jumpu-icon-button"
+        title="X"
         target="_blank"
-        aria-describedby="tooltip-Twitter"
+        aria-describedby="tooltip-X"
         href="https://twitter.com/neurona_jp"
         rel="noopener"
       >
-        <i class="fab fa-x-twitter text-xl"></i>
-        <span id="tooltip-Twitter" role="tooltip">Twitter</span>
+        <Icon name="ri:twitter-x-fill" size="1.6rem" />
+        <span id="tooltip-X" role="tooltip">X</span>
       </a>
       <a
-        class=""
+        class="jumpu-icon-button"
         title="Instagram"
         target="_blank"
         aria-describedby="tooltip-Instagram"
         href="https://www.instagram.com/neurona_jp/"
         rel="noopener"
       >
-        <i class="fab fa-instagram text-xl"></i>
+        <Icon name="mdi:instagram" size="1.6rem" />
         <span id="tooltip-Instagram" role="tooltip">Instagram</span>
       </a>
       <a
-        class=""
+        class="jumpu-icon-button"
         title="猫又ショップ"
         target="_blank"
         href="https://neurona.base.shop/"
@@ -93,4 +102,55 @@
       </a>
     </div>
   </div>
-</div>
+</header>
+
+
+{isHome && (
+  <script is:inline>
+    const header = document.getElementById('site-header');
+    if (header) {
+      const onScroll = () => {
+        const scrolled = window.scrollY > 8;
+        header.classList.toggle('bg-black/90', scrolled);
+        header.classList.toggle('bg-transparent', !scrolled);
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+  </script>
+)}
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const drawerTrigger = document.getElementById('btn07');
+    const drawerMenu = document.getElementById('drawer-menu');
+    const bodyEl = document.body;
+    if (drawerTrigger && drawerMenu) {
+      const closeDrawer = () => {
+        drawerMenu.classList.remove('translate-x-0');
+        drawerMenu.classList.add('translate-x-full');
+        drawerTrigger.classList.remove('active');
+        drawerTrigger.setAttribute('aria-expanded', 'false');
+        bodyEl.classList.remove('overflow-hidden');
+      };
+      const toggleDrawer = () => {
+        const isOpen = drawerMenu.classList.toggle('translate-x-0');
+        drawerMenu.classList.toggle('translate-x-full', !isOpen);
+        drawerTrigger.classList.toggle('active', isOpen);
+        drawerTrigger.setAttribute('aria-expanded', String(isOpen));
+        bodyEl.classList.toggle('overflow-hidden', isOpen);
+      };
+      drawerTrigger.addEventListener('click', toggleDrawer);
+      drawerMenu.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!target || !(target instanceof HTMLElement)) return;
+        if (target.closest('.drawer-overlay') || target.closest('.drawer-close')) {
+          closeDrawer();
+          return;
+        }
+        if (target.tagName === 'A') {
+          closeDrawer();
+        }
+      });
+    }
+  });
+</script>

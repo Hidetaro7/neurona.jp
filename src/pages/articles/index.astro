@@ -3,6 +3,7 @@ import RootLayout from '@/layouts/RootLayout.astro';
 import { getArticles } from '@/lib/microcms';
 import type { Article } from '@/lib/types';
 import { formatDate } from '@/utils/dateFormatter';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 
 const title = 'ニューロナ - 記事一覧';
 const description = 'ニューロナの記事一覧ページ';
@@ -17,9 +18,11 @@ try {
   // Sort articles by publishedAt date (newest first)
   articles.sort((a, b) => {
     const dateA = new Date(a.publishedAt);
-    const dateB = new Date(b.publishedAt);
-    return dateB.getTime() - dateA.getTime();
-  });
+  const dateB = new Date(b.publishedAt);
+  return dateB.getTime() - dateA.getTime();
+});
+// Only show schedule articles
+articles = articles.filter((article) => article.type?.includes('schedule'));
 } catch (error) {
   console.error('Failed to fetch articles from microCMS:', error);
   hasError = true;
@@ -28,14 +31,10 @@ try {
 ---
 
 <RootLayout {title} {description} {thumbnail}>
-  <div class="h-20 lg:h-24 bg-black"></div>
-  <div class="container mx-auto py-8 md:py-16 px-4">
-    <div class="prose max-w-none mx-auto mb-8">
-      <p class="text-sm mb-8">
-        <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i>
-        <span>News</span>
-      </p>
-      <h1 class="text-4xl md:text-5xl notosans-black text-center mb-8">記事一覧</h1>
+  <div class="page-container">
+    <div class="page-header">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'News' }]} />
+      <h1 class="page-title">記事一覧</h1>
     </div>
 
     {hasError ? (
@@ -43,9 +42,9 @@ try {
         <p class="text-gray-500 text-lg">データの取得に失敗しました。</p>
       </div>
     ) : articles.length > 0 ? (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.map((article) => (
-          <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+          <article class="jumpu-card">
             <a href={`/articles/${article.permalink}`} class="block">
               {article.thumbnail && (
                 <div class="aspect-video bg-gray-200 overflow-hidden">

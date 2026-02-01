@@ -1,1 +1,38 @@
 @import "tailwindcss";
+@import "@jumpu-ui/tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #000000;
+}
+
+.jumpu-text-button {
+  @apply text-gray-200 hover:text-white font-medium hover:bg-transparent;
+}
+.jumpu-icon-button {
+  @apply text-white hover:text-white hover:bg-transparent;
+}
+.jumpu-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300;
+}
+.page-container {
+  @apply container mx-auto max-w-6xl px-4 py-8 md:py-16;
+}
+.page-header {
+  @apply mx-auto mb-8;
+}
+.page-title {
+  @apply text-4xl md:text-5xl text-center mb-8;
+}
+.page-breadcrumb {
+  @apply text-sm mb-8 flex flex-wrap items-center;
+  a {
+    @apply underline hover:no-underline;
+  }
+}
+.gallery-main {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+  img {
+    @apply max-w-full aspect-square object-cover;
+  }
+}

@@ -5,6 +5,7 @@ import type { Article } from '@/lib/types';
 import { marked, type Tokens } from 'marked';
 import { markedHighlight } from 'marked-highlight';
 import hljs from 'highlight.js';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 
 // Configure marked with syntax highlighting
 marked.use(
@@ -62,28 +63,23 @@ const description = article.content.replace(/[#*`\[\]]/g, '').substring(0, 100);
   description={description}
   thumbnail={article.thumbnail?.url}
 >
-  <div class="h-20 lg:h-24 bg-black"></div>
-  <div class="prose mx-auto py-8 md:py-16 px-4">
-    <!-- Add highlight.js CSS inline for syntax highlighting -->
-    <style is:inline>
-      @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css');
-    </style>
-    <p class="text-sm mb-8">
-      <a href="/">Home</a><i class="fal fa-angle-right mx-1"></i
-      ><a href="/articles/">News</a><i class="fal fa-angle-right mx-1"></i>
-      {article.title}
-    </p>
-    <h1>{article.title}</h1>
-    <p>
-      {article.type && article.type.length > 0 && (
-        <span
-          class="inline-flex rounded-full py-1 px-3 border border-gray-300 text-xs"
-        >
-          {article.type.join(', ')}
-        </span>
-      )}
-    </p>
-    <main>
+  <div
+    class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
+    style={article.thumbnail?.url ? `background-image: url(${article.thumbnail.url});` : undefined}
+  >
+    <div class="page-container">
+      <h1 class="page-title">{article.title}</h1>
+    </div>
+  </div>
+  <!-- Add highlight.js CSS inline for syntax highlighting -->
+  <style is:inline>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css');
+  </style>
+  <div class="page-container">
+    <div class="page-header">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'News', href: '/articles/' }, { label: article.title }]} />
+    </div>
+    <main class="prose max-w-none mx-auto">
       {article.thumbnail && (
         <p>
           <img src={article.thumbnail.url} alt={article.title} />
