@@ -39,3 +39,13 @@
     @apply max-w-full aspect-square object-cover;
   }
 }
+
+.footer-nav {
+  @apply flex justify-center gap-x-4 sm:gap-x-16 px-4;
+  dt {
+    @apply font-medium text-sm mb-1;
+  }
+  a {
+    @apply underline hover:no-underline text-sm;
+  }
+}
