@@ -21,8 +21,11 @@
 .page-header {
   @apply mx-auto mb-8;
 }
+.page-hero {
+  @apply h-72 md:h-96 bg-cover bg-center flex items-center relative after:content-[''] after:absolute after:inset-0 after:bg-white after:opacity-90;
+}
 .page-title {
-  @apply text-4xl md:text-5xl text-center mb-8;
+  @apply text-4xl md:text-5xl text-center mb-8 z-10 relative;
 }
 .page-breadcrumb {
   @apply text-sm mb-8 flex flex-wrap items-center;

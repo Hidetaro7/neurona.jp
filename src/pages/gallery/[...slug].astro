@@ -39,7 +39,7 @@ const publishedDate = formatDate(gallery.publishedAt || gallery.createdAt || '')
   thumbnail={gallery.thumbnail?.url}
 >
   <div
-    class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
+    class="page-hero"
     style={gallery.thumbnail?.url ? `background-image: url(${gallery.thumbnail.url});` : undefined}
   >
     <div class="page-container">

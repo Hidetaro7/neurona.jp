@@ -64,7 +64,7 @@ const description = article.content.replace(/[#*`\[\]]/g, '').substring(0, 100);
   thumbnail={article.thumbnail?.url}
 >
   <div
-    class="h-72 md:h-2/3 bg-cover bg-center flex items-center"
+    class="page-hero"
     style={article.thumbnail?.url ? `background-image: url(${article.thumbnail.url});` : undefined}
   >
     <div class="page-container">
