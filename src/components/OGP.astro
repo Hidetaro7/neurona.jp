@@ -6,24 +6,35 @@ interface Props {
   description?: string;
   thumbnail?: string;
   ogpImage?: string;
+  url?: string;
 }
 
 const { 
   title, 
   description, 
   thumbnail, 
-  ogpImage 
+  ogpImage,
+  url
 } = Astro.props;
 
 const ogImageUrl = thumbnail || ogpImage || site.ogpImage;
+const absoluteOgImageUrl = ogImageUrl.startsWith('http')
+  ? ogImageUrl
+  : new URL(ogImageUrl, site.origin).href;
 const fullTitle = title || site.name;
 const fullDescription = description || site.description;
+const fullUrl = url || site.origin;
 ---
 
 <meta property="og:description" content={fullDescription} />
 <meta property="og:site_name" content={site.name} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:type" content="website" />
-<meta property="og:url" content={site.origin} />
-<meta property="twitter:card" content="summary" />
-<meta property="og:image" content={ogImageUrl} />
+<meta property="og:url" content={fullUrl} />
+<meta property="og:image" content={absoluteOgImageUrl} />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={fullDescription} />
+<meta property="twitter:image" content={absoluteOgImageUrl} />
+<meta property="twitter:url" content={fullUrl} />
