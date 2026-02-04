@@ -16,6 +16,7 @@ const { title, description, thumbnail } = Astro.props;
 const pageTitle = title || site.name;
 const pageDescription = description || site.description;
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index';
+const canonicalUrl = new URL(Astro.url.pathname, site.origin).href;
 ---
 
 <html lang="ja" prefix="og: http://ogp.me/ns#">
@@ -25,10 +26,19 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index';
 
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <link rel="icon" type="image/svg+xml" href="/image/favicon.svg" />
+    <link rel="icon" href="/image/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/apple-touch-icon.png" />
+    <link rel="manifest" href="/image/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="preconnect" href="https://www.youtube.com" />
     <link rel="preconnect" href="https://i.ytimg.com" />
 
-    <OGP title={title} description={description} thumbnail={thumbnail} />
+    <OGP title={title} description={description} thumbnail={thumbnail} url={canonicalUrl} />
   </head>
   <body class="">
     <Header isHome={isHome} />
