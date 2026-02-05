@@ -4,6 +4,7 @@ import { getArticles } from '@/lib/microcms';
 import type { Article } from '@/lib/types';
 import { Image } from 'astro:assets';
 import YouTubeLite from '@/components/YouTubeLite.astro';
+import { site } from '@/lib/site';
 
 // Import images
 import jacketFifth from '@/assets/images/jacket-5th-anniversary.jpg';
@@ -13,9 +14,9 @@ import topBgMembers from '@/assets/images/top-bg-members.jpg';
 import cover2024 from '@/assets/images/cover_2024.webp';
 import cover2024Mb from '@/assets/images/cover_2024_mb.webp';
 
-const title = 'ニューロナ あんぐらねこねこ音楽団';
-const description = 'ニューロナの公式ページ';
-const thumbnail = '/image/ogp_image.png';
+const title = 'ニューロナ | あんぐらねこねこ音楽団';
+const description = site.description;
+const thumbnail = site.ogpImage;
 
 // Fetch articles data from microCMS with error handling
 let articles: Article[] = [];
