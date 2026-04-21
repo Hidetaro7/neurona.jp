@@ -8,6 +8,7 @@ import { site } from '@/lib/site';
 
 // Import images
 import jacketFifth from '@/assets/images/jacket-5th-anniversary.jpg';
+import jacketBakeneko from '@/assets/images/jacket-bakeneko.jpg';
 import figNekomata from '@/assets/images/fig-nekomata.png';
 import topBgMembersDonotenter from '@/assets/images/top-bg-members-donotenter.jpg';
 import topBgMembers from '@/assets/images/top-bg-members.jpg';
@@ -62,6 +63,48 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
         <YouTubeLite id="a1WKK4ho6iY" title="YouTube video player" wrapperClass="aspect-video" />
       </div>
 
+    <div class="max-w-4xl mx-auto mb-24">
+      <h2 class="text-4xl mt-0 mb-8 text-center notosans-black">
+        New Release
+      </h2>
+      <div class="flex flex-col md:flex-row gap-8 items-center bg-neutral-900 p-8 rounded-lg">
+        <div class="w-full md:w-1/2">
+          <Image
+            src={jacketBakeneko}
+            alt="化け猫集会"
+            class="w-full rounded shadow-lg"
+            width={400}
+            height={400}
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 400px, 400px"
+            format="webp"
+            loading="lazy"
+          />
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col justify-center">
+          <h3 class="text-3xl font-bold mb-2">化け猫集会</h3>
+          <p class="text-gray-400 mb-6">2026.04.20 リリース</p>
+          <p class="text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
+            化け猫たちが夜な夜な集い、舞い、騒ぐ——<br/>
+            狂気と遊びが交差する幻想の宴「化け猫集会」。<br/>
+            猫たちの気まぐれで愛おしい日常と、人間の内面に潜む光と影。<br/>
+            可笑しさの奥に潜む本質を描く、全12曲。<br/><br/>
+            ドラマー加入により、ニューロナ初のバンドサウンドへ。音はより荒く、より生々しく、“集会”は現実へと滲み出す。
+          </p>
+          <div class="text-center md:text-left">
+            <a
+              href="https://big-up.style/kb7uGj2lyF"
+              rel="noopener"
+              target="_blank"
+              class="jumpu-outlined-button text-white border-white hover:bg-gray-100 hover:bg-opacity-20 inline-block"
+            >
+              各種ストアで聴く
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl mt-0 mb-4 text-gray-500 notosans-black">
         次のねこ時間は...
@@ -103,6 +146,8 @@ const galleryArticles = articles.filter(article => article.type?.includes('galle
           src={jacketFifth}
           alt="ニューロナ 5th Anniversary 2017-2022"
           class="rounded-sm w-48 m-6 mx-auto"
+          width={192}
+          height={192}
           widths={[192, 384]}
           sizes="(max-width: 768px) 192px, 192px"
           format="webp"

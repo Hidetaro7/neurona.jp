@@ -11,3 +11,5 @@ dist/
 # TypeScript
 *.tsbuildinfo
 package-lock.json
+
+.DS_Store
