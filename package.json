@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",
     "@jumpu-ui/tailwindcss": "^2.0.0",
-    "@tailwindcss/vite": "4.1.18",
+    "@tailwindcss/vite": "4.3.1",
     "astro-iconify": "^1.2.0",
     "fast-glob": "^3.2.11",
     "highlight.js": "^11.11.1",
@@ -60,7 +60,7 @@
     "rimraf": "3.0.2",
     "serve-handler": "^6.1.6",
     "sharp": "^0.33.5",
-    "tailwindcss": "4.1.18",
+    "tailwindcss": "4.3.1",
     "typescript": "^5.9.3"
   },
   "homepage": "https://github.com/tuqulore/website-boilerplate#readme",
