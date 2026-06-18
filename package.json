@@ -10,7 +10,7 @@
     "node": "^24"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/mdx": "^6.0.3",
     "@jumpu-ui/tailwindcss": "^2.0.0",
     "@tailwindcss/vite": "^4.1.18",
     "astro-iconify": "^1.2.0",
