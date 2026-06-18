@@ -1,0 +1,134 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+const title = 'Contact';
+const description = 'ニューロナへのお問い合わせページです。出演依頼、取材のご相談、ファンレターなどはInstagramのDMまたはメールよりご連絡ください。';
+const thumbnail = '/image/ogp_image.png';
+---
+
+<RootLayout {title} {description} {thumbnail}>
+  <div class="page-container">
+    <div class="page-header">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact', href: '/contact/' }]} />
+      <h1 class="page-title">Contact</h1>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Description -->
+      <div class="mb-12 text-center max-w-2xl mx-auto">
+        <p class="text-gray-600 leading-relaxed">
+          ライブのご出演依頼やブッキングのお誘い、取材・インタビュー、メディア掲載のご相談、<br class="hidden md:inline"/>
+          その他ファンレターや温かいメッセージなど、以下のお問い合わせルートよりお気軽にご連絡ください。
+        </p>
+      </div>
+
+      <!-- Warning Banner -->
+      <div class="mb-12 p-4 bg-amber-50 border border-amber-200 text-amber-900 rounded-lg text-sm flex items-start gap-3 shadow-sm">
+        <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+        <div>
+          <p class="font-bold">チケット予約についてのご注意</p>
+          <p class="mt-1">
+            チケットのご予約・お取り置き・お申し込みは、当サイトのお問い合わせ窓口では受け付けておりません。<br class="hidden md:inline"/>
+            各ライブ情報ページに記載されているプレイガイドや店頭、または出演情報の案内をご確認ください。
+          </p>
+        </div>
+      </div>
+
+      <!-- Two routes -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <!-- Route 1: Instagram -->
+        <div class="jumpu-card p-8 flex flex-col justify-between h-full border border-gray-100 hover:border-purple-200 transition-all duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 flex items-center justify-center text-white mb-6 shadow-md shadow-purple-100">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7Zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3Zm10.2 1.8a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold mb-3 text-gray-900">Instagram DM</h2>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+              ニューロナの公式Instagramです。ライブのお誘いやカジュアルなお問い合わせ、ファンメッセージなどはDM（ダイレクトメッセージ）よりお気軽にお送りください。
+            </p>
+            <div class="bg-gray-50 rounded px-4 py-3 mb-6 font-mono text-sm flex items-center justify-between border border-gray-100">
+              <span class="text-gray-700">@neurona_jp</span>
+            </div>
+          </div>
+          <a
+            href="https://www.instagram.com/neurona_jp/"
+            target="_blank"
+            rel="noopener"
+            class="jumpu-button w-full text-center cursor-pointer"
+          >
+            DMを送る
+          </a>
+        </div>
+
+        <!-- Route 2: Email -->
+        <div class="jumpu-card p-8 flex flex-col justify-between h-full border border-gray-100 hover:border-blue-200 transition-all duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mb-6 shadow-md shadow-blue-100">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                <path d="M22 6l-10 7L2 6"></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold mb-3 text-gray-900">E-mail</h2>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+              取材依頼、出演に関する企画書や詳細資料の添付が必要な場合は、メールよりお問い合わせください。
+            </p>
+            <div class="bg-gray-50 rounded px-4 py-2.5 mb-6 font-mono text-sm flex items-center justify-between border border-gray-100">
+              <span class="text-gray-700 select-all" id="email-text">neurona.jp@gmail.com</span>
+              <button
+                id="copy-btn"
+                type="button"
+                class="text-xs text-gray-600 hover:text-blue-600 font-sans border border-gray-300 hover:border-blue-300 bg-white py-1 px-2.5 rounded transition-all active:scale-95 flex items-center gap-1 cursor-pointer"
+                title="メールアドレスをコピー"
+              >
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="copy-btn-text">コピー</span>
+              </button>
+            </div>
+          </div>
+          <a
+            href="mailto:neurona.jp@gmail.com"
+            class="jumpu-button w-full text-center cursor-pointer"
+          >
+            メールを作成
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</RootLayout>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const copyBtn = document.getElementById('copy-btn');
+    const copyBtnText = document.getElementById('copy-btn-text');
+    const emailText = document.getElementById('email-text');
+
+    if (copyBtn && copyBtnText && emailText) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(emailText.textContent.trim());
+          copyBtnText.textContent = 'コピーしました！';
+          copyBtn.classList.add('bg-green-50', 'text-green-600', 'border-green-300');
+          copyBtn.classList.remove('text-gray-600', 'border-gray-300');
+          
+          setTimeout(() => {
+            copyBtnText.textContent = 'コピー';
+            copyBtn.classList.remove('bg-green-50', 'text-green-600', 'border-green-300');
+            copyBtn.classList.add('text-gray-600', 'border-gray-300');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy email: ', err);
+        }
+      });
+    }
+  });
+</script>
