@@ -27,7 +27,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/sitemap": "^3.6.0",
-    "@tailwindcss/line-clamp": "^0.2.1",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "v0.5.19",
     "@typescript-eslint/eslint-plugin": "^8.50.1",
     "@typescript-eslint/parser": "^8.50.1",
