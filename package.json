@@ -49,7 +49,7 @@
     "markdown-it-toc-done-right": "^4.2.0",
     "node-html-parser": "^5.4.2",
     "npm-run-all2": "5.0.0",
-    "postcss": "^8.4.12",
+    "postcss": "^8.5.18",
     "postcss-cli": "^9.1.0",
     "postcss-csso": "^6.0.0",
     "postcss-import": "^14.1.0",
