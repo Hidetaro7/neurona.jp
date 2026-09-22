@@ -59,7 +59,7 @@
     "prettier-plugin-md-nocjsp": "^1.4.0",
     "rimraf": "3.0.2",
     "serve-handler": "^6.1.6",
-    "sharp": "^0.33.5",
+    "sharp": "^0.35.0",
     "tailwindcss": "4.1.18",
     "typescript": "^5.9.3"
   },
